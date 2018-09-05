@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.about-image{
+    color:#fff;
+    text-align:center;
+    background:url('/Frontend/RecipeApp/src/assets/images/tasty.jpg');
+    background-size:cover;
+    background-position:center;
+    padding-top:100px;
+    padding-bottom:100px;
+}

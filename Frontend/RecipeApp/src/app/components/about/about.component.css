@@ -1,7 +1,7 @@
-div.jumbotron.mt-2.about-image{
+iv.jumbotron.mt-2.about-image{
     color:#fff;
     text-align:center;
-    background:url('C:/Users/tmacd/Documents/_repos/project2/Frontend/RecipeApp/src/assets/images/tasty.jpg');
+    background:url('/Frontend/RecipeApp/src/assets/images/ing.jpg');
     background-size:cover;
     background-position:center;
     padding-top:100px;
