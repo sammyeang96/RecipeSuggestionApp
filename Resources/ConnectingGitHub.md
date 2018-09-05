@@ -7,6 +7,9 @@
 5. Run `git clone https://github.com/sammyeang96/RecipeSuggestionApp.git`
 
 <h2>Good Practice</h2>
+
 * Before starting any work sessions, run `git pull` to make sure you have the latest code
+
 * Before implementing a new feature, create a branch using `git checkout -b *name_of_branch* ` and merge when feature is reviewed and complete
+
 * Make sure to commit often so you don't lose changes!
