@@ -1,9 +1,10 @@
-div.jumbotron.mt-2.about-image{
+div.background-image{
     color:#fff;
     text-align:center;
-    background:url('../images/tasty.jpg');
+    background:url('tasty.jpg');
     background-size:cover;
     background-position:center;
+    /* transform: rotate(90deg); */
     padding-top:100px;
     padding-bottom:100px;
 }
