@@ -11,6 +11,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import {AuthService} from './service/auth.service';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AuthService} from './service/auth.service';
     PopularComponent,
     UserInfoComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent
     
   ],
   imports: [

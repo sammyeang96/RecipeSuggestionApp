@@ -5,14 +5,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarRecipeApp">
       <div class="navbar-nav" id="navMenu">
-        <a  class="nav-item nav-link" routerLink="">Link1</a>
+        <a  class="nav-item nav-link" routerLink="/popular">Popular Recipes</a>
         <a class="nav-item nav-link" routerLink="">Link3</a>
         <a class="nav-item nav-link" routerLink="">Link3</a>
       </div>
       
     </div>
     <ul class="navbar-nav offset-4">
-        <li class="nav-item" id="logoutLink"><a routerLink="/login" class="nav-link text-light" id="logoutIcon">Log in <span class="oi oi-account-login"></span></a></li>
+        <li class="nav-item" id="logoutLink" *ngIf='isLoggedin'><a routerLink="" class="nav-link text-light" id="logoutIcon">Log out <span class="oi oi-account-logout"></span></a></li>
     </ul>
 
 </nav>
