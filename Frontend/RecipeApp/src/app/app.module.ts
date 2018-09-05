@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import {AuthService} from './service/auth.service';
 import { AboutComponent } from './components/about/about.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import { AboutComponent } from './components/about/about.component';
     UserInfoComponent,
     HomeComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SlideshowModule
 
   ],
   providers: [AuthService],
