@@ -21,7 +21,7 @@ export class HandleArraysService {
   {id:6,name:'Salmon',category:'meats', weight:10},
   {id:7,name:'Tuna',category:'meats', weight:10},
   {id:8,name:'Tilapia',category:'meats', weight:10},
-  {id:1,name:'Halibut',category:'meats', weight:10},
+  {id:9,name:'Halibut',category:'meats', weight:10},
   
 
 ];
