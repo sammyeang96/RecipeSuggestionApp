@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: 'Lora';
-    background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("./app/tasty.jpg");
+    background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("./assets/images/tasty.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
