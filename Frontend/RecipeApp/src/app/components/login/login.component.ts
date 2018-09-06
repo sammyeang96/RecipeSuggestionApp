@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
+import { AuthService } from '../../service/auth.service';
 
 
 @Component({
@@ -19,15 +20,18 @@ export class LoginComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private route: RouterModule,
-    private router: Router) { }
+    private router: Router,
+    private authService: AuthService
+
+  ) { }
 
   ngOnInit() {
     console.log('inside the login component');
   }
 
-  openLoginModal(content) {
-    this.modalService.open(content, { size: 'lg' });
-  }
+  // openLoginModal(content) {
+  //   this.modalService.open(content, { size: 'lg' });
+  // }
 
   login() {
 
@@ -38,16 +42,14 @@ export class LoginComponent implements OnInit {
       console.log("printing info... ")
       console.log(this.username);
       console.log(this.password);
-  }
 
-    //LOGIN LOGIC HERE
+      this.hidden = !this.hidden;
+      this.show = !this.show;
 
-  }
+      //SOME LOGIN LOGIC
 
-  createNewUser() {
+        }
 
-    //CREATE NEW USER HERE
-
-  }
+    }
 
 }

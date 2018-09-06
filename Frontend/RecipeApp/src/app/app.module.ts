@@ -38,6 +38,10 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
+  entryComponents: [
+    LoginComponent
+  ]
 })
 export class AppModule { }
