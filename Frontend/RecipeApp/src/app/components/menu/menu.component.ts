@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +12,9 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
  private search: string;
-  constructor(private authService: AuthService,
+  constructor(
+    private modalService: NgbModal,
+    private authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
@@ -27,6 +32,10 @@ export class MenuComponent implements OnInit {
       }
     );
   }
+  }
+
+  open() {
+    const modalRef = this.modalService.open(LoginComponent);
   }
 
 }
