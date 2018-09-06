@@ -14,7 +14,7 @@
 .background-image{
     color:#fff;
     text-align:center;
-    background:url('tasty.jpg');
+    background:url('./tasty.jpg');
     background-size:cover;
     background-position:center;
     padding-top:100px;
