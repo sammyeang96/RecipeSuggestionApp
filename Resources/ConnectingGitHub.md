@@ -15,11 +15,11 @@
   * If pushing to the master branch from any branch, use `git push -u origin master`, otherwise use `git push` to push to the branch you're currently in
   * After pushing use `git merge master` to merge your local branch with the local master
   * Switch to master and push the master branch back up to github.
-   * `git push` from your branch
-   * `git merge master`
-   * `git checkout master`
-   * `git commit -m "message"`
-   * `git push`
+    * `git push` from your branch
+    * `git merge master`
+    * `git checkout master`
+    * `git commit -m "message"`
+    * `git push`
 
   * To merge the branch, use `git merge master -m "message"`
   * If you want to delete the branch afterwords, run `git branch -d branch_name`

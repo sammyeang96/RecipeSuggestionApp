@@ -6,13 +6,20 @@
   <div class="collapse navbar-collapse" id="navbarRecipeApp">
       <div class="navbar-nav" id="navMenu">
         <a  class="nav-item nav-link" routerLink="/popular">Popular Recipes</a>
-        <a class="nav-item nav-link" routerLink="">Link3</a>
-        <a class="nav-item nav-link" routerLink="">Link3</a>
+        <a class="nav-item nav-link" routerLink="/about">About</a>
       </div>
+     
       
-    </div>
-    <ul class="navbar-nav offset-4">
-        <li class="nav-item" id="logoutLink" *ngIf='isLoggedin'><a routerLink="" class="nav-link text-light" id="logoutIcon">Log out <span class="oi oi-account-logout"></span></a></li>
+      
+      <ul class="navbar-nav col-6 offset-4">
+        <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search" class="form-control mt-2">
+        <button class="btn btn-light ml-2 mt-2" (click)="searchRecipe()"><span class="oi oi-zoom-out"></span></button>
+        <button routerLink="/login" class="btn btn-primary ml-2 mt-2 ">Log in</button>
+        <button class="btn btn-warning ml-2 mt-2 ">Sign up</button>
+        <button class="btn btn-secondary ml-2 mt-2">Account <span class="oi oi-person"></span></button>
+
     </ul>
+    </div>
+    
 
 </nav>
