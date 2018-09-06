@@ -13,7 +13,7 @@
 } */
 .background-image{
     color:#fff;
-    text-align:center;
+    /* text-align:center; */
     background:url('tasty.jpg');
     background-size:cover;
     background-position:center;
