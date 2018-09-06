@@ -13,7 +13,17 @@ export class HandleArraysService {
     //{id:1,name:'Beef',category:'turkey'}
     ];
   public meats:Array<Ingredient>=[
-//{id:1,name:'Beef',category:'turkey'}
+  {id:1,name:'Beef',category:'meats', weight:10},
+  {id:2,name:'Chicken',category:'meats', weight:10},
+  {id:3,name:'Turkey',category:'meats', weight:10},
+  {id:4,name:'Pork',category:'meats', weight:10},
+  {id:5,name:'Shrimp',category:'meats', weight:10},
+  {id:6,name:'Salmon',category:'meats', weight:10},
+  {id:7,name:'Tuna',category:'meats', weight:10},
+  {id:8,name:'Tilapia',category:'meats', weight:10},
+  {id:1,name:'Halibut',category:'meats', weight:10},
+  
+
 ];
 public veggies:Array<Ingredient>=[
   //{id:1,name:'Beef',category:'turkey'}
