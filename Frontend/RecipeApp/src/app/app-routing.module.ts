@@ -7,15 +7,17 @@ import { LoginComponent } from './components/login/login.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { AboutComponent } from './components/about/about.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'about', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
   { path: 'popular', component: PopularComponent},
   { path: 'login', component: LoginComponent },
   { path: 'userInfo', component: UserInfoComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'search', component: SearchResultsComponent }
   
 ];
 

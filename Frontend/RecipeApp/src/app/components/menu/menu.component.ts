@@ -8,11 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+ private search: string;
   constructor(private authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
+  }
+
+  searchRecipe() {
+    this.authService.searchRecipes(this.search).subscribe(
+      data => {
+        this.authService.recipe = data;
+        if(data !== null) {
+          this.router.navigate(['search']);
+        console.log(JSON.stringify(data));
+        }
+      }
+    );
   }
 
 }
