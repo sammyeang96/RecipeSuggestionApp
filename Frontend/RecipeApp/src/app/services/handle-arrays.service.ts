@@ -22,11 +22,27 @@ export class HandleArraysService {
   {id:7,name:'Tuna',category:'meats', weight:10},
   {id:8,name:'Tilapia',category:'meats', weight:10},
   {id:9,name:'Halibut',category:'meats', weight:10},
-  
+
 
 ];
 public veggies:Array<Ingredient>=[
-  //{id:1,name:'Beef',category:'turkey'}
+  {id:1,name:'Broccoli',category:'veggies',weight:6},
+  {id:2,name:'Squash',category:'veggies',weight:6},
+  {id:3,name:'Spinach',category:'veggies',weight:6},
+  {id:4,name:'Carrots',category:'veggies',weight:6},
+  {id:5,name:'Onion',category:'veggies',weight:6},
+  {id:6,name:'Cabbage',category:'veggies',weight:6},
+  {id:7,name:'Zucchini',category:'veggies',weight:6},
+  {id:8,name:'Eggplant',category:'veggies',weight:6},
+  {id:9,name:'Corn',category:'veggies',weight:6},
+  {id:10,name:'Lettuce',category:'veggies',weight:6},
+  {id:11,name:'Chives',category:'veggies',weight:6},
+  {id:12,name:'Asparagus',category:'veggies',weight:6},
+  {id:13,name:'Garlic',category:'veggies',weight:6},
+  {id:14,name:'Peas',category:'veggies',weight:6},
+  {id:15,name:'Chickpea',category:'veggies',weight:6},
+
+
   ];
 
   public fruits:Array<Ingredient>=[
