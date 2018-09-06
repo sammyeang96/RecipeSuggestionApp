@@ -8,6 +8,7 @@ import { PopularComponent } from './components/popular/popular.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 export const routes: Routes = [
@@ -17,8 +18,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'userInfo', component: UserInfoComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchResultsComponent }
-  
+  { path: 'search', component: SearchResultsComponent },
+  { path: 'register', component: RegisterComponent }
+
 ];
 
 
