@@ -46,7 +46,22 @@ public veggies:Array<Ingredient>=[
   ];
 
   public fruits:Array<Ingredient>=[
-    //{id:1,name:'Beef',category:'turkey'}
+    {id:1,name:'Tomato',category:'fruits',weight:5},
+    {id:2,name:'Bell Pepper',category:'fruits',weight:5},
+    {id:3,name:'Cucumbers',category:'fruits',weight:5},
+    {id:4,name:'Olives',category:'fruits',weight:5},
+    {id:5,name:'Avocado',category:'fruits',weight:5},
+    {id:6,name:'Bananas',category:'fruits',weight:5},
+    {id:7,name:'Pineapple',category:'fruits',weight:5},
+    {id:8,name:'Cherries',category:'fruits',weight:5},
+    {id:9,name:'Lemons',category:'fruits',weight:5},
+    {id:10,name:'Limes',category:'fruits',weight:5},
+    {id:11,name:'Oranges',category:'fruits',weight:5},
+    {id:12,name:'Pears',category:'fruits',weight:5},
+    {id:13,name:'Mangos',category:'fruits',weight:5},
+    {id:14,name:'Jalepeno Pepper',category:'fruits',weight:5},
+    {id:15,name:'Green Pepper',category:'fruits',weight:5},
+
     ];
 
   public dairy:Array<Ingredient>=[
