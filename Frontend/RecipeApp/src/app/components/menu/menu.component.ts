@@ -25,10 +25,7 @@ export class MenuComponent implements OnInit {
     this.authService.searchRecipes(this.search).subscribe(
       data => {
         this.authService.recipe = data;
-        
         this.router.navigate(['search']);
-        console.log(JSON.stringify(data));
-        
       }
     );
   }

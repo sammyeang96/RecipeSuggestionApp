@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
+import { Recipe } from '../../models/Recipe.model';
 
 @Component({
   selector: 'app-search-results',
@@ -7,10 +8,17 @@ import { AuthService } from '../../service/auth.service';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-
-  constructor(private authService: AuthService) { }
+  recipe: string;
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    this.parseJson();
   }
+
+  parseJson() {
+    this.recipe = JSON.stringify(this.authService.recipe);
+    // console.log(JSON.stringify(this.authService.recipe));
+  }
+
 
 }
