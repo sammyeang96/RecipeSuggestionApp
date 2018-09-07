@@ -41,7 +41,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    SearchResultsComponent
   ]
 })
 export class AppModule { }
