@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-success">
-  <a href="#" class="navbar-brand">Insert cool name here</a>
+  <a href="#" class="navbar-brand">RecAPI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRecipeApp" aria-controls="navbarRecipeApp" 
   aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,9 +11,9 @@
         <a class="nav-item nav-link" routerLink="/about">About</a>
       </div>
     
-      <ul class="navbar-nav col-6 offset-3">
+      <ul class="navbar-nav offset-5">
 
-            <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search" class="form-control mt-2">
+            <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search" class="form-control col-7 mt-2">
 
             <button class="btn btn-light ml-2 mt-2" (click)="searchRecipe()">
                 <span class="oi oi-zoom-out"></span>
@@ -21,7 +21,7 @@
 
             <button (click)="open()" class="btn btn-primary ml-2 mt-2 ">Log in</button> <!-- routerLink="/login" -->
 
-            <button class="btn btn-warning ml-2 mt-2 ">Sign up</button>
+            <button routerLink="/register" class="btn btn-warning ml-2 mt-2 ">Sign up</button>
 
             <button class="btn btn-secondary ml-2 mt-2">Account
                 <span class="oi oi-person"></span>
