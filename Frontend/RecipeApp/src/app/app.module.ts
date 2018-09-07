@@ -11,9 +11,10 @@ import { PopularComponent } from './components/popular/popular.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import {AuthService} from './service/auth.service';
+import {AuthService} from './services/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { ResultsModalComponent } from './components/results-modal/results-modal.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -26,7 +27,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ResultsModalComponent
     
     
     
