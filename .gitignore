@@ -1,6 +1,7 @@
 
 Backend/recipe-app/.springBeans
 Backend/recipe-app/.springBeans
+node_modules
 *.css
 Frontend/RecipeApp/src/app/app.component.css
 Frontend/RecipeApp/src/app/app.component.css
