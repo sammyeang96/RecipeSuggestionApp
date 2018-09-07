@@ -35,4 +35,6 @@ export class MenuComponent implements OnInit {
     const modalRef = this.modalService.open(LoginComponent);
   }
 
+  
+
 }

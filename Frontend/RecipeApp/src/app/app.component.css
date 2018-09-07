@@ -13,8 +13,13 @@
 } */
 .background-image{
     color:#fff;
+<<<<<<< HEAD
     /* text-align:center; */
     background:url('./tasty.jpg');
+=======
+    text-align:center;
+    background:url('tasty.jpg');
+>>>>>>> master
     background-size:cover;
     background-position:center;
     padding-top:100px;
