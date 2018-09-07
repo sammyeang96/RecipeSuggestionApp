@@ -19,7 +19,7 @@ export class SearchResultsComponent implements OnInit {
 
   parseJson() {
     this.recipe = this.authService.recipe.hits.map(hit => hit.recipe);
-    // console.log(JSON.stringify(this.authService.recipe));
+    this.authService.recipes = this.recipe;
   }
 
   open() {
