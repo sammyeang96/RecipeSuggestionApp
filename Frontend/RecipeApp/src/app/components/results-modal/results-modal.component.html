@@ -6,11 +6,14 @@
      
     
   </div>
-    <div class="modal-body">    
+    <div class="modal-body">
+      <h4>Ingredients:</h4>    
     <P *ngFor="let i of recipes.ingredientLines">{{ i }}</P>
+      <h4>Health Labels:</h4>
+      <P *ngFor="let i of recipes.healthLabels">{{ i }}</P>
     
   </div>
   <div class="modal-footer">
-
+    
   </div>
 </ng-template>

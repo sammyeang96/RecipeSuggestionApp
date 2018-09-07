@@ -29,11 +29,9 @@
                     <span class="oi oi-zoom-out"></span>
                 </button>
 
-                <button (click)="openLoginRegisterModal()" class="btn btn-primary ml-2 mt-2 ">Log in/Register</button> <!-- routerLink="/login" -->
+                <button (click)="openLoginRegisterModal()" class="btn btn-primary ml-2 mt-2 ">Log in/Register</button>
 
-                <button routerLink="/register" class="btn btn-primary ml-2 mt-2 ">Sign up</button>
-
-                <button class="btn btn-primary ml-2 mt-2">Account
+                <button [hidden]="hiddenUntilLoggedIn" class="btn btn-primary ml-2 mt-2">Account
                     <span class="oi oi-person"></span>
                 </button>
             </ul>
