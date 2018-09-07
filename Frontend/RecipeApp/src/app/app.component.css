@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* .background-image{
     color:#fff;
     text-align:center;
@@ -14,17 +14,11 @@
 } */
 .background-image{
     color:#fff;
-<<<<<<< HEAD
-    /* text-align:center; */
-    background:url('./tasty.jpg');
-=======
     text-align:center;
-    background:url('tasty.jpg');
->>>>>>> master
+    background:url('../assets/images/tasty.jpg');
     background-size:cover;
     background-position:center;
     padding-top:100px;
     padding-bottom:100px;
 }
-=======
->>>>>>> staging
+
