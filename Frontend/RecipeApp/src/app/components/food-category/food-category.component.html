@@ -2,7 +2,7 @@
   <div class="container">
     <div class="product-item-description d-flex mr-auto">
 
-      <div class="bg-faded p-5 rounded">
+      <div class="bg-faded p-5 rounded" *ngIf="!showIngredients">
         <h2 class="section-heading mb-0">
           <span class="section-heading-upper">Select a food group to begin adding ingredients</span>
           <span class="section-heading-lower">Categories</span>
@@ -36,6 +36,19 @@
             <img src="../../../assets/images/spice.png" width="80" (click)="showHerbSpice()">
           </div>
         </div>
+      </div>
+      <div class="bg-faded p-5 rounded" *ngIf="showIngredients">
+        <h2 class="section-heading mb-0">
+          <span class="section-heading-upper">Click on your {{this.currentCategory}} to add to your pantry</span>
+          <span class="section-heading-lower">{{this.currentCategory}}</span>
+        </h2>
+        <br>
+        <ul>
+          <li *ngFor="let ingredient of ingredients">
+            {{ingredient.name}}
+          </li>
+        </ul>
+        <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
       </div>
     </div>
   </div>
