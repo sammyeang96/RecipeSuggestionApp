@@ -12,6 +12,7 @@ import { SearchResultsComponent } from '../components/search-results/search-resu
 export class AuthService {
   link: string;
   recipe: RecipeData;
+  recipes: Recipe[];
   constructor(private http: HttpClient) { }
 
   searchRecipes(search: string) {

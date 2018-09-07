@@ -1,51 +1,16 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <div class="modal-header" style="margin: 0 auto">
-
-    <h4 class="modal-title">Login</h4>
+<ng-template #content>
+<div class="modal-header" >
+    <h5 class="modal-title">{{ recipes.label }}</h5>
+    
+     
+    
+  </div>
+    <div class="modal-body">    
+    <P *ngFor="let i of recipes.ingredientLines">{{ i }}</P>
+    
+  </div>
+  <div class="modal-footer">
 
   </div>
-
-    <div id="login-overlay" >
-
-          <div class="modal-body">
-              <div class="row">
-
-                  <div class="col-xs-12 col-md-6">
-                      <div class="well">
-
-                              <div class="form-group">
-                                  <label for="username" class="control-label">Username</label>
-                                  <input type="text" class="form-control" id="username" name="username" value="" required title="Please enter your username" placeholder="username..."[(ngModel)]='username'>
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="password" class="control-label">Password</label>
-                                  <input type="password" class="form-control" id="password" name="password" value="" required title="Please enter your password" placeholder="password..." [(ngModel)]='password'>
-                              </div>
-
-                              <div [hidden]="hidden" id="loginErrorMsg" class="alert alert-error hide">Wrong username/password!</div>
-
-                              
-
-                      </div>
-                  </div>
-
-                  <div class="col-xs-12 col-md-6">
-                      <p class="lead">Register now for <span class="text-info">FREE</span></p>
-
-                      <ul class="list-unstyled" style="line-height: 2">
-                          <li><span class="fa fa-check text-info"></span> Save items in your pantry</li>
-                          <li><span class="fa fa-check text-info"></span> Fast recipes</li>
-                          <li><span class="fa fa-check text-info"></span> Save your favorites</li>
-                          
-                          <li><a href="/about/"><u>Read more</u></a></li>
-                      </ul>
-                      
-                      <p><a routerLink="/register" (click)="modal.close('Close click')" class="btn btn-info btn-block">Register now!</a></p>
-                  </div>
-
-              </div>
-          </div>
-
-  </div>
+</ng-template>
