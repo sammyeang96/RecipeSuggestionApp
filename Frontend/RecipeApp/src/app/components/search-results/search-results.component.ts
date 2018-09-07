@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
 import { Recipe } from '../../models/Recipe.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { ResultsModalComponent } from '../results-modal/results-modal.component';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -21,8 +21,8 @@ export class SearchResultsComponent implements OnInit {
     // console.log(JSON.stringify(this.authService.recipe));
   }
 
-  // open() {
-  //   this.modalService.open();
-  // }
+  open() {
+    this.modalService.open(ResultsModalComponent);
+  }
 
 }
