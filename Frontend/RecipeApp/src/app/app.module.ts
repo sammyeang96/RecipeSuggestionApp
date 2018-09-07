@@ -46,7 +46,8 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
 
   entryComponents: [
     LoginComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ResultsModalComponent
   ]
 })
 export class AppModule { }
