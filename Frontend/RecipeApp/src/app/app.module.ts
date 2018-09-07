@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import {AuthService} from './services/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { ResultsModalComponent } from './components/results-modal/results-modal.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -26,7 +27,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ResultsModalComponent
     
     
     
@@ -44,7 +46,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 
   entryComponents: [
     LoginComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ResultsModalComponent
   ]
 })
 export class AppModule { }
