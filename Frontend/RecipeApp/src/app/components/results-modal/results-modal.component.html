@@ -1,13 +1,16 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <div class="modal-header" style="margin: 0 auto">
-  <p id="p1">
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-  </p>
+<ng-template #content>
+<div class="modal-header" >
+    <h5 class="modal-title">{{ recipes.label }}</h5>
     
+     
     
+  </div>
+    <div class="modal-body">    
+    <P *ngFor="let i of recipes.ingredientLines">{{ i }}</P>
+    
+  </div>
+  <div class="modal-footer">
 
   </div>
+</ng-template>

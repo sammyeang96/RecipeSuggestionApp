@@ -42,7 +42,7 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule
 
   ],
   providers: [AuthService],
@@ -51,7 +51,8 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
   entryComponents: [
     LoginComponent,
     SearchResultsComponent,
-    ResultsModalComponent
+    ResultsModalComponent,
+    LoginRegisterComponent
   ]
 })
 export class AppModule { }
