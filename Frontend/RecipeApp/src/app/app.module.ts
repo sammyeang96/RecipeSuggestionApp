@@ -40,7 +40,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule
 
   ],
   providers: [AuthService],
