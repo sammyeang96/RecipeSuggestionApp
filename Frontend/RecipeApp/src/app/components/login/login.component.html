@@ -43,7 +43,7 @@
                           <li><a href="/about/"><u>Read more</u></a></li>
                       </ul>
                       
-                      <p><a href="/new-customer/" class="btn btn-primary btn-block">Register now!</a></p>
+                      <p><a routerLink="/register" (click)="modal.close('Close click')" class="btn btn-info btn-block">Register now!</a></p>
                   </div>
 
               </div>
@@ -51,9 +51,10 @@
 
   </div>
 
-  <div class="modal-footer">
+
+  <!-- <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-  </div>
+  </div> -->
 
 <!-- </ng-template> -->
 

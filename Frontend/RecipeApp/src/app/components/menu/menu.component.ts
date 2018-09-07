@@ -3,6 +3,7 @@ import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SearchResultsComponent } from '../search-results/search-results.component';
 
 
 @Component({
@@ -12,8 +13,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MenuComponent implements OnInit {
  private search: string;
-  constructor(
-    private modalService: NgbModal,
+  constructor(private modalService: NgbModal,
     private authService: AuthService,
     private router: Router) { }
 
@@ -34,5 +34,7 @@ export class MenuComponent implements OnInit {
   open() {
     const modalRef = this.modalService.open(LoginComponent);
   }
+
+  
 
 }

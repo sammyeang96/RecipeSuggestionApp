@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import {AuthService} from './service/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+// import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    SearchResultsComponent,
+    SearchResultsComponent
+    
     
     
   ],
@@ -41,7 +43,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    SearchResultsComponent
   ]
 })
 export class AppModule { }

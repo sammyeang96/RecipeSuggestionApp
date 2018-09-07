@@ -1,31 +1,9 @@
-<<<<<<< HEAD
 <div class="container">
     <div class="jumbotron mt-2">
-        <h2 class="offset-5">Search Results</h2>
-
-        <ul class="list-group list-group-flush">
-            <li>{{ recipe }}</li>
+        <h2 class="offset-5 text-dark">Search Results</h2>
+        
+        <ul class="list-group list-group-flush" style="text-align:left">
+            <li (click)="open()" *ngFor="let r of recipe" class="text-dark">{{ r.label }}</li>
         </ul>
-
-    <div class="offset-4 col-4">
-</div>
-</div>
-</div>
-=======
-<section class="page-section">
-    <div class="container">
-        <div class="product-item-description d-flex mr-auto">
-            
-            <div class="bg-faded p-5 rounded">
-                <h2 class="section-heading mb-0">
-                    <span class="section-heading-lower">Search Results</span>
-                </h2>
-                <br>
-                <ul class="mb-0">
-                    <li>{{ this.authService.recipe }}</li>
-                </ul>
-            </div>
-        </div>    
     </div>
-</section>
->>>>>>> e4225d19ba3c435b9256d17a09ee732aff592e1c
+</div>
