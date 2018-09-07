@@ -15,6 +15,7 @@ import {AuthService} from './services/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { ResultsModalComponent } from './components/results-modal/results-modal.component';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -28,7 +29,8 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
     LoginComponent,
     AboutComponent,
     SearchResultsComponent,
-    ResultsModalComponent
+    ResultsModalComponent,
+    LoginRegisterComponent
     
     
     
