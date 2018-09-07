@@ -49,7 +49,8 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
   entryComponents: [
     LoginComponent,
     SearchResultsComponent,
-    ResultsModalComponent
+    ResultsModalComponent,
+    LoginRegisterComponent
   ]
 })
 export class AppModule { }
