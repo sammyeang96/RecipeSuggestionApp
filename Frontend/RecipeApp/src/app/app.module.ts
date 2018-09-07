@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import {AuthService} from './services/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { RegisterComponent } from './components/register/register.component';
+// import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -26,8 +26,8 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    SearchResultsComponent,
-    RegisterComponent,
+    SearchResultsComponent
+    
     
     
   ],
@@ -43,7 +43,8 @@ import { RegisterComponent } from './components/register/register.component';
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    SearchResultsComponent
   ]
 })
 export class AppModule { }
