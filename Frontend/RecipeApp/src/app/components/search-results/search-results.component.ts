@@ -27,5 +27,8 @@ export class SearchResultsComponent implements OnInit {
   open(recipe: Recipe) {
     this.modal.open(recipe);
   }
+  // close(recipe: Recipe) {
+  //   this.modal.close();
+  // }
 
 }
