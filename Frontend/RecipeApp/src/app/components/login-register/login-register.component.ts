@@ -70,4 +70,8 @@ export class LoginRegisterComponent implements OnInit {
           }
       }
 
+      dismissModal(any) {
+        this.modalService.dismissAll('Cross click')
+      }
+
 }
