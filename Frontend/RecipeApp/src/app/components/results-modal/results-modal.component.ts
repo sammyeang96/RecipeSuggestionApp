@@ -7,7 +7,7 @@ import { Recipe } from '../../models/Recipe.model';
 @Component({
   selector: 'app-results-modal',
   templateUrl: './results-modal.component.html',
-  styleUrls: ['./results-modal.component.css']
+  // styleUrls: ['./results-modal.component.css']
 })
 
 export class ResultsModalComponent implements OnInit {
