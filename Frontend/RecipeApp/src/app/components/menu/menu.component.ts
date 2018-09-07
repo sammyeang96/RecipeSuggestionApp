@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { LoginRegisterComponent } from '../login-register/login-register.component';
 
 
 @Component({
@@ -35,6 +35,8 @@ export class MenuComponent implements OnInit {
     const modalRef = this.modalService.open(LoginComponent);
   }
 
-  
+  openLoginRegisterModal() {
+    const modalRef = this.modalService.open(LoginRegisterComponent);
+  }
 
 }

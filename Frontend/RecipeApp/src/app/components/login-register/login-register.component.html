@@ -32,15 +32,29 @@
                 </div>
 
                 <div class="col-xs-12 col-md-6">
-                    <p class="lead">Register now for <span class="text-success">FREE</span></p>
-
-                    <ul class="list-unstyled" style="line-height: 2">
-                        <li><span class="fa fa-check text-success"></span> Save items in your pantry</li>
-                        <li><span class="fa fa-check text-success"></span> Fast recipes</li>
-                        <li><span class="fa fa-check text-success"></span> Save your favorites</li>
-                        
-                        <li><a href="/about/"><u>Read more</u></a></li>
-                    </ul>
+                  <div class="form-group">
+                    <label for="username" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="" required title="Select a username" placeholder="Select a username..."
+                      [(ngModel)]='username'>
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="" required title="Choose your password"
+                      placeholder="Choose your password..." [(ngModel)]='password'>
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="fullName" class="control-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" value="" required title="Enter full name" placeholder="Enter full name..."
+                      [(ngModel)]='fullName'>
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="" required title="Enter email address" placeholder="Enter email address..."
+                      [(ngModel)]='email'>
+                  </div>
                     
                     <p><a  (click)="modal.close('Close click')" class="btn btn-info btn-block">Register now!</a></p> <!-- routerLink="/register" -->
                 </div>
@@ -53,81 +67,3 @@
 <div class="modal-footer">
   <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="modal-header" style="margin: 0 auto">
-
-    <h4 class="modal-title">New Account</h4>
-  
-  </div>
-  
-  <div id="login-overlay">
-  
-    <div class="modal-body">
-      <div class="row">
-  
-        <div class="col-xs-12 col-md-6">
-          <div class="well">
-  
-            <div class="form-group">
-              <label for="username" class="control-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" value="" required title="Select a username" placeholder="Select a username..."
-                [(ngModel)]='username'>
-            </div>
-  
-            <div class="form-group">
-              <label for="password" class="control-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" value="" required title="Choose your password"
-                placeholder="Choose your password..." [(ngModel)]='password'>
-            </div>
-  
-            <div class="form-group">
-              <label for="fullName" class="control-label">Full Name</label>
-              <input type="text" class="form-control" id="fullName" name="fullName" value="" required title="Enter full name" placeholder="Enter full name..."
-                [(ngModel)]='fullName'>
-            </div>
-  
-            <div class="form-group">
-              <label for="email" class="control-label">Email</label>
-              <input type="text" class="form-control" id="email" name="email" value="" required title="Enter email address" placeholder="Enter email address..."
-                [(ngModel)]='email'>
-            </div>
-  
-            <div [hidden]="hidden" id="registerErrorMsg" class="alert alert-error hide">Please fill out all fields!</div>
-  
-            <button type="submit" class="btn btn-success btn-block" (click)="register()">Submit</button>
-  
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  
-  </div>
-  
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-  </div>
