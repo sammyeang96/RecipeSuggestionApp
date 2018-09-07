@@ -12,7 +12,10 @@ import { LoginRegisterComponent } from '../login-register/login-register.compone
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
- private search: string;
+
+  private search: string;
+  hiddenUntilLoggedIn = true;
+
   constructor(private modalService: NgbModal,
     private authService: AuthService,
     private router: Router) { }
@@ -21,14 +24,14 @@ export class MenuComponent implements OnInit {
   }
 
   searchRecipe() {
-    if ( this.search !== undefined ) {
-    this.authService.searchRecipes(this.search).subscribe(
-      data => {
-        this.authService.recipe = data;
-        this.router.navigate(['search']);
-      }
-    );
-  }
+    if (this.search !== undefined) {
+      this.authService.searchRecipes(this.search).subscribe(
+        data => {
+          this.authService.recipe = data;
+          this.router.navigate(['search']);
+        }
+      );
+    }
   }
 
   open() {

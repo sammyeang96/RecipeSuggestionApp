@@ -21,6 +21,7 @@ export class LoginRegisterComponent implements OnInit {
 
   show = false;
   hidden = true;
+  hidden1 = true;
 
   constructor(
     private modalService: NgbModal,
@@ -54,6 +55,7 @@ export class LoginRegisterComponent implements OnInit {
       if (this.fullName == null || this.newUsername == null || this.newPassword == null || this.confirmPassword == null
         || this.newEmail == null) {
         alert('please fill  in all fields');
+        this.hidden1 = !this.hidden1;
       } else {
         console.log('printing info... ');
         console.log(this.fullName);
