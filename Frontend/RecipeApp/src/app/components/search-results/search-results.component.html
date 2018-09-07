@@ -8,7 +8,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr (click)="open()" *ngFor="let r of recipe">
+              <tr (click)="open(r)" *ngFor="let r of recipe">
                 <td>{{ r.label }}</td>
               </tr>
             </tbody>
@@ -17,3 +17,4 @@
     </div>
     
 </div>
+<app-results-modal></app-results-modal>

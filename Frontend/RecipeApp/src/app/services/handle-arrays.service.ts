@@ -123,7 +123,7 @@ public veggies:Array<Ingredient>=[
         return this.veggies;
       }
       public getMeats() {
-        return this.veggies;
+        return this.meats;
       }
 
       public getRecipes(){

@@ -16,6 +16,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { ResultsModalComponent } from './components/results-modal/results-modal.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
+import { FoodCategoryComponent } from './components/food-category/food-category.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -30,7 +31,8 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
     AboutComponent,
     SearchResultsComponent,
     ResultsModalComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    FoodCategoryComponent
     
     
     
@@ -40,7 +42,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule
 
   ],
   providers: [AuthService],
