@@ -1,6 +1,6 @@
 <section class="page-section">
   <div class="container">
-    <div class="product-item-description2 d-flex mr-auto">
+    <div class="product-item-description d-flex ">
 
       <div class="bg-faded p-5 rounded" *ngIf="!showIngredients">
         <h2 class="section-heading mb-0">
@@ -37,9 +37,9 @@
           <span class="section-heading-lower">{{this.currentCategory}}</span>
         </h2>
         <br>
-        <ul>
+        <ul style="list-style:none;">
           <li *ngFor="let ingredient of ingredients">
-            {{ingredient.name}}
+            <input type="checkbox"> {{ingredient.name}}
           </li>
         </ul>
         <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
