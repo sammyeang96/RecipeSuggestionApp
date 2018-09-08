@@ -71,7 +71,11 @@ export class LoginRegisterComponent implements OnInit {
       }
 
       dismissModal(any) {
-        this.modalService.dismissAll('Cross click')
+        this.modalService.dismissAll('Cross click');
+      }
+
+      testLogin() {
+        console.log('woohooo, the testLogin is working');
       }
 
 }
