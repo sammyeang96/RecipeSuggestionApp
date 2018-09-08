@@ -37,9 +37,8 @@ export class MenuComponent implements OnInit {
       );
     }
   }
-  reload(link: string) {
-    this.router.navigate(['/'], {skipLocationChange: true})
-        .then(() => { this.router.navigate([link]); });
+reload(link: string) {
+  this.router.navigate(['/'], {skipLocationChange: true}).then(() => { this.router.navigate([link]); });
 }
   open() {
     const modalRef = this.modalService.open(LoginComponent);
