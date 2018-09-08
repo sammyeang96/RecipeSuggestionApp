@@ -1,19 +1,23 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <ng-template #content>
 <div class="modal-header" >
-    <h5 class="modal-title">{{ recipes.label }}</h5>
+    <h3 class="modal-title">{{ recipes.label }}</h3>
     
      
     
   </div>
     <div class="modal-body">
       <h4>Ingredients:</h4>    
-    <P *ngFor="let i of recipes.ingredientLines">{{ i }}</P>
+    <ol class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let i of recipes.ingredientLines">{{ i }}</li>
+    </ol>
       <h4>Health Labels:</h4>
-      <P *ngFor="let i of recipes.healthLabels">{{ i }}</P>
+      <ul class="list-inline">
+      <li class="list-inline-item" *ngFor="let i of recipes.healthLabels">{{ i }},</li>
       <p><img src="{{recipes.image}}"></p>
+      </ul>
   </div>
   <div class="modal-footer">
-    
+    <button (click)="close()" class="btn btn-danger"><span class="oi oi-fullscreen-exit"></span></button>
   </div>
 </ng-template>

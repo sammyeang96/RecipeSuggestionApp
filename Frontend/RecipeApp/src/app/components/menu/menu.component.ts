@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginRegisterComponent } from '../login-register/login-register.component';
+import { SearchResultsComponent } from '../search-results/search-results.component';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class MenuComponent implements OnInit {
         data => {
           this.authService.recipe = data;
           this.router.navigate(['search']);
+          // this.ngOnInit();
         }
       );
     }
