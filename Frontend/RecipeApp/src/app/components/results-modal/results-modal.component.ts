@@ -27,4 +27,7 @@ export class ResultsModalComponent implements OnInit {
     this.recipes = recipes;
     this.modalService.open(this.content);
   }
+  close() {
+    this.modalService.dismissAll();
+  }
 }

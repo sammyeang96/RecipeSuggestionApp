@@ -7,6 +7,7 @@ export class Recipe{
     servings:number;
     healthLabels: string[];
     ingredientLines: string[];
+    image: string;
     calories:number;
 
  
