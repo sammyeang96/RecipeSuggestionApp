@@ -15,6 +15,8 @@ import {AuthService} from './services/auth.service';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { ResultsModalComponent } from './components/results-modal/results-modal.component';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
+import { FoodCategoryComponent } from './components/food-category/food-category.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -28,7 +30,9 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
     LoginComponent,
     AboutComponent,
     SearchResultsComponent,
-    ResultsModalComponent
+    ResultsModalComponent,
+    LoginRegisterComponent,
+    FoodCategoryComponent
     
     
     
@@ -38,7 +42,7 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule
 
   ],
   providers: [AuthService],
@@ -47,7 +51,8 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
   entryComponents: [
     LoginComponent,
     SearchResultsComponent,
-    ResultsModalComponent
+    ResultsModalComponent,
+    LoginRegisterComponent
   ]
 })
 export class AppModule { }

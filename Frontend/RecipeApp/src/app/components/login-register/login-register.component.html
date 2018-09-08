@@ -1,0 +1,84 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="modal-header" style="margin: 0 auto">
+
+  <h4 class="modal-title">Login Or Register</h4>
+
+</div>
+
+<div id="login-overlay">
+
+  <div class="modal-body">
+    <div class="row">
+
+      <div class="col-xs-12 col-md-6">
+        <div class="well">
+
+          <div class="form-group">
+            <label for="username" class="control-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="" required title="Please enter your username"
+              placeholder="username..." [(ngModel)]='username'>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="control-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="" required title="Please enter your password"
+              placeholder="password..." [(ngModel)]='password'>
+          </div>
+
+          <div [hidden]="hidden" id="loginErrorMsg" class="alert alert-error hide">Wrong username/password!</div>
+
+          <button type="submit" class="btn btn-primary btn-block" (click)="login()">Login</button>
+          <br>
+        </div>
+      </div>
+      
+      <div class="col-xs-12 col-md-6">
+        <div class="well">
+          <div class="form-group">
+            <label for="fullName" class="control-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" value="" required title="Enter full name"
+              placeholder="Enter full name..." [(ngModel)]='fullName'>
+          </div>
+
+          <div class="form-group">
+            <label for="newUsername" class="control-label">Username</label>
+            <input type="text" class="form-control" id="newUsername" name="newUsername" value="" required title="Select a username"
+              placeholder="Select a username..." [(ngModel)]='newUsername'>
+          </div>
+
+          <div class="form-group">
+            <label for="newPassword" class="control-label">Password</label>
+            <input type="password" class="form-control" id="newPassword" name="newPassword" value="" required title="Choose your password"
+              placeholder="Choose your password..." [(ngModel)]='newPassword'>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword" class="control-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="" required
+              title="Confirm password" placeholder="Confirm password..." [(ngModel)]='confirmPassword'>
+          </div>
+
+          <div class="form-group">
+            <label for="newEmail" class="control-label">Email</label>
+            <input type="text" class="form-control" id="newEmail" name="newEmail" value="" required title="Enter email address"
+              placeholder="Enter email address..." [(ngModel)]='newEmail'>
+          </div>
+
+          <div [hidden]="hidden1" id="registerErrorMsg" class="alert alert-error hide">Fill in fields!</div>
+
+          <button type="submit" class="btn btn-primary btn-block" (click)="registerUser()" (click)="modal.close('Close click')">Register
+            now!</button>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+</div>

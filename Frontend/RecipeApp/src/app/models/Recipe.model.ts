@@ -5,7 +5,9 @@ export class Recipe{
     label:string;
     cooktime:number;
     servings:number;
-    ingredients:Array<Ingredient>;
+    healthLabels: string[];
+    ingredientLines: string[];
+    image: string;
     calories:number;
 
  

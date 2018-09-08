@@ -1,13 +1,25 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<ng-template #content>
+  <div class="modal-header">
+    <h3 class="modal-title">{{ recipes.label }}</h3>
 
-  <div class="modal-header" style="margin: 0 auto">
-  <p id="p1">
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-    {{ recipes[1].label }}
-  </p>
-    
-    
+
 
   </div>
+  <div class="modal-body">
+    <h4>Ingredients:</h4>
+    <ol class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let i of recipes.ingredientLines">{{ i }}</li>
+    </ol>
+    <br>
+    <h4>Health Labels:</h4>
+    <ul class="list-inline">
+      <li class="list-inline-item" *ngFor="let i of recipes.healthLabels">{{ i }},</li>
+      <br>
+      <p><img src="{{recipes.image}}" class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-sm-0"></p>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button (click)="close()" class="btn btn-danger"><span class="oi oi-fullscreen-exit"></span></button>
+  </div>
+</ng-template>
