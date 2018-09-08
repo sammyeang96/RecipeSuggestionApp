@@ -13,8 +13,9 @@ import org.springframework.stereotype.Component;
 public class User_Login {
 	
 	@Id
-	@Column(unique=true)
 	private String username;
+	
+	@Column(nullable=false)
 	private String password;
 	
 	public User_Login() {}
