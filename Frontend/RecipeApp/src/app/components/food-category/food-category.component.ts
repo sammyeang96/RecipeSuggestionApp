@@ -15,7 +15,7 @@ export class FoodCategoryComponent implements OnInit {
   images: any[] = [
     {
       name: "meat",
-      url:'../../../assets/images/meat.png'
+      url: '../../../assets/images/meat.png'
     },
     {
       name: "dairy",
@@ -40,66 +40,73 @@ export class FoodCategoryComponent implements OnInit {
   ]
   public currentCategory;
   public showIngredients: boolean;
+  public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
   public ingredient: Ingredient[] = [];
 
-  constructor(private router: Router, private foodService: HandleArraysService, private pantryService: PantryService ) { }
+  constructor(private router: Router, private foodService: HandleArraysService, private pantryService: PantryService) { }
 
   ngOnInit() {
     this.showIngredients = false;
   }
 
+  toggleEditable(event) {
+    if (event.target.checked) {
+      this.contentEditable = true;
+    }
+  }
+
   public setCategory = (category) => {
-    if(this.currentCategory == category) return;
+    if (this.currentCategory == category) return;
     this.currentCategory = category;
   }
 
-  public showCarne(){
+  public showCarne() {
     this.ingredients = this.foodService.getMeats();
     this.currentCategory = "meats";
     this.showIngredients = true;
     // console.log(this.ingredients);
   }
-  
-  public showDairy(){
+
+  public showDairy() {
     this.ingredients = this.foodService.getDairy();
     this.currentCategory = "dairy";
     this.showIngredients = true;
   }
 
-  public showVeggie(){
+  public showVeggie() {
     this.ingredients = this.foodService.getVeggies();
     this.currentCategory = "veggies";
     this.showIngredients = true;
   }
 
-  public showFruit(){
+  public showFruit() {
     this.ingredients = this.foodService.getFruits();
     this.currentCategory = "fruits";
     this.showIngredients = true;
   }
 
-  public showGrain(){
+  public showGrain() {
     this.ingredients = this.foodService.getStarches();
     this.currentCategory = "grains";
     this.showIngredients = true;
   }
 
-  public showHerbSpice(){
+  public showHerbSpice() {
     this.ingredients = this.foodService.getSpices();
     this.currentCategory = "herbs-spices";
     this.showIngredients = true;
   }
 
   addToPantry(ingredient: Ingredient) {
-   this.ingredient.push(ingredient);
-   console.log(this.ingredient);
-   this.pantryService.ingredient = this.ingredient;
-  //  console.log(this.ingredient);
-  console.log(this.pantryService.ingredient);
-   
+    this.ingredient.push(ingredient);
+    console.log(this.ingredient);
+    this.pantryService.ingredient = this.ingredient;
+    //  console.log(this.ingredient);
+    console.log(this.pantryService.ingredient);
+
   }
-  
+
 
 
 }
