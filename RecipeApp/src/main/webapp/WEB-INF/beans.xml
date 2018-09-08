@@ -1,31 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<display-name>RecipeApp</display-name>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/beans.xml</param-value>
-	</context-param>
+<!-- Enable annotations in this context -->
+	<context:annotation-config />
 	
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	<!-- where to look for annotations -->
+	<context:component-scan base-package="com.ex"/>
 
-	<servlet>
-		<servlet-name>DispatcherServlet</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/beans.xml</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DispatcherServlet</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
+	<!-- Enable @Transactional -->
+	<tx:annotation-driven/>
+	
+	<mvc:annotation-driven/>
+	
+	<aop:aspectj-autoproxy/>
+	
+	<!-- CONTEXTUAL SESSIONS! Configure Hibernate 
+		with spring -->
+	<bean id="myDataSource" 
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@project2.cyhhdzohvxox.us-east-2.rds.amazonaws.com:1521:ORCL"/>
+		<property name="username" value="test"/>
+		<property name="password" value="project2test"/>
+	</bean>
+	
+	<bean id="mySessionFactory" class=
+		"org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource"/>
+		<property name="packagesToScan" value="com.ex"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- HBM2DDL.AUTO OPTIONS:
+					validate: validate the schema, makes no changes to the database.
+					update: update the schema.
+					create: creates the schema, destroying previous data.
+					create-drop: drop the schema when the 
+						SessionFactory is closed explicitly, 
+						typically when the application is stopped.
+				 -->
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager"
+	class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
 
-</web-app>
+
+</beans>

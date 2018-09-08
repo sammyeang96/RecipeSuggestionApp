@@ -26,7 +26,6 @@ public class User_Pantry {
 	private int id;
 	
 	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name="USER_PANTRY", unique=true)
 	private User_Login username;
 	
 	public User_Pantry() {}

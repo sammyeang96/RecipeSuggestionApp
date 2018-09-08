@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -25,12 +26,17 @@ public class Pantry_Item_List {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_item_list")
 	private int id;
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="PANTRY_ITEM")
 	private User_Pantry user_Pantry_Id;
 	
+	@Column
 	private String item_Name;
+	
+	@Column
 	private String item_Category;
+	
+	@Column
 	private double item_Weight;
 	
 	public Pantry_Item_List() {}
