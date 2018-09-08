@@ -1,12 +1,15 @@
-<div class="col">
+<div class="col-12">
     <section class="page-section">
-<div class="jumbotron col-9 bg-faded">
+<div class="jumbotron col-10 bg-faded">
     <h2 class="section-heading mb-0">
         <span class="section-heading-upper">My Virtual Pantry</span>
         <span class="section-heading-lower">My Ingredients</span>
       </h2>
       <p *ngFor="let i of this.pantryService.ingredient">{{ i.name }}</p>
-      <p id="ingr"></p>
+    <!-- <ul class="list-inline">
+        <li class="list-inline-item" *ngFor="let i of this.pantryService.ingredient">{{ i.name }},</li>
+    </ul> -->
+      <button class="btn btn-primary" (click)="addSelectionToArray()">Submit</button>
 </div>
 </section>
-</div>
+</div>  
