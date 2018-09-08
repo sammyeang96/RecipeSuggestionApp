@@ -9,6 +9,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FoodCategoryComponent } from './components/food-category/food-category.component';
+import { PantryComponent } from './components/pantry/pantry.component';
+
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -21,6 +23,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchResultsComponent },
   { path: 'categories', component: FoodCategoryComponent },
+  {path: 'pantry', component: PantryComponent}
   // { path: 'register', component: RegisterComponent }
 
 ];

@@ -1,4 +1,6 @@
-<section class="page-section">
+<div class="row">
+  <div class="col offset-1">
+<section class="page-section ">
   <div class="container">
     <div class="product-item-description d-flex ">
 
@@ -37,10 +39,9 @@
           <span class="section-heading-lower">{{this.currentCategory}}</span>
         </h2>
         <br>
-        <ul style="list-style:none;">
-          <li *ngFor="let ingredient of ingredients">
-            <input type="checkbox" name="ingredientName"> 
-            <label for="ingredientName"> {{ingredient.name}} </label>
+        <ul>
+          <li (click)="addToPantry(ingredient)" *ngFor="let ingredient of ingredients">
+            {{ingredient.name}}
           </li>
         </ul>
         <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
@@ -48,3 +49,6 @@
     </div>
   </div>
 </section>
+</div>
+<app-pantry></app-pantry>
+</div>
