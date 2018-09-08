@@ -102,6 +102,7 @@ export class LoginRegisterComponent implements OnInit {
 
   testLogin() {
     console.log('woohooo, the testLogin is working');
+    
   }
 
 }

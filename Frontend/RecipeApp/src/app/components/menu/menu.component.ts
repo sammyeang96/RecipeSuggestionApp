@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
   searchRecipe() {
     if (this.search !== undefined) {
       this.authService.searchRecipes(this.search).subscribe(
-         data => {
+        data => {
           this.authService.recipe = data;
           // this.router.navigate(['search']);
           this.reload('search');
@@ -37,15 +37,23 @@ export class MenuComponent implements OnInit {
       );
     }
   }
+<<<<<<< HEAD
 reload(link: string) {
   this.router.navigate(['/'], {skipLocationChange: true}).then(() => { this.router.navigate([link]); });
 }
   open() {
     const modalRef = this.modalService.open(LoginComponent);
+=======
+
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true })
+      .then(() => { this.router.navigate([link]); });
+>>>>>>> staging
   }
 
   openLoginRegisterModal() {
-    const modalRef = this.modalService.open(LoginRegisterComponent);
+    return this.modalService.open(LoginRegisterComponent);
+    
   }
 
 }
