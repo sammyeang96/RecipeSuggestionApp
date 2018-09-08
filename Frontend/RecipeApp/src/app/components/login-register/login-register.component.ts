@@ -27,7 +27,7 @@ export class LoginRegisterComponent implements OnInit {
     private modalService: NgbModal,
     private route: RouterModule,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
 
   ) { }
 
@@ -102,7 +102,6 @@ export class LoginRegisterComponent implements OnInit {
 
   testLogin() {
     console.log('woohooo, the testLogin is working');
-    
   }
 
 }

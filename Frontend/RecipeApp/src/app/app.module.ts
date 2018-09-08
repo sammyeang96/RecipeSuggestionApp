@@ -49,7 +49,6 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent,
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent
