@@ -28,24 +28,23 @@
 
           <div [hidden]="hidden" id="loginErrorMsg" class="alert alert-error hide">Wrong username/password!</div>
 
-          <button type="submit" class="btn btn-success btn-block" (click)="login()">Login</button>
-
+          <button type="submit" class="btn btn-primary btn-block" (click)="login()">Login</button>
+          <br>
         </div>
       </div>
-
+      
       <div class="col-xs-12 col-md-6">
         <div class="well">
-
           <div class="form-group">
             <label for="fullName" class="control-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" name="fullName" value="" required title="Enter full name" placeholder="Enter full name..."
-              [(ngModel)]='fullName'>
+            <input type="text" class="form-control" id="fullName" name="fullName" value="" required title="Enter full name"
+              placeholder="Enter full name..." [(ngModel)]='fullName'>
           </div>
 
           <div class="form-group">
             <label for="newUsername" class="control-label">Username</label>
-            <input type="text" class="form-control" id="newUsername" name="newUsername" value="" required title="Select a username" placeholder="Select a username..."
-              [(ngModel)]='newUsername'>
+            <input type="text" class="form-control" id="newUsername" name="newUsername" value="" required title="Select a username"
+              placeholder="Select a username..." [(ngModel)]='newUsername'>
           </div>
 
           <div class="form-group">
@@ -56,19 +55,20 @@
 
           <div class="form-group">
             <label for="confirmPassword" class="control-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="" required title="Confirm password"
-              placeholder="Confirm password..." [(ngModel)]='confirmPassword'>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="" required
+              title="Confirm password" placeholder="Confirm password..." [(ngModel)]='confirmPassword'>
           </div>
 
           <div class="form-group">
             <label for="newEmail" class="control-label">Email</label>
-            <input type="text" class="form-control" id="newEmail" name="newEmail" value="" required title="Enter email address" placeholder="Enter email address..."
-              [(ngModel)]='newEmail'>
+            <input type="text" class="form-control" id="newEmail" name="newEmail" value="" required title="Enter email address"
+              placeholder="Enter email address..." [(ngModel)]='newEmail'>
           </div>
 
           <div [hidden]="hidden1" id="registerErrorMsg" class="alert alert-error hide">Fill in fields!</div>
 
-          <button type="submit" class="btn btn-info btn-block" (click)="registerUser()" (click)="modal.close('Close click')">Register now!</button>
+          <button type="submit" class="btn btn-primary btn-block" (click)="registerUser()" (click)="modal.close('Close click')">Register
+            now!</button>
 
         </div>
       </div>
