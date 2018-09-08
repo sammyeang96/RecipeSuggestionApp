@@ -39,7 +39,8 @@
         <br>
         <ul style="list-style:none;">
           <li *ngFor="let ingredient of ingredients">
-            <input type="checkbox"> {{ingredient.name}}
+            <input type="checkbox" name="ingredientName"> 
+            <label for="ingredientName"> {{ingredient.name}} </label>
           </li>
         </ul>
         <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
