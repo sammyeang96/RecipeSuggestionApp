@@ -5,6 +5,8 @@ import { LoginComponent } from '../login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginRegisterComponent } from '../login-register/login-register.component';
 import { SearchResultsComponent } from '../search-results/search-results.component';
+import { BehaviorSubject } from 'rxjs';
+import { RecipeData } from '../../models/recipe-data';
 
 
 @Component({
@@ -27,15 +29,18 @@ export class MenuComponent implements OnInit {
   searchRecipe() {
     if (this.search !== undefined) {
       this.authService.searchRecipes(this.search).subscribe(
-        data => {
+         data => {
           this.authService.recipe = data;
-          this.router.navigate(['search']);
-          // this.ngOnInit();
+          // this.router.navigate(['search']);
+          this.reload('search');
         }
       );
     }
   }
-
+  reload(link: string) {
+    this.router.navigate(['/'], {skipLocationChange: true})
+        .then(() => { this.router.navigate([link]); });
+}
   open() {
     const modalRef = this.modalService.open(LoginComponent);
   }

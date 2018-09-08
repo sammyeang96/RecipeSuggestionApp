@@ -3,11 +3,11 @@ import { AuthService } from '../../services/auth.service';
 import { Recipe } from '../../models/Recipe.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ResultsModalComponent } from '../results-modal/results-modal.component';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
-  
 })
 export class SearchResultsComponent implements OnInit {
   recipe: Recipe[];
@@ -27,6 +27,4 @@ export class SearchResultsComponent implements OnInit {
   open(recipe: Recipe) {
     this.modal.open(recipe);
   }
-  
-
 }
