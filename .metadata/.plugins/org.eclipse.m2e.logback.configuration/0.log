@@ -1,0 +1,37 @@
+2018-09-08 19:18:12,134 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:RecipeApp:0.0.1-SNAPSHOT @ C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\pom.xml.
+2018-09-08 19:18:18,799 [Worker-13: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:RecipeApp:0.0.1-SNAPSHOT @ C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\pom.xml.
+2018-09-08 19:18:19,578 [Worker-13: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom
+2018-09-08 19:18:19,614 [Worker-13: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom
+2018-09-08 19:18:30,912 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:30,913 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:30,915 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:30,915 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:37,445 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:RecipeApp:0.0.1-SNAPSHOT @ C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\pom.xml.
+2018-09-08 19:18:38,029 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:38,029 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:38,033 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:38,033 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:39,932 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:39,932 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:39,935 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:39,937 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:40,237 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:40,237 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:40,241 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:40,247 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:40,571 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:40,572 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:40,573 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:40,587 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:41,063 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,063 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:41,065 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,067 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:41,374 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,374 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:41,376 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,409 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-08 19:18:41,827 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,827 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-08 19:18:41,829 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-08 19:18:41,923 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
