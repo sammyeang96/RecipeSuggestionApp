@@ -17,6 +17,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { ResultsModalComponent } from './components/results-modal/results-modal.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { FoodCategoryComponent } from './components/food-category/food-category.component';
+import { PantryComponent } from './components/pantry/pantry.component';
 // import { RegisterComponent } from './components/register/register.component';
 
 
@@ -32,7 +33,8 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent,
-    FoodCategoryComponent
+    FoodCategoryComponent,
+    PantryComponent
     
     
     
@@ -49,7 +51,6 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent,
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent

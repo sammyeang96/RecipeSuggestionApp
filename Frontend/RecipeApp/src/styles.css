@@ -189,14 +189,14 @@ body {
       z-index: 0;
       max-width: 50vw;
     }
-    /* trying to format search result image.... */
-    .product-item .product-item-img2 {
-      position: relative;
-      z-index: 0;
-      max-width: 60vw;
-      padding-top: 25px;
-    }
+
     .product-item .product-item-description {
+      position: relative;
+      z-index: 1;
+      margin-top: -3rem;
+      max-width: 50vw;
+    }
+    .product-item .product-item-description2 {
       position: relative;
       z-index: 1;
       margin-top: -3rem;

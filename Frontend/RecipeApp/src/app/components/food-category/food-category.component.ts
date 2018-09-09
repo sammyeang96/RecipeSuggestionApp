@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HandleArraysService } from '../../services/handle-arrays.service';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { Ingredient } from '../../models/Ingredient.model';
+import { PantryService } from '../../services/pantry.service';
+
 
 @Component({
   selector: 'app-food-category',
@@ -39,8 +41,9 @@ export class FoodCategoryComponent implements OnInit {
   public currentCategory;
   public showIngredients: boolean;
   public ingredients: Ingredient[] = [];
+  public ingredient: Ingredient[] = [];
 
-  constructor(private router: Router, private foodService: HandleArraysService) { }
+  constructor(private router: Router, private foodService: HandleArraysService, private pantryService: PantryService ) { }
 
   ngOnInit() {
     this.showIngredients = false;
@@ -55,7 +58,7 @@ export class FoodCategoryComponent implements OnInit {
     this.ingredients = this.foodService.getMeats();
     this.currentCategory = "meats";
     this.showIngredients = true;
-    console.log(this.ingredients);
+    // console.log(this.ingredients);
   }
   
   public showDairy(){
@@ -87,4 +90,16 @@ export class FoodCategoryComponent implements OnInit {
     this.currentCategory = "herbs-spices";
     this.showIngredients = true;
   }
+
+  addToPantry(ingredient: Ingredient) {
+   this.ingredient.push(ingredient);
+   console.log(this.ingredient);
+   this.pantryService.ingredient = this.ingredient;
+  //  console.log(this.ingredient);
+  console.log(this.pantryService.ingredient);
+   
+  }
+  
+
+
 }

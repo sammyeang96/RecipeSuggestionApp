@@ -1,6 +1,8 @@
-<section class="page-section">
+<div class="row">
+  <div class="col offset-1">
+<section class="page-section ">
   <div class="container">
-    <div class="product-item-description d-flex mr-auto">
+    <div class="product-item-description2 d-flex mr-auto">
 
       <div class="bg-faded p-5 rounded" *ngIf="!showIngredients">
         <h2 class="section-heading mb-0">
@@ -8,32 +10,26 @@
           <span class="section-heading-lower">Categories</span>
         </h2>
         <br>
-        <!-- <ul>
-          <li *ngFor="#category of categories" (click)="setCategory(category)">
-          <li *ngFor="let image of images" (click)="setCategory(image.name)">
-            <img src="{{image.url}}" width="100" />
-          </li>
-        </ul> -->
         <div class="row">
           <div class="column">
-            <img src="../../../assets/images/meat.png" width="90" (click)="showCarne()">
+            <img src="../../../assets/images/meat.png" width="110" (click)="showCarne()">
           </div>
           <div class="column">
-            <img src="../../../assets/images/dairy.png" width="100" (click)="showDairy()">
+            <img src="../../../assets/images/dairy.png" width="140" (click)="showDairy()">
           </div>
           <div class="column">
-            <img src="../../../assets/images/veggie.png" width="80" (click)="showVeggie()">
+            <img src="../../../assets/images/veggie.png" width="105" (click)="showVeggie()">
           </div>
         </div>
         <div class="row">
           <div class="column">
-            <img src="../../../assets/images/fruit.png" width="80" (click)="showFruit()">
+            <img src="../../../assets/images/fruit.png" width="120" (click)="showFruit()">
           </div>
           <div class="column">
-            <img src="../../../assets/images/wheat.png" width="100" (click)="showGrain()">
+            <img src="../../../assets/images/wheat.png" width="145" (click)="showGrain()">
           </div>
           <div class="column">
-            <img src="../../../assets/images/spice.png" width="80" (click)="showHerbSpice()">
+            <img src="../../../assets/images/spice.png" width="110" (click)="showHerbSpice()">
           </div>
         </div>
       </div>
@@ -44,7 +40,7 @@
         </h2>
         <br>
         <ul>
-          <li *ngFor="let ingredient of ingredients">
+          <li (click)="addToPantry(ingredient)" *ngFor="let ingredient of ingredients">
             {{ingredient.name}}
           </li>
         </ul>
@@ -53,3 +49,6 @@
     </div>
   </div>
 </section>
+</div>
+<app-pantry></app-pantry>
+</div>
