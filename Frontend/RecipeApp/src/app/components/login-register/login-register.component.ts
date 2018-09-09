@@ -67,7 +67,8 @@ export class LoginRegisterComponent implements OnInit {
 
     if (
       // this.fullName == null
-      || this.newUsername == null
+      // ||
+      this.newUsername == null
       || this.newPassword == null
       // || this.confirmPassword == null
       // || this.newEmail == null
