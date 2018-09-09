@@ -5,10 +5,10 @@
         <span class="section-heading-upper">My Virtual Pantry</span>
         <span class="section-heading-lower">My Ingredients</span>
       </h2>
-      <p *ngFor="let i of this.pantryService.ingredient">{{ i.name }}</p>
-    <!-- <ul class="list-inline">
-        <li class="list-inline-item" *ngFor="let i of this.pantryService.ingredient">{{ i.name }},</li>
-    </ul> -->
+      <!-- <p *ngFor="let i of this.pantryService.ingredient" (click)="removeItemFromPantry(i.id)">{{ i.name }}</p> -->
+    <ul class="list">
+        <li class="list-item" (click)="removeItemFromPantry(i)" *ngFor="let i of this.pantryService.ingredient">{{ i.name }}</li>
+    </ul>
       <button class="btn btn-primary" (click)="addSelectionToArray()">Submit</button>
 </div>
 </section>

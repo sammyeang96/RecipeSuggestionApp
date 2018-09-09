@@ -8,7 +8,7 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
   styleUrls: ['./pantry.component.css']
 })
 export class PantryComponent implements OnInit {
-  ingredient: Ingredient[];
+  ingredient: Ingredient[] = [];
   constructor(private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
@@ -16,12 +16,12 @@ export class PantryComponent implements OnInit {
 
   addSelectionToArray() {
     this.ingredient = this.pantryService.ingredient;
-    console.log(this.ingredient);
-    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe( 
-      data => {
-        console.log(data);
-      }
-    );
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe( data => {
+      console.log(data);
+    } );
   }
 
+  removeItemFromPantry(ingredient: Ingredient) {
+    this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
+  }
 }
