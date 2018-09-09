@@ -32,9 +32,21 @@ export class AuthService {
     return this.http.post<User>('http://localhost: and the rest of the URL', {username: username, password: password});
   }
 
-  registerUser(fullName: string, newUsername: string, newPassword: string, confirmPassword: string, newEmail: string) {
-    return this.http.post<User>('http://localhost: and the rest of the URL',
-    {fullName: fullName, newUsername: newUsername, newPassword: newPassword, confirmPassword: confirmPassword, newEmail: newEmail});
+  registerUser(
+    // fullName: string,
+    newUsername: string,
+    newPassword: string
+    // confirmPassword: string,
+    // newEmail: string
+  ) {
+    return this.http.post<User>('http://localhost:8081/create',
+    {
+      // fullName: fullName,
+      newUsername: newUsername,
+      newPassword: newPassword
+      // confirmPassword: confirmPassword,
+      // newEmail: newEmail
+    });
   }
 
   getUsersPantryItems() {
