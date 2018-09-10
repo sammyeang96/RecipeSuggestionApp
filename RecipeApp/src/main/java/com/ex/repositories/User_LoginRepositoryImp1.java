@@ -18,9 +18,8 @@ public class User_LoginRepositoryImp1 implements User_LoginRepository {
 	public User_Login add(User_Login a) {
 		String username = (String) sf.getCurrentSession().save(a);
 		
-		if(getByusername(username)!=null) {
+		if(getByusername(a.getUsername())!=null) {
 			System.out.println("Inside add and username is not null!");
-		
 		a.setUsername(username);
 		return a;
 		}

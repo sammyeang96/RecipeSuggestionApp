@@ -31,6 +31,7 @@ public class User_LoginController {
 		/*try this and see if it works*/
 		
 		if(a == null) {
+			//Return null to them here?
 			return new ResponseEntity<User_Login>(a, HttpStatus.CONFLICT);
 		}
 		else {
