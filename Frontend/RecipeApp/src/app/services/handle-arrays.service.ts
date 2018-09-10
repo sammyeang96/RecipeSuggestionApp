@@ -85,6 +85,8 @@ public veggies:Array<Ingredient>=[
     {id:5,name:'Paprika',category:'spices',weight:2},
     {id:6,name:'Basil',category:'spices',weight:2},
     {id:7,name:'Crushed Red Pepper',category:'spices',weight:2},
+    {id:8,name:'Pepper',category:'spices',weight:2},
+    {id:9,name:'Salt',category:'spices',weight:2},
     
     ];
 
