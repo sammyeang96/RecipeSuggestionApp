@@ -99,14 +99,6 @@ export class FoodCategoryComponent implements OnInit {
   }
 
   addToPantry(ingredient: Ingredient) {
-    this.ingredient.push(ingredient);
-    console.log(this.ingredient);
-    this.pantryService.ingredient = this.ingredient;
-    //  console.log(this.ingredient);
-    console.log(this.pantryService.ingredient);
-
+   this.pantryService.ingredient.push(ingredient);
   }
-
-
-
 }
