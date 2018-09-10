@@ -16,16 +16,10 @@ public class User_LoginRepositoryImp1 implements User_LoginRepository {
 	
 	@Override
 	public User_Login add(User_Login a) {
-		String username = (String) sf.getCurrentSession().save(a);
-		
-		if(getByusername(a.getUsername())!=null) {
-			System.out.println("Inside add and username is not null!");
+			String username = (String) sf.getCurrentSession().save(a);
 		a.setUsername(username);
 		return a;
-		}
-		else {
-			return null;
-		}
+	
 		
 	
 	
