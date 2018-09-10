@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ex.beans.User;
 import com.ex.service.UserService;
-
+//IGNORE THIS CLASS BEN
 @RestController
 @RequestMapping("/login2")
 //@CrossOrigin //can put parenthesees to say port 4200 in order to reach through this port

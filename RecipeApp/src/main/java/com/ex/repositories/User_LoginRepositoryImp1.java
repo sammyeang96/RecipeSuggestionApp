@@ -17,8 +17,25 @@ public class User_LoginRepositoryImp1 implements User_LoginRepository {
 	@Override
 	public User_Login add(User_Login a) {
 		String username = (String) sf.getCurrentSession().save(a);
+		
+		if(getByusername(username)!=null) {
+			System.out.println("Inside add and username is not null!");
+		
 		a.setUsername(username);
 		return a;
+		}
+		else {
+			return null;
+		}
+		
+	
+	
+	}
+	
+	@Override
+	public User_Login getByusername(String username) {
+		// TODO Auto-generated method stub
+		return (User_Login)sf.getCurrentSession().get(User_Login.class, username);
 	}
 
 }
