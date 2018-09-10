@@ -2,5 +2,21 @@
 Backend/recipe-app/.springBeans
 Backend/recipe-app/.springBeans
 node_modules
+<<<<<<< HEAD
+=======
+*.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/menu/menu.component.html
+>>>>>>> Benjamin
 /.metadata/
 /.recommenders/
