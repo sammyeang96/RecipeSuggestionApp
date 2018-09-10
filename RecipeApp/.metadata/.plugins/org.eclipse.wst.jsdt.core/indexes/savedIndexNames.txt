@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\mm\1807Jul30Java\RecipeSuggestionApp\RecipeApp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2283121670.index
-3194243048.index
-1188580297.index
-1067094681.index
-1021290468.index
-3388847176.index
