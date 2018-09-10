@@ -51,7 +51,7 @@
 						SessionFactory is closed explicitly, 
 						typically when the application is stopped.
 				 -->
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>
