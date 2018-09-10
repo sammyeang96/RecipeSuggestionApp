@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="PANTRY_ITEM_LIST")
 public class Pantry_Item_List {
-	
 	@Id
 	@Column
 	@SequenceGenerator(name="user_item_list", sequenceName="user_item_list_seq", allocationSize=1)
@@ -90,6 +89,7 @@ public class Pantry_Item_List {
 	public void setItem_Weight(double item_Weight) {
 		this.item_Weight = item_Weight;
 	}
+
 
 	@Override
 	public String toString() {

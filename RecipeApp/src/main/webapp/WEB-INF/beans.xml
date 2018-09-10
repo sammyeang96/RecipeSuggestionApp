@@ -21,7 +21,7 @@
 	<tx:annotation-driven/>
 	
 	<mvc:annotation-driven/>
-	
+	<mvc:resources location="/static" mapping="/**"></mvc:resources>
 	<aop:aspectj-autoproxy/>
 	
 	<!-- CONTEXTUAL SESSIONS! Configure Hibernate 
@@ -51,7 +51,7 @@
 						SessionFactory is closed explicitly, 
 						typically when the application is stopped.
 				 -->
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>

@@ -1,3 +1,5 @@
+
+
 package com.ex.beans;
 
 import javax.persistence.Column;
@@ -7,11 +9,11 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+
 @Component
 @Entity
 @Table(name="USER_LOGIN")
 public class User_Login {
-	
 	@Id
 	@Column(unique=true)
 	private String username;
