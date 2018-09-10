@@ -7,7 +7,7 @@ import { Ingredient } from '../models/Ingredient.model';
 })
 export class PantryService {
   
-ingredient: Ingredient[];
+ingredient: Ingredient[] = [];
   constructor() { }
 
 

@@ -28,7 +28,7 @@ body {
   }
   
   .site-heading {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0rem;
     text-transform: uppercase;
     line-height: 1;
@@ -48,9 +48,11 @@ body {
   }
   
   .page-section {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 5rem;
   }
+
+  
   
   .section-heading {
     text-transform: uppercase;
