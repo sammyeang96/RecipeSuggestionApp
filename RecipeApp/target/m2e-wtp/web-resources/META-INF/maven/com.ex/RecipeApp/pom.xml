@@ -107,7 +107,7 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
 			<version>12.1.0</version>
-<<<<<<< HEAD
+
 		</dependency>
 		
 		
@@ -125,9 +125,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			
-=======
->>>>>>> Benjamin
+
 		</dependency>
 		
 
