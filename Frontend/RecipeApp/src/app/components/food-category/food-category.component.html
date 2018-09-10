@@ -40,16 +40,15 @@
                 <span class="section-heading-lower">{{this.currentCategory}}</span>
               </h2>
               <br>
-              <ul>
-                <li (click)="addToPantry(ingredient)" *ngFor="let ingredient of ingredients">
-                  {{ingredient.name}}
-                </li>
-              </ul>
+              <ul style="list-style: none;">
+                  <li *ngFor="let ingredient of ingredients">
+                    <label><input type="checkbox" (click)="addToPantry(ingredient)">{{ingredient.name}} </label>
+                  </li>
+                </ul>
               <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
             </div>
           </div>
         </div>
-        
 
       </section>
     </div>

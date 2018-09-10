@@ -1,59 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HandleArraysService } from '../../services/handle-arrays.service';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { Ingredient } from '../../models/Ingredient.model';
 import { PantryService } from '../../services/pantry.service';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-food-category',
   templateUrl: './food-category.component.html',
-  styleUrls: ['./food-category.component.css']
+  styleUrls: ['./food-category.component.css'],
+  animations: [
+    trigger('heroState', [
+      state('inactive', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-out'))
+    ])
+  ]
 })
 export class FoodCategoryComponent implements OnInit {
 
-  images: any[] = [
-    {
-      name: "meat",
-      url: '../../../assets/images/meat.png'
-    },
-    {
-      name: "dairy",
-      url: '../../../assets/images/dairy.png'
-    },
-    {
-      name: "veggie",
-      url: '../../../assets/images/veggie.png'
-    },
-    {
-      name: "fruit",
-      url: '../../../assets/images/fruit.png'
-    },
-    {
-      name: "grain",
-      url: '../../../assets/images/wheat.png'
-    },
-    {
-      name: "spice",
-      url: '../../../assets/images/spice.png'
-    }
-  ]
   public currentCategory;
   public showIngredients: boolean;
   public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
   public ingredient: Ingredient[] = [];
 
-  constructor(private router: Router, private foodService: HandleArraysService, private pantryService: PantryService) { }
+  public state = 'inavtive';
+
+  constructor(router: Router, private foodService: HandleArraysService, private pantryService: PantryService) { }
 
   ngOnInit() {
     this.showIngredients = false;
   }
 
-  toggleEditable(event) {
-    if (event.target.checked) {
-      this.contentEditable = true;
-    }
+  toggleState() {
+    this.state = this.state === 'active' ? 'inactive' : 'active';
   }
 
   public setCategory = (category) => {
@@ -99,6 +87,6 @@ export class FoodCategoryComponent implements OnInit {
   }
 
   addToPantry(ingredient: Ingredient) {
-   this.pantryService.ingredient.push(ingredient);
+    this.pantryService.ingredient.push(ingredient);
   }
 }
