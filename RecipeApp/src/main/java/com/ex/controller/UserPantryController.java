@@ -9,26 +9,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ex.beans.UserLogin;
-import com.ex.services.UserLoginService;
+import com.ex.beans.UserPantry;
+import com.ex.services.UserPantryService;
 
 @RestController
-@RequestMapping("/login")
-public class UserLoginController {
+@RequestMapping("/pantry")
+public class UserPantryController {
 	
 	@Autowired
-	private UserLoginService userLoginService;
+	private UserPantryService userPantryService;
 	
 	@RequestMapping(value="/create", method=RequestMethod.POST,
 			consumes=MediaType.APPLICATION_JSON_VALUE,
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
-		a = userLoginService.addUserLogin(a);
-		if(a == null) {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.CONFLICT);
+	public ResponseEntity<UserPantry> addUserPantry(@RequestBody UserPantry a) {
+		a = userPantryService.addUserPantry(a);
+		if (a == null) {
+			return new ResponseEntity<UserPantry>(a, HttpStatus.CONFLICT);
 		}
 		else {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
+			return new ResponseEntity<UserPantry>(a, HttpStatus.CREATED);
 		}
 	}
+
 }
