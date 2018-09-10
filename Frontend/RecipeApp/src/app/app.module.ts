@@ -18,7 +18,8 @@ import { ResultsModalComponent } from './components/results-modal/results-modal.
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { FoodCategoryComponent } from './components/food-category/food-category.component';
 import { PantryComponent } from './components/pantry/pantry.component';
-// import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Browser } from 'protractor';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { PantryComponent } from './components/pantry/pantry.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
 
   ],
   providers: [AuthService],
