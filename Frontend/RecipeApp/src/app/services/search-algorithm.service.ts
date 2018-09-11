@@ -55,7 +55,7 @@ export class SearchAlgorithmService {
 
   //Retrives a JSON recipe with URL to instructions
   searchRecipeInstructionById(id: number) {
-    return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/` + id + `/information`,
+    return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/`+ id + `/analyzedInstructions`,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
       })
