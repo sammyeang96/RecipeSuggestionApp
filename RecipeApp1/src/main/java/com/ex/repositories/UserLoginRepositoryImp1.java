@@ -1,5 +1,8 @@
 package com.ex.repositories;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
@@ -24,7 +27,11 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 	
 	@Override
 	public UserLogin getByusername(String username) {
+		
+		
 		// TODO Auto-generated method stub
 		return (UserLogin)sf.getCurrentSession().get(UserLogin.class, username);
 	}
+
+
 }
