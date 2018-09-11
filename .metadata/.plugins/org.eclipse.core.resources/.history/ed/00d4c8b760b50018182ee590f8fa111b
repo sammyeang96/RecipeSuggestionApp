@@ -1,0 +1,62 @@
+package com.ex.beans;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table(name="LOGIN_INFORMATION")
+public class UserInformation {
+	
+	@Id
+	@OneToOne
+	@JoinColumn
+	private String username;
+	
+	private String Firstname;
+	
+	private String Lastname;
+	
+	public UserInformation() {}
+
+	public UserInformation(String username, String firstname, String lastname) {
+		super();
+		this.username = username;
+		Firstname = firstname;
+		Lastname = lastname;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getFirstname() {
+		return Firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		Firstname = firstname;
+	}
+
+	public String getLastname() {
+		return Lastname;
+	}
+
+	public void setLastname(String lastname) {
+		Lastname = lastname;
+	}
+
+	@Override
+	public String toString() {
+		return "UserInformation [username=" + username + ", Firstname=" + Firstname + ", Lastname=" + Lastname + "]";
+	}
+}

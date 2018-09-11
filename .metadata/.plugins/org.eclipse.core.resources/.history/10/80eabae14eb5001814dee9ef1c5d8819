@@ -1,0 +1,36 @@
+package com.ex.beans;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table(name="PANTY_ITEMS")
+public class PantryItems {
+	
+	@Id
+	@Column(name="ITEM_ID")
+	private int id;
+	
+	@ManyToOne
+	@JoinColumn(name="PANTRY_ID")
+	private UserPantry pantryId;
+	
+	@Column
+	private String name;
+	
+	@Column
+	private String type;
+	
+	@Column
+	private double weight;
+	
+	public PantryItems() {}
+
+}

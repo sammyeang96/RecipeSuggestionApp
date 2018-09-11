@@ -1,0 +1,5 @@
+package com.ex.repositories;
+
+public class UserInformationRepositoryImp1 implements UserInformationRepository {
+
+}
