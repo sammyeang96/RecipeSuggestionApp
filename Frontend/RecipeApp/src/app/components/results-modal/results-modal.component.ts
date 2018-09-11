@@ -12,7 +12,7 @@ import { Recipe } from '../../models/Recipe.model';
 
 export class ResultsModalComponent implements OnInit {
   recipes: Recipe;
-  @ViewChild("content")
+  @ViewChild('content')
   content: NgbActiveModal;
   constructor(private modalService: NgbModal,
     private route: RouterModule,
@@ -26,5 +26,8 @@ export class ResultsModalComponent implements OnInit {
   open(recipes: Recipe) {
     this.recipes = recipes;
     this.modalService.open(this.content);
+  }
+  close() {
+    this.modalService.dismissAll();
   }
 }
