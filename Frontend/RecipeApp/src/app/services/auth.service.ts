@@ -34,18 +34,22 @@ export class AuthService {
 
   registerUser(
     // fullName: string,
+    firstName: string,
+    lastName: string,
     newUsername: string,
     newPassword: string
     // confirmPassword: string,
     // newEmail: string
   ) {
-    return this.http.post<User>('http://localhost:8081/create',
+    return this.http.post<User>('http://localhost:8081/login/create',
     {
-      // fullName: fullName,
-      newUsername: newUsername,
-      newPassword: newPassword
-      // confirmPassword: confirmPassword,
-      // newEmail: newEmail
+
+      firstName: firstName,
+      lastName: lastName,
+      newUsername: {
+        newUsername: newUsername,
+        newPassword: newPassword }
+
     });
   }
 

@@ -13,11 +13,12 @@ export class LoginRegisterComponent implements OnInit {
   private username: string;
   private password: string;
 
-  private fullName: string;
+  private firstName: string;
+  private lastName: string;
   private newUsername: string;
   private newPassword: string;
   private confirmPassword: string;
-  private newEmail: string;
+  // private newEmail: string;
 
   show = false;
   hidden = true;
@@ -66,10 +67,13 @@ export class LoginRegisterComponent implements OnInit {
   registerUser() {
 
     if (
-      // this.fullName == null
-      // ||
+      this.firstName == null
+      ||
+      this.lastName == null
+      ||
       this.newUsername == null
-      || this.newPassword == null
+      ||
+      this.newPassword == null
       // || this.confirmPassword == null
       // || this.newEmail == null
     ) {
@@ -78,7 +82,8 @@ export class LoginRegisterComponent implements OnInit {
     } else {
 
       console.log('printing info... ');
-      // console.log(this.fullName);
+      console.log(this.firstName);
+      console.log(this.lastName);
       console.log(this.newUsername);
       console.log(this.newPassword);
       // console.log(this.confirmPassword);
@@ -89,7 +94,8 @@ export class LoginRegisterComponent implements OnInit {
 
       this.authService.registerUser(
 
-        // this.fullName,
+        this.firstName,
+        this.lastName,
         this.newUsername,
         this.newPassword
         // this.confirmPassword,
