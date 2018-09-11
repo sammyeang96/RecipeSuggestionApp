@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchAlgorithmService } from '../../services/search-algorithm.service';
 import { FeatureResults } from '../../models/feature-results';
+import { FeatureInstructionsComponent } from '../feature-instructions/feature-instructions.component';
+import { Recipe } from '../../models/Recipe.model';
 
 @Component({
   selector: 'app-feature-results',
@@ -9,11 +11,12 @@ import { FeatureResults } from '../../models/feature-results';
 })
 export class FeatureResultsComponent implements OnInit {
   results: FeatureResults[];
+  @ViewChild(FeatureResultsComponent)
+  modal:FeatureInstructionsComponent;
   constructor(private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
     this.set();
-  
   }
 
   set() {
@@ -26,6 +29,9 @@ export class FeatureResultsComponent implements OnInit {
         console.log(data);
       }
     );
+  }
+  open(recipe: FeatureResults) {
+    this.modal.open(recipe);
   }
 
 }
