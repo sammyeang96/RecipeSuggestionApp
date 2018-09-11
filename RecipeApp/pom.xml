@@ -107,7 +107,7 @@
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
-			<version>12.1.0</version>
+			<version>11.2.0</version>
 
 		</dependency>
 		
@@ -118,15 +118,7 @@
 			<version>4.0.1.Final</version>
 			<classifier>tests</classifier>
 		</dependency>
-		
-		<!--  
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
-		</dependency>
-		-->
-			<dependency>
     <groupId>org.hibernate.javax.persistence</groupId>
     <artifactId>hibernate-jpa-2.1-api</artifactId>
     <version>1.0.0.Final</version>
