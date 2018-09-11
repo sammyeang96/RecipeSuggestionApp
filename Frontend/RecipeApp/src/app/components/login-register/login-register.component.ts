@@ -81,7 +81,7 @@ export class LoginRegisterComponent implements OnInit {
       this.hidden1 = !this.hidden1;
     } else {
 
-      console.log('printing info... ');
+      console.log('printing info inside login-register ');
       console.log(this.firstName);
       console.log(this.lastName);
       console.log(this.newUsername);

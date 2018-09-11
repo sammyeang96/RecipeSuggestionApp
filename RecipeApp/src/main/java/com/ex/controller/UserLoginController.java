@@ -23,6 +23,7 @@ public class UserLoginController {
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
+		System.out.println("woohoo! we made it here!");
 		a = userLoginService.addUserLogin(a);
 		if(a == null) {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CONFLICT);
