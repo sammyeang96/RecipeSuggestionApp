@@ -1,4 +1,4 @@
-package com.ex.repositories;
+	package com.ex.repositories;
 
 import javax.transaction.Transactional;
 
@@ -20,5 +20,11 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 		String username = (String) sf.getCurrentSession().save(a);
 		a.setUsername(username);
 		return a;
+	}
+
+	@Override
+	public UserLogin getByusername(String username) {
+		UserLogin result = (UserLogin) sf.getCurrentSession().get(UserLogin.class, username);
+		return result;
 	}
 }

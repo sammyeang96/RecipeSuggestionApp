@@ -4,6 +4,6 @@ import com.ex.beans.UserPantry;
 
 public interface UserPantryRepository {
 
-	UserPantry add(UserPantry a);
+	public UserPantry add(UserPantry a);
 
 }
