@@ -33,7 +33,7 @@ img:hover{
 .change-category {
   margin-top: 10%;
   margin-bottom: 0%;
-}
+} 
 
   /* Clear floats after image containers */
 .row::after {
