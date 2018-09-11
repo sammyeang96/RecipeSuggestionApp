@@ -26,7 +26,7 @@ public class UserLoginController {
 	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
 		a = userLoginService.addUserLogin(a);
 		if(a == null) {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.CONFLICT);
+			return new ResponseEntity<UserLogin>(HttpStatus.CONFLICT);
 		}
 		else {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);

@@ -1,5 +1,7 @@
 package com.ex.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,18 +21,17 @@ public class PantryItemsController {
 	@Autowired
 	private PantryItemsService pantryItemsService;
 	
-	@RequestMapping(value="/add", method=RequestMethod.POST,
-			consumes=MediaType.APPLICATION_JSON_VALUE,
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<PantryItems> addPantryItems(@RequestBody PantryItems a) {
-		a = pantryItemsService.addPantryItems(a);
+	// Takes a JSON that's a list to add to the table
+	@RequestMapping(value="/add",method=RequestMethod.POST,
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<PantryItems>> addAllBypantryId(@RequestBody List<PantryItems> a) {
+		a = pantryItemsService.addAllBypantryId(a);
 		if(a == null) {
-			return new ResponseEntity<PantryItems>(a, HttpStatus.CONFLICT);
+			return new ResponseEntity<List<PantryItems>>(HttpStatus.CONFLICT);
 		}
 		else {
-			return new ResponseEntity<PantryItems>(a, HttpStatus.CREATED);
+			return new ResponseEntity<List<PantryItems>>(a, HttpStatus.OK);
 		}
-		
 	}
-
 }
