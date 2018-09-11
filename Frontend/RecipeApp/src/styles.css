@@ -28,7 +28,7 @@ body {
   }
   
   .site-heading {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0rem;
     text-transform: uppercase;
     line-height: 1;
@@ -48,9 +48,11 @@ body {
   }
   
   .page-section {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 5rem;
   }
+
+  
   
   .section-heading {
     text-transform: uppercase;
@@ -189,14 +191,14 @@ body {
       z-index: 0;
       max-width: 50vw;
     }
-    /* trying to format search result image.... */
-    .product-item .product-item-img2 {
-      position: relative;
-      z-index: 0;
-      max-width: 60vw;
-      padding-top: 25px;
-    }
+
     .product-item .product-item-description {
+      position: relative;
+      z-index: 1;
+      margin-top: -3rem;
+      max-width: 50vw;
+    }
+    .product-item .product-item-description2 {
       position: relative;
       z-index: 1;
       margin-top: -3rem;
