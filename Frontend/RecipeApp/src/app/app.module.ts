@@ -21,6 +21,7 @@ import { PantryComponent } from './components/pantry/pantry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Browser } from 'protractor';
 import { FeatureResultsComponent } from './components/feature-results/feature-results.component';
+import { ScrollSpyModule } from 'ngx-scrollspy';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { FeatureResultsComponent } from './components/feature-results/feature-re
     HttpClientModule,
     FormsModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ScrollSpyModule.forRoot()
 
   ],
   providers: [AuthService],
