@@ -3,7 +3,7 @@ body {
     font-family: 'Raleway', sans-serif;
     background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("./assets/images/tasty.jpg");
     background-attachment: fixed;
-    background-position: center;
+    /* background-position: center; */
     background-size: cover;
   }
   .icon{
@@ -28,8 +28,8 @@ body {
   }
   
   .site-heading {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
     text-transform: uppercase;
     line-height: 1;
     font-family: 'Raleway';
@@ -37,20 +37,22 @@ body {
   
   .site-heading .site-heading-upper {
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
   }
   
   .site-heading .site-heading-lower {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 100;
     line-height: 4rem;
   }
   
   .page-section {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 5rem;
   }
+
+  
   
   .section-heading {
     text-transform: uppercase;
@@ -84,6 +86,8 @@ body {
   #mainNav .navbar-nav .nav-item .nav-link {
     color: rgba(255, 255, 255, 0.7);
     font-weight: 800;
+    /* added */
+    display: inline-block;
   }
   
   #mainNav .navbar-nav .nav-item.active .nav-link {
@@ -185,16 +189,16 @@ body {
     .product-item .product-item-img {
       position: relative;
       z-index: 0;
-      max-width: 60vw;
+      max-width: 50vw;
     }
-    /* trying to format search result image.... */
-    .product-item .product-item-img2 {
-      position: relative;
-      z-index: 0;
-      max-width: 60vw;
-      padding-top: 25px;
-    }
+
     .product-item .product-item-description {
+      position: relative;
+      z-index: 1;
+      margin-top: -3rem;
+      max-width: 50vw;
+    }
+    .product-item .product-item-description2 {
       position: relative;
       z-index: 1;
       margin-top: -3rem;

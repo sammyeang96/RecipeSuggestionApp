@@ -17,7 +17,11 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { ResultsModalComponent } from './components/results-modal/results-modal.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { FoodCategoryComponent } from './components/food-category/food-category.component';
-// import { RegisterComponent } from './components/register/register.component';
+import { PantryComponent } from './components/pantry/pantry.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Browser } from 'protractor';
+import { FeatureResultsComponent } from './components/feature-results/feature-results.component';
+// import { ScrollSpyModule } from 'ngx-scrollspy';
 
 
 @NgModule({
@@ -32,7 +36,9 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent,
-    FoodCategoryComponent
+    FoodCategoryComponent,
+    PantryComponent,
+    FeatureResultsComponent
     
     
     
@@ -42,7 +48,9 @@ import { FoodCategoryComponent } from './components/food-category/food-category.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
+    // ScrollSpyModule.forRoot()
 
   ],
   providers: [AuthService],

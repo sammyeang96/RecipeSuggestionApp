@@ -46,36 +46,63 @@ export class LoginRegisterComponent implements OnInit {
 
       this.hidden = !this.hidden;
       this.show = !this.show;
-      // does nothing yet
-        }
-    }
 
-    registerUser() {
+      this.authService.login(this.username, this.password).subscribe(
+        data => {
+          console.log(data);
+          this.authService.loggedInUser = data;
 
-      if (this.fullName == null || this.newUsername == null || this.newPassword == null || this.confirmPassword == null
-        || this.newEmail == null) {
-        alert('please fill  in all fields');
-        this.hidden1 = !this.hidden1;
-      } else {
-        console.log('printing info... ');
-        console.log(this.fullName);
-        console.log(this.newUsername);
-        console.log(this.newPassword);
-        console.log(this.confirmPassword);
-        console.log(this.newEmail);
-
-        this.hidden = !this.hidden;
-        this.show = !this.show;
-        // does nothing yet
+          if (data != null) {
+            this.authService.isLoggedIn = true;
+            this.router.navigate(['userInfo']);
           }
-      }
 
-      dismissModal(any) {
-        this.modalService.dismissAll('Cross click');
-      }
+        }
 
-      testLogin() {
-        console.log('woohooo, the testLogin is working');
-      }
+      );
+    }
+  }
+
+  registerUser() {
+
+    if (this.fullName == null || this.newUsername == null || this.newPassword == null || this.confirmPassword == null
+      || this.newEmail == null) {
+      alert('please fill  in all fields');
+      this.hidden1 = !this.hidden1;
+    } else {
+      console.log('printing info... ');
+      console.log(this.fullName);
+      console.log(this.newUsername);
+      console.log(this.newPassword);
+      console.log(this.confirmPassword);
+      console.log(this.newEmail);
+
+      this.hidden = !this.hidden;
+      this.show = !this.show;
+
+      this.authService.registerUser(this.fullName, this.newUsername, this.newPassword, this.confirmPassword, this.newEmail).subscribe(
+        data => {
+          console.log(data);
+          this.authService.loggedInUser = data;
+
+          if (data != null) {
+            this.authService.isLoggedIn = true;
+            this.router.navigate(['userInfo']);
+          }
+
+        }
+
+      );
+    }
+  }
+
+  dismissModal(any) {
+    this.modalService.dismissAll('Cross click');
+  }
+
+  testLogin() {
+    console.log('woohooo, the testLogin is working');
+    
+  }
 
 }
