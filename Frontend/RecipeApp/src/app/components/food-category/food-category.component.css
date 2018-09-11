@@ -1,15 +1,45 @@
+#category-view{
+ width: 100%;
+ height: 500px;
+}
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
     float: left;
     width: 33.33%;
-    padding: 5px;
-    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
-    transition: width 2s;
+    /* width: 30%; */
+    padding: 15px;
   }
+.row {
+  height: 40%;
+}
+img{
+  /* -webkit-transition: width 1s; For Safari 3.1 to 6.0 */
+  transition: width .3s;
+  width: 90%;
+}
 
-/* .column:hover{
-  width:
-} */
+img:hover{
+  width: 100%;
+  /* margin-bottom: -5px; */
+}
+
+.button {
+  background-color: #e6a756;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.3s;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(85, 77, 62, 0.24),0 17px 50px 0 rgba(126, 106, 65, 0.19);
+}
+
+.change-category {
+  margin-top: 10%;
+  margin-bottom: -20%;
+  position: relative;
+}
+
   /* Clear floats after image containers */
 .row::after {
     content: "";

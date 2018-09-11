@@ -1,5 +1,7 @@
 package com.ex.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +13,8 @@ public class PantryItemsService {
 	
 	@Autowired
 	private PantryItemsRepository pantryItemsRepo;
-	
-	public PantryItems addPantryItems(PantryItems a) {
-		return pantryItemsRepo.add(a);
-	}
 
+	public List<PantryItems> addAllBypantryId(List<PantryItems> a) {
+		return pantryItemsRepo.addAllBypantryId(a);
+	}
 }

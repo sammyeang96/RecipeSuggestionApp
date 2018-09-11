@@ -2,4 +2,22 @@
 Backend/recipe-app/.springBeans
 Backend/recipe-app/.springBeans
 node_modules
+<<<<<<< HEAD
 /.metadata/
+=======
+*.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.css
+Frontend/RecipeApp/src/app/components/about/about.component.html
+Frontend/RecipeApp/src/app/app.component.css
+Frontend/RecipeApp/src/app/components/menu/menu.component.html
+**/.metadata/
+**/.recommenders/
+>>>>>>> 5761931397bea083cf98eac93333e44683ed4226

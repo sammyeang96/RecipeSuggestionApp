@@ -1,4 +1,5 @@
 INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 4289135590.index
 1455593261.index
 3523662158.index
@@ -18,3 +19,28 @@ INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.
 2511617568.index
 984225034.index
 2301944148.index
+=======
+1455593261.index
+1988513050.index
+326805980.index
+1084624933.index
+1518219961.index
+728296283.index
+398058497.index
+1222594007.index
+1622776731.index
+1635476219.index
+2301944148.index
+1870878615.index
+3886402465.index
+3940600246.index
+1422973464.index
+3523662158.index
+2773834657.index
+2665152799.index
+984225034.index
+3854475047.index
+14682029.index
+2511617568.index
+4289135590.index
+>>>>>>> staging
