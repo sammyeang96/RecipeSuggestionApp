@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ingredient } from '../models/Ingredient.model';
+import { FeatureResults } from '../models/feature-results';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class SearchAlgorithmService {
 
   private searchUrl: string = "";
   private selectedPantry: Ingredient[];
+   resultSet: FeatureResults[];
 
 
   // randomInt(min, max) {
@@ -43,10 +45,10 @@ export class SearchAlgorithmService {
   searchPantryRecipes(searchArray: Ingredient[]) {
     this.searchUrl = searchArray[0].name;
     for (let i = 1; i < searchArray.length; i++) {
-      this.searchUrl = this.searchUrl + "," + searchArray[i].name;
+      this.searchUrl = this.searchUrl + "%2C" + searchArray[i].name;
     }
     console.log(this.searchUrl);
-    return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=` + this.searchUrl + '&limitLicense=false&number=12&ranking=2'
+    return this.http.get<FeatureResults[]>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=` + this.searchUrl + '&limitLicense=false&number=12&ranking=2'
       ,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
