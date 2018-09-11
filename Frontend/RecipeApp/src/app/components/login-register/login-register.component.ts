@@ -67,13 +67,7 @@ export class LoginRegisterComponent implements OnInit {
   registerUser() {
 
     if (
-      this.firstName == null
-      ||
-      this.lastName == null
-      ||
-      this.newUsername == null
-      ||
-      this.newPassword == null
+      this.firstName == null || this.lastName == null || this.newUsername == null || this.newPassword == null
       // || this.confirmPassword == null
       // || this.newEmail == null
     ) {
@@ -81,11 +75,6 @@ export class LoginRegisterComponent implements OnInit {
       this.hidden1 = !this.hidden1;
     } else {
 
-      console.log('printing info inside login-register ');
-      console.log(this.firstName);
-      console.log(this.lastName);
-      console.log(this.newUsername);
-      console.log(this.newPassword);
       // console.log(this.confirmPassword);
       // console.log(this.newEmail);
 

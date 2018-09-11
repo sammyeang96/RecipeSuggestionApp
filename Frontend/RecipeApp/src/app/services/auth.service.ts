@@ -34,8 +34,6 @@ export class AuthService {
 
   registerUser(
 
-
-
     // fullName: string,
     firstName: string,
     lastName: string,
@@ -44,14 +42,15 @@ export class AuthService {
     // confirmPassword: string,
     // newEmail: string
   ) {
-    return this.http.post<User>('http://localhost:8081/login/create',
+    console.log('printing info inside auth-service ');
+    // console.log(this.firstName);
+    // console.log(this.lastName);
+    console.log(newUsername);
+    console.log(newPassword);
+    return this.http.post<User>('http://localhost:8081/RecipeApp/login/create',
     {
-
-      firstName: firstName,
-      lastName: lastName,
-      newUsername: {
-        newUsername: newUsername,
-        newPassword: newPassword }
+        username: newUsername,
+        password: newPassword
 
     });
   }
