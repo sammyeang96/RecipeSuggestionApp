@@ -1,5 +1,7 @@
 package com.ex.repositories;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
@@ -16,12 +18,10 @@ public class PantryItemsRepositoryImp1 implements PantryItemsRepository {
 	SessionFactory sf;
 
 	@Override
-	public PantryItems add(PantryItems a) {
-		int id = (Integer) sf.getCurrentSession().save(a);
-		a.setId(id);
-		return a;
+	public List<PantryItems> addAllBypantryId(List<PantryItems> a) {
+		@SuppressWarnings("unchecked")
+		List<PantryItems> list = (List<PantryItems>) sf.getCurrentSession().save(a);
+		return list;
 	}
-	
-	
 
 }

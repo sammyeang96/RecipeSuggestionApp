@@ -13,6 +13,7 @@ public class UserPantryService {
 	private UserPantryRepository userPantryRepo;
 	
 	public UserPantry addUserPantry(UserPantry a) {
+		System.out.println("Service" + a);
 		return userPantryRepo.add(a);
 	}
 

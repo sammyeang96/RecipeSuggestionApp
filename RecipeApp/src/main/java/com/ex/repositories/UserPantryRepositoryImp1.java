@@ -17,8 +17,11 @@ public class UserPantryRepositoryImp1 implements UserPantryRepository {
 
 	@Override
 	public UserPantry add(UserPantry a) {
+		System.out.println("Repo before" + a);
 		int id = (Integer) sf.getCurrentSession().save(a);
+		System.out.println("Repo after " + id);
 		a.setId(id);
 		return a;
 	}
+
 }
