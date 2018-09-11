@@ -21,8 +21,8 @@ public class UserPantryController {
 	
 	//Will take in a JSON that has a UserLogin Object within the username 
 	@RequestMapping(value="/create", method=RequestMethod.POST,
-		consumes=MediaType.APPLICATION_JSON_VALUE,
-		produces=MediaType.APPLICATION_JSON_VALUE)
+			consumes=MediaType.APPLICATION_JSON_VALUE,
+			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserPantry> addUserPantry(@RequestBody UserPantry a) {
 		System.out.println("Controller" + a);
 		a = userPantryService.addUserPantry(a);
@@ -33,4 +33,5 @@ public class UserPantryController {
 			return new ResponseEntity<UserPantry>(a, HttpStatus.CREATED);
 		}
 	}
+
 }
