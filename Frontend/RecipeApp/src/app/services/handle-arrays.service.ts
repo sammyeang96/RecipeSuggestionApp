@@ -41,7 +41,27 @@ public veggies:Array<Ingredient>=[
   {id:13,name:'Garlic',category:'veggies',weight:4},
   {id:14,name:'Peas',category:'veggies',weight:4},
   {id:15,name:'Chickpea',category:'veggies',weight:4},
-  {id:16,name:'Mushroom',category:'veggies',weight:4}
+  {id:16,name:'Mushroom',category:'veggies',weight:4},
+  {id:17,name:'Celery',category:'veggies',weight:4},
+  {id:18,name:'Kale',category:'veggies',weight:4},
+  {id:19,name:'Radish',category:'veggies',weight:4},
+  {id:20,name:'Artichokes',category:'veggies',weight:4},
+  {id:21,name:'Arugula',category:'veggies',weight:4},
+  {id:22,name:'Spring Beans',category:'veggies',weight:4},
+  {id:23,name:'Beets',category:'veggies',weight:4},
+  {id:24,name:'Belgian Endive',category:'veggies',weight:4},
+  {id:25,name:'Bok Choy',category:'veggies',weight:4},
+  {id:26,name:'Broccoli Rabe',category:'veggies',weight:4},
+  {id:27,name:'Brussel Sprouts',category:'veggies',weight:4},
+  {id:28,name:'Cauliflower',category:'veggies',weight:4},
+  {id:29,name:'Collard Greens',category:'veggies',weight:4},
+  {id:30,name:'Crookneck',category:'veggies',weight:4},
+  {id:31,name:'Fennel',category:'veggies',weight:4},
+  {id:32,name:'Ginger Root',category:'veggies',weight:4},
+  {id:33,name:'Horseradish',category:'veggies',weight:4},
+  {id:34,name:'Jicama',category:'veggies',weight:4}
+
+
 
   ];
 
