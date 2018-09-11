@@ -4,6 +4,7 @@ import { PantryService } from '../../services/pantry.service';
 import { SearchAlgorithmService } from '../../services/search-algorithm.service';
 import { FoodCategoryComponent } from '../food-category/food-category.component';
 
+import { RouterModule, Router } from '@angular/router';
 @Component({
   selector: 'app-pantry',
   templateUrl: './pantry.component.html',
@@ -11,16 +12,19 @@ import { FoodCategoryComponent } from '../food-category/food-category.component'
 })
 export class PantryComponent implements OnInit {
   ingredient: Ingredient[] = [];
-  constructor(private foodCategory: FoodCategoryComponent, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
+  constructor(private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
   }
 
   addSelectionToArray() {
     this.ingredient = this.pantryService.ingredient;
-    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe( data => {
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
+      data => {
+      this.searchAlgorithmService.resultSet = data;
       console.log(data);
     } );
+    this.router.navigate(['feature']);
   }
 
   removeItemFromPantry(ingredient: Ingredient) {
