@@ -27,7 +27,7 @@ public class Pantry_Item_List {
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="PANTRY_ITEM")
-	private User_Pantry user_Pantry_Id;
+	private UserPantry user_Pantry_Id;
 	
 	@Column
 	private String item_Name;
@@ -40,7 +40,7 @@ public class Pantry_Item_List {
 	
 	public Pantry_Item_List() {}
 
-	public Pantry_Item_List(int id, User_Pantry user_Pantry_Id, String item_Name, String item_Category,
+	public Pantry_Item_List(int id, UserPantry user_Pantry_Id, String item_Name, String item_Category,
 			double item_Weight) {
 		super();
 		this.id = id;
@@ -58,11 +58,11 @@ public class Pantry_Item_List {
 		this.id = id;
 	}
 
-	public User_Pantry getUser_Pantry_Id() {
+	public UserPantry getUser_Pantry_Id() {
 		return user_Pantry_Id;
 	}
 
-	public void setUser_Pantry_Id(User_Pantry user_Pantry_Id) {
+	public void setUser_Pantry_Id(UserPantry user_Pantry_Id) {
 		this.user_Pantry_Id = user_Pantry_Id;
 	}
 

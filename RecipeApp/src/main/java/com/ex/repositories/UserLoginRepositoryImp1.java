@@ -1,4 +1,7 @@
-	package com.ex.repositories;
+package com.ex.repositories;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -16,30 +19,19 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 	SessionFactory sf;
 	
 	@Override
-<<<<<<< HEAD:RecipeApp/src/main/java/com/ex/repositories/User_LoginRepositoryImp1.java
-	public User_Login add(User_Login a) {
-			String username = (String) sf.getCurrentSession().save(a);
-=======
 	public UserLogin add(UserLogin a) {
 		String username = (String) sf.getCurrentSession().save(a);
->>>>>>> Benjamin:RecipeApp/src/main/java/com/ex/repositories/UserLoginRepositoryImp1.java
 		a.setUsername(username);
 		return a;
-	
-		
-	
-	
 	}
 	
-	@Override
-	public User_Login getByusername(String username) {
-		// TODO Auto-generated method stub
-		return (User_Login)sf.getCurrentSession().get(User_Login.class, username);
-	}
-
 	@Override
 	public UserLogin getByusername(String username) {
-		UserLogin result = (UserLogin) sf.getCurrentSession().get(UserLogin.class, username);
-		return result;
+		
+		
+		// TODO Auto-generated method stub
+		return (UserLogin)sf.getCurrentSession().get(UserLogin.class, username);
 	}
+
+
 }
