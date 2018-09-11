@@ -1,7 +1,5 @@
 package com.ex.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,9 +19,10 @@ public class UserLoginController {
 	@Autowired
 	private UserLoginService userLoginService;
 	
+	// Takes in UserLogin object (username, password)
 	@RequestMapping(value="/create", method=RequestMethod.POST,
-			consumes=MediaType.APPLICATION_JSON_VALUE,
-			produces=MediaType.APPLICATION_JSON_VALUE)
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
 		a = userLoginService.addUserLogin(a);
 		if(a == null) {
@@ -33,5 +32,20 @@ public class UserLoginController {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
 		}
 	}
-
+	
+	// Takes in UserLogin object (username, password) and returns it if found and null if not found
+	@RequestMapping(value="/validate", method=RequestMethod.POST,
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
+		UserLogin result = userLoginService.getByUsername(a.getUsername());
+		if (result.getPassword().equals(a.getPassword())) {
+			System.out.println("Login Success");
+			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
+			
+		}
+		else {
+			return new ResponseEntity<UserLogin>(HttpStatus.NOT_FOUND);
+		}
+	}
 }
