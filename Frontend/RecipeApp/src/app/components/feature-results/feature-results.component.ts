@@ -20,4 +20,12 @@ export class FeatureResultsComponent implements OnInit {
     this.results = this.searchAlgorithmService.resultSet;
   }
 
+  openDetails(result: FeatureResults) {
+    this.searchAlgorithmService.searchRecipeInstructionById(392463).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
+  }
+
 }
