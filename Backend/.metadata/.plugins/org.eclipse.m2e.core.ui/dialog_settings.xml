@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Dylan\Desktop\Project2\RecipeSuggestionApp\RecipeApp"/>
 			<item value="C:\Users\Dylan\Desktop\Project2\RecipeSuggestionApp\Backend\recipe-app"/>
 		</list>
 		<list key="projectNameTemplate">
