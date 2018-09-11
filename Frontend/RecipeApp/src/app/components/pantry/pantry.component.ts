@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../../models/Ingredient.model';
 import { PantryService } from '../../services/pantry.service';
 import { SearchAlgorithmService } from '../../services/search-algorithm.service';
+import { FoodCategoryComponent } from '../food-category/food-category.component';
+
 @Component({
   selector: 'app-pantry',
   templateUrl: './pantry.component.html',
@@ -9,7 +11,7 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
 })
 export class PantryComponent implements OnInit {
   ingredient: Ingredient[] = [];
-  constructor(private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
+  constructor(private foodCategory: FoodCategoryComponent, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
   }
@@ -23,5 +25,6 @@ export class PantryComponent implements OnInit {
 
   removeItemFromPantry(ingredient: Ingredient) {
     this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
+    this.foodCategory.ingredients.push(ingredient);
   }
 }

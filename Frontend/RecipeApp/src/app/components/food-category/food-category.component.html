@@ -13,24 +13,24 @@
               <br>
               <div class="row">
                 <div class="column">
-                  <img src="../../../assets/images/meat.png" width="110" (click)="showCarne()">
+                  <img src="../../../assets/images/meat.png" width="100" (click)="showCarne()">
                 </div>
                 <div class="column">
-                  <img src="../../../assets/images/dairy.png" width="140" (click)="showDairy()">
+                  <img src="../../../assets/images/dairy.png" width="100" (click)="showDairy()">
                 </div>
                 <div class="column">
-                  <img src="../../../assets/images/veggie.png" width="105" (click)="showVeggie()">
+                  <img src="../../../assets/images/veggie.png" width="95" (click)="showVeggie()">
                 </div>
               </div>
               <div class="row">
                 <div class="column">
-                  <img src="../../../assets/images/fruit.png" width="120" (click)="showFruit()">
+                  <img src="../../../assets/images/fruit.png" width="100" (click)="showFruit()">
                 </div>
                 <div class="column">
-                  <img src="../../../assets/images/wheat.png" width="145" (click)="showGrain()">
+                  <img src="../../../assets/images/wheat.png" width="100" (click)="showGrain()">
                 </div>
                 <div class="column">
-                  <img src="../../../assets/images/spice.png" width="110" (click)="showHerbSpice()">
+                  <img src="../../../assets/images/spice.png" width="90" (click)="showHerbSpice()">
                 </div>
               </div>
             </div>
@@ -40,11 +40,13 @@
                 <span class="section-heading-lower">{{this.currentCategory}}</span>
               </h2>
               <br>
-              <ul style="list-style: none;">
-                  <li *ngFor="let ingredient of ingredients">
-                    <label><input type="checkbox" (click)="addToPantry(ingredient)">{{ingredient.name}} </label>
-                  </li>
-                </ul>
+              <div class="card-deck row">
+                <div class="card-block" *ngFor="let ingredient of ingredients">
+                  <button class="btn btn-sm button" (click)="addToPantry(ingredient)">{{ingredient.name}}</button>
+                </div>
+              </div>
+              <br>
+              <hr>
               <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
             </div>
           </div>
