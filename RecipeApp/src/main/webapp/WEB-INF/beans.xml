@@ -61,9 +61,5 @@
 		<property name="sessionFactory" ref="mySessionFactory"/>
 	</bean>
 
+</beans>
 
-<<<<<<< HEAD
-</beans>
-=======
-</beans>
->>>>>>> staging

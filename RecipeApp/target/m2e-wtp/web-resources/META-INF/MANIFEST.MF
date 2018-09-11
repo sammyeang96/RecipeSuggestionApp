@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: Joel DeVos
-=======
-Built-By: Dylan
->>>>>>> 5761931397bea083cf98eac93333e44683ed4226
 Build-Jdk: 1.8.0_181
 Created-By: Maven Integration for Eclipse
 

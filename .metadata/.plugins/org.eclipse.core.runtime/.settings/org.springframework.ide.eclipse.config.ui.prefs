@@ -1,2 +1,2 @@
-//com.springsource.config.ui.prefs.activePageIndex\:/RecipeApp/src/main/webapp/WEB-INF/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage id\="com.springsource.sts.config.ui.editors.namespaces" index\="0" kind\="formPage"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/RecipeApp/src/main/webapp/WEB-INF/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 eclipse.preferences.version=1
