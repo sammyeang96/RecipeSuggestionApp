@@ -43,7 +43,7 @@ export class SearchAlgorithmService {
   searchPantryRecipes(searchArray: Ingredient[]) {
     this.searchUrl = searchArray[0].name;
     for (let i = 1; i < searchArray.length; i++) {
-      this.searchUrl = this.searchUrl + "," + searchArray[i].name;
+      this.searchUrl = this.searchUrl + "%2C" + searchArray[i].name;
     }
     console.log(this.searchUrl);
     return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=` + this.searchUrl + '&limitLicense=false&number=12&ranking=2'
