@@ -1,6 +1,10 @@
 
 Backend/recipe-app/.springBeans
 Backend/recipe-app/.springBeans
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Benjamin
 node_modules
 <<<<<<< HEAD
 =======
@@ -20,3 +24,9 @@ Frontend/RecipeApp/src/app/components/menu/menu.component.html
 >>>>>>> Benjamin
 /.metadata/
 /.recommenders/
+<<<<<<< HEAD
+=======
+=======
+node_modules
+>>>>>>> bf7fab2d3853fe8d0a861792922bd9b5bf537d45
+>>>>>>> Benjamin

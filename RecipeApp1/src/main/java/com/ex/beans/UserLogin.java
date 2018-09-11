@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="LOGIN_INFORMATION")
+@Table(name="LOGIN_CREDENTIALS")
 public class UserLogin {
 	
 	@Id
@@ -16,18 +16,12 @@ public class UserLogin {
 	
 	private String password;
 	
-	private String firstname;
-	
-	private String lastname;
-	
 	public UserLogin() {}
 
-	public UserLogin(String username, String password, String firstname, String lastname) {
+	public UserLogin(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.firstname = firstname;
-		this.lastname = lastname;
 	}
 
 	public String getUsername() {
@@ -46,26 +40,9 @@ public class UserLogin {
 		this.password = password;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
 	@Override
 	public String toString() {
-		return "UserLogin [username=" + username + ", password=" + password + ", firstname=" + firstname + ", lastname="
-				+ lastname + "]";
+		return "UserLogin [username=" + username + ", password=" + password + "]";
 	}
 
 }

@@ -20,8 +20,8 @@ public class UserPantryController {
 	private UserPantryService userPantryService;
 	
 	@RequestMapping(value="/create", method=RequestMethod.POST,
-			consumes=MediaType.APPLICATION_JSON_VALUE,
-			produces=MediaType.APPLICATION_JSON_VALUE)
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserPantry> addUserPantry(@RequestBody UserPantry a) {
 		a = userPantryService.addUserPantry(a);
 		if (a == null) {
@@ -31,5 +31,4 @@ public class UserPantryController {
 			return new ResponseEntity<UserPantry>(a, HttpStatus.CREATED);
 		}
 	}
-
 }

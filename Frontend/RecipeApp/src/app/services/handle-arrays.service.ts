@@ -48,19 +48,33 @@ public veggies:Array<Ingredient>=[
   public fruits:Array<Ingredient>=[
     {id:1,name:'Tomato',category:'fruits',weight:7},
     {id:2,name:'Bell Pepper',category:'fruits',weight:7},
-    {id:3,name:'Cucumbers',category:'fruits',weight:7},
+    {id:3,name:'Cucumber',category:'fruits',weight:7},
     {id:4,name:'Olives',category:'fruits',weight:7},
     {id:5,name:'Avocado',category:'fruits',weight:7},
-    {id:6,name:'Bananas',category:'fruits',weight:7},
+    {id:6,name:'Banana',category:'fruits',weight:7},
     {id:7,name:'Pineapple',category:'fruits',weight:7},
-    {id:8,name:'Cherries',category:'fruits',weight:7},
-    {id:9,name:'Lemons',category:'fruits',weight:7},
-    {id:10,name:'Limes',category:'fruits',weight:7},
-    {id:11,name:'Oranges',category:'fruits',weight:7},
-    {id:12,name:'Pears',category:'fruits',weight:7},
-    {id:13,name:'Mangos',category:'fruits',weight:7},
+    {id:8,name:'Cherry',category:'fruits',weight:7},
+    {id:9,name:'Lemon',category:'fruits',weight:7},
+    {id:10,name:'Lime',category:'fruits',weight:7},
+    {id:11,name:'Orange',category:'fruits',weight:7},
+    {id:12,name:'Pear',category:'fruits',weight:7},
+    {id:13,name:'Mango',category:'fruits',weight:7},
     {id:14,name:'Jalepeno Pepper',category:'fruits',weight:7},
-    {id:15,name:'Green Pepper',category:'fruits',weight:7},
+    {id:15,name:'Strawberry',category:'fruits',weight:7},
+    {id:16,name:'Blueberry',category:'fruits',weight:7},
+    {id:17,name:'Watermelon',category:'fruits',weight:7},
+    {id:18,name:'Apple',category:'fruits',weight:7},
+    {id:19,name:'Plum',category:'fruits',weight:7},
+    {id:20,name:'Peach',category:'fruits',weight:7},
+    {id:21,name:'Grapes',category:'fruits',weight:7},
+    {id:22,name:'Coconut',category:'fruits',weight:7},
+    {id:23,name:'Cherries',category:'fruits',weight:7},
+    {id:24,name:'Raspberry',category:'fruits',weight:7},
+    {id:24,name:'Blackberry',category:'fruits',weight:7}
+
+
+
+
 
     ];
 
@@ -71,9 +85,16 @@ public veggies:Array<Ingredient>=[
     {id:4,name:'Cheddar Cheese',category:'dairy',weight:5},
     {id:5,name:'Cottage Cheese',category:'dairy',weight:5},
     {id:6,name:'Mozzarella',category:'dairy',weight:5},
-    {id:6,name:'Milk',category:'dairy',weight:5},
-    {id:6,name:'Swiss Cheese',category:'dairy',weight:5},
-    {id:7,name:'Cream',category:'dairy',weight:5}
+    {id:7,name:'Milk',category:'dairy',weight:5},
+    {id:8,name:'Swiss Cheese',category:'dairy',weight:5},
+    {id:9,name:'Cream',category:'dairy',weight:5},
+    {id:10,name:'Cheese',category:'dairy',weight:5},
+    {id:10,name:'Cream Cheese',category:'dairy',weight:5},
+    {id:10,name:'Eggnog',category:'dairy',weight:5}
+
+
+
+
    
     ];
  
@@ -85,8 +106,34 @@ public veggies:Array<Ingredient>=[
     {id:5,name:'Paprika',category:'spices',weight:2},
     {id:6,name:'Basil',category:'spices',weight:2},
     {id:7,name:'Crushed Red Pepper',category:'spices',weight:2},
+<<<<<<< HEAD
     {id:8,name:'Salt',category:'spices',weight:2},
     {id:9,name:'Pepper',category:'spices',weight:2},
+=======
+    {id:8,name:'Pepper',category:'spices',weight:2},
+    {id:9,name:'Salt',category:'spices',weight:2},
+    {id:10,name:'Cumin',category:'spices',weight:2},
+    {id:11,name:'Thyme',category:'spices',weight:2},
+    {id:12,name:'Cinnamon',category:'spices',weight:2},
+    {id:13,name:'Ginger',category:'spices',weight:2},
+    {id:14,name:'Parsley',category:'spices',weight:2},
+    {id:15,name:'Ketchup',category:'spices',weight:2},
+    {id:16,name:'Mustard',category:'spices',weight:2},
+    {id:17,name:'Sesame',category:'spices',weight:2},
+    {id:18,name:'Onion Powder',category:'spices',weight:2},
+    {id:19,name:'Bay Leaf',category:'spices',weight:2},
+    {id:20,name:'Sugar',category:'spices',weight:2},
+    {id:21,name:'Powdered Sugar',category:'spices',weight:2}
+
+
+
+
+
+
+
+
+
+>>>>>>> Benjamin
     
     ];
 
@@ -103,7 +150,12 @@ public veggies:Array<Ingredient>=[
       {id:11,name:'Linguini',category:'grains',weight:15},
       {id:12,name:'Spaghetti',category:'grains',weight:15},
       {id:13,name:'Fettucini',category:'grains',weight:15},
-      {id:14,name:'Ravioli',category:'grains',weight:15}
+      {id:14,name:'Ravioli',category:'grains',weight:15},
+      {id:15,name:'Baking powder',category:'grains',weight:15},
+      {id:16,name:'Flour',category:'grains',weight:15}
+
+
+
 
 
       ];

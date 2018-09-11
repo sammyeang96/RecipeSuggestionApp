@@ -1,4 +1,4 @@
-package com.ex.repositories;
+	package com.ex.repositories;
 
 import javax.transaction.Transactional;
 
@@ -35,5 +35,11 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 	public User_Login getByusername(String username) {
 		// TODO Auto-generated method stub
 		return (User_Login)sf.getCurrentSession().get(User_Login.class, username);
+	}
+
+	@Override
+	public UserLogin getByusername(String username) {
+		UserLogin result = (UserLogin) sf.getCurrentSession().get(UserLogin.class, username);
+		return result;
 	}
 }
