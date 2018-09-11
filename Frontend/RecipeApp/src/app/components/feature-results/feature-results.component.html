@@ -1,0 +1,10 @@
+<div class="card-deck">
+  <div class="card" *ngFor="let r of this.searchAlgorithmService.resultSet">
+    <img class="card-img-top" src="{{r.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ r.title }}</h5>
+      <p class="card-text">Likes: {{ r.likes }}</p>
+      <p class="card-text"><small class="text-muted">{{ r.usedIngredientCount }}</small></p>
+    </div>
+  </div>
+</div>
