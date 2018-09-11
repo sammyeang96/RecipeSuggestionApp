@@ -21,4 +21,10 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 		a.setUsername(username);
 		return a;
 	}
+
+	@Override
+	public UserLogin getByusername(String username) {
+		UserLogin result = (UserLogin) sf.getCurrentSession().get(UserLogin.class, username);
+		return result;
+	}
 }

@@ -20,8 +20,8 @@ public class UserLoginController {
 	private UserLoginService userLoginService;
 	
 	@RequestMapping(value="/create", method=RequestMethod.POST,
-			consumes=MediaType.APPLICATION_JSON_VALUE,
-			produces=MediaType.APPLICATION_JSON_VALUE)
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
 		a = userLoginService.addUserLogin(a);
 		if(a == null) {
@@ -29,6 +29,19 @@ public class UserLoginController {
 		}
 		else {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
+		}
+	}
+	
+	@RequestMapping(value="/validate", method=RequestMethod.POST,
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
+		UserLogin result = userLoginService.getByUsername(a.getUsername());
+		if (result.getPassword() == a.getPassword()) {
+			return new ResponseEntity<UserLogin>(a, HttpStatus.NOT_FOUND);
+		}
+		else {
+			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
 		}
 	}
 }

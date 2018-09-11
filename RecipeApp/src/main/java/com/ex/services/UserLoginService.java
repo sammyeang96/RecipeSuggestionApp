@@ -15,4 +15,8 @@ public class UserLoginService {
 	public UserLogin addUserLogin(UserLogin a) {
 		return userLoginRepo.add(a);
 	}
+	
+	public UserLogin getByUsername(String username) {
+		return userLoginRepo.getByusername(username);
+	}
 }
