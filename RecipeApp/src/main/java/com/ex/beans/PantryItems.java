@@ -2,9 +2,12 @@ package com.ex.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -16,6 +19,10 @@ public class PantryItems {
 	
 	@Id
 	@Column(name="ITEM_ID")
+	@SequenceGenerator(name="item", 
+	sequenceName="item_seq", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,
+	generator="item")
 	private int id;
 	
 	@ManyToOne

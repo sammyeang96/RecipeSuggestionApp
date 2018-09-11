@@ -24,7 +24,7 @@ public class UserInformation {
 	private int id;
 	
 	@OneToOne
-	@JoinColumn
+	@JoinColumn(unique=true)
 	private UserLogin username;
 	
 	private String firstname;

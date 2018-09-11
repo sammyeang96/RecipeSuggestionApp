@@ -38,10 +38,10 @@ public class UserLoginController {
 	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword() == a.getPassword()) {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
 		}
 		else {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
+			return new ResponseEntity<UserLogin>(a, HttpStatus.NOT_FOUND);
 		}
 	}
 }

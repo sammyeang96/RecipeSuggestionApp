@@ -9,26 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ex.beans.UserPantry;
-import com.ex.services.UserPantryService;
+import com.ex.beans.UserInformation;
+import com.ex.services.UserInformationService;
 
 @RestController
-@RequestMapping("/pantry")
-public class UserPantryController {
-	
+@RequestMapping("/info")
+public class UserInformationController {
+
 	@Autowired
-	private UserPantryService userPantryService;
+	private UserInformationService userInformationService;
 	
-	@RequestMapping(value="/create", method=RequestMethod.POST,
+	@RequestMapping(value="/create",method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UserPantry> addUserPantry(@RequestBody UserPantry a) {
-		a = userPantryService.addUserPantry(a);
-		if (a == null) {
-			return new ResponseEntity<UserPantry>(a, HttpStatus.CONFLICT);
-		}
-		else {
-			return new ResponseEntity<UserPantry>(a, HttpStatus.CREATED);
-		}
+	public ResponseEntity<UserInformation> addUserInformation(@RequestBody UserInformation a) {
+		System.out.println("IN IT NOW");
+		a = userInformationService.addUserInformation(a);
+		return new ResponseEntity<UserInformation>(a, HttpStatus.OK);
 	}
+	
 }

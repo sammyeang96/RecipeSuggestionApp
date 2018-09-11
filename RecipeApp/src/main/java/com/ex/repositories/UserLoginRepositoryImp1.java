@@ -1,4 +1,4 @@
-package com.ex.repositories;
+	package com.ex.repositories;
 
 import javax.transaction.Transactional;
 
