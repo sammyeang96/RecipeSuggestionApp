@@ -5,7 +5,59 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-09-11T12:15:41Z</updated>
+  <updated>2018-09-11T13:46:17Z</updated>
+  <entry>
+    <title>Kotlin Support in Spring Cloud Function</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/09/11/kotlin-support-in-spring-cloud-function" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Oleg Zhurakousky</name>
+    </author>
+    <id>tag:spring.io,2018-09-11:3390</id>
+    <updated>2018-09-11T13:46:17Z</updated>
+    <content type="html">&lt;p&gt;Rarely we blog about a single feature, but given that &lt;a href="https://github.com/spring-cloud/spring-cloud-function/issues/77"&gt;this one&lt;/a&gt; was one of the most requested ones in &lt;a href="https://cloud.spring.io/spring-cloud-function/"&gt;Spring Cloud Function&lt;/a&gt; (relatively young project), we thought it may be appropriate, so here it is.&lt;/p&gt;
+&lt;p&gt;Initial support for &lt;a href="https://kotlinlang.org/"&gt;Kotlin&lt;/a&gt; lambdas has been added to Spring Cloud Function. What it means is that Spring Cloud Function can now recognize Kotlin lambdas that &lt;em&gt;effectively&lt;/em&gt; match to one of Java&amp;rsquo;s &lt;code&gt;Supplier&lt;/code&gt;, &lt;code&gt;Function&lt;/code&gt; or &lt;code&gt;Consumer&lt;/code&gt; and treat them as such.&lt;/p&gt;
+&lt;p&gt;That is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint $kotlin"&gt;@Bean&#xD;
+open fun kotlinFunction(): (String) -&amp;gt; String {&#xD;
+    return  { it.toUpperCase() }&#xD;
+}&#xD;
+&#xD;
+@Bean&#xD;
+open fun kotlinConsumer(): (String) -&amp;gt; Unit {&#xD;
+    return  { println(it) }&#xD;
+}&#xD;
+&#xD;
+@Bean&#xD;
+open fun kotlinSupplier(): () -&amp;gt; String {&#xD;
+    return  { &amp;quot;Hello Kotlin&amp;quot; }&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Check out the sample project &lt;a href="https://github.com/olegz/demos/tree/master/demo-function-kotlin"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That is pretty much it. The feature is available in the current snapshot and will be part of Spring Cloud Function 2.0.0.RELEASE. This means that enhancements and modifications are still ongoing so your feedback is quite important.&lt;/p&gt;
+&lt;p&gt;For more on Spring Cloud Function see the following:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function"&gt;https://spring.io/blog/2017/07/05/introducing-spring-cloud-function&lt;/a&gt;&lt;br/&gt;&lt;a href="https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html"&gt;https://www.nurkiewicz.com/2018/04/sneak-peek-at-spring-cloud-function.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Security 5.0.8 and 4.2.8 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/09/11/spring-security-5-0-8-and-4-2-8-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Josh Cummings</name>
+    </author>
+    <id>tag:spring.io,2018-09-10:3388</id>
+    <updated>2018-09-11T13:26:15Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I am pleased to announce that the Spring Security 5.0.8 (&lt;a href="https://github.com/spring-projects/spring-security/milestone/120?closed=1"&gt;changelog&lt;/a&gt;) and 4.2.8 (&lt;a href="https://github.com/spring-projects/spring-security/milestone/118?closed=1"&gt;changelog&lt;/a&gt;) have been released. The releases primarily deliver bug fixes and dependency version updates along with some minor improvements. The releases will be found in the upcoming Spring Boot maintenance releases coming this week.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="http://docs.spring.io/spring-security/site/docs/4.2.x/reference/htmlsingle/"&gt;4.x Reference&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/5.0.x/reference/htmlsingle/"&gt;5.x Reference&lt;/a&gt;
+| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - September 11th, 2018</title>
     <link rel="alternate" href="https://spring.io/blog/2018/09/11/this-week-in-spring-september-11th-2018" />
@@ -1568,175 +1620,5 @@ interface ReservationRepository extends PagingAndSortingRepository&amp;lt;Reserv
   &lt;p&gt;We create a Spring Data repository that is also exposed using Spring Data REST as a REST API.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This example should look familiar if you’ve ever used Spring Data. Spring Data Spanner builds upon familiar concepts and patterns - templates, repositories, and entities - to support familiar data access patterns with a very different kind of database.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Bootiful GCP: Relational Data Access with Spring Cloud GCP (2/8)</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/08/23/bootiful-gcp-relational-data-access-with-spring-cloud-gcp-2-8" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2018-08-17:3364</id>
-    <updated>2018-08-23T00:00:00Z</updated>
-    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;Hi Spring fans! In this brief 8 part series we’re going to look at the Spring Cloud integration for Google Cloud Platform, called Spring Cloud GCP. &lt;a href="https://cloud.spring.io/spring-cloud-gcp/"&gt;Spring Cloud GCP&lt;/a&gt; represents a joint effort between Google and Pivotal that endeavors to provide a first class experience for Spring Cloud developers when using the Google Cloud Platform. Pivotal Cloud Foundry users will enjoy an even &lt;a href="https://docs.pivotal.io/partners/gcp-sb/index.html"&gt;easier integration with the GCP service broker&lt;/a&gt;. I wrote these installments with input from Google Cloud Developer Advocate, and my buddy, &lt;a href="http://twitter.com/saturnism"&gt;Ray Tsang&lt;/a&gt;. You can also catch a walkthrough of Spring Cloud GCP in our Google Next 2018 session, &lt;a href="https://www.youtube.com/watch?v=2Jo3vy7iQf8"&gt;Bootiful Google Cloud Platform&lt;/a&gt;. Thanks buddy! As always, &lt;a href="http://twitter.com/starbuxman"&gt;I&amp;rsquo;d love to hear from you if you have feedback&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If you&amp;rsquo;re just joining us, be sure to read the previous installments including:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/08/20/bootiful-gcp-getting-started-with-spring-cloud-for-google-cloud-platform-1-8"&gt;Bootiful GCP: Getting Started with Spring Cloud for Google Cloud Platform (1/8)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In this installment we’re going to look at how to connect a Spring Boot-based application to a SQL datastore, like PostgreSQL or MySQL, running on Google Cloud Platform. GCP offers managed SQL services including MySQL and PostgreSQL. Let’s provision a MySQL instance and use that from a Spring Boot-based application. You’ll need to first enable the SQL APIs in Google Cloud:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt; gcloud services enable sqladmin.googleapis.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then, you’ll need to provision a new Google Cloud SQL instance in a particular region. The default is MySQL. (This could take several minutes!)&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;gcloud sql instances create reservations --region=us-central1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then, provision a new database in that Google Cloud SQL instance:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;gcloud sql databases create reservations --instance reservations
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;There are a couple of ways to establish a secured connection to this CloudSQL instance, e.g. configure the JDBC driver &lt;a href="https://cloud.google.com/sql/docs/mysql/connect-external-app#proxy"&gt;with a SSL Socket Factory and/or using SQL Proxy&lt;/a&gt;. To make all the configuration easier though, you can add the GCP MySQL starter: &lt;code&gt;org.springframework.cloud&lt;/code&gt; : &lt;code&gt;spring-cloud-gcp-starter-sql-mysql&lt;/code&gt;. This starter, and a dash of configuration, can connect your application to the platform.&lt;/p&gt;
-&lt;p&gt;What configuration, you say? Well, Spring applications have bean definitions (in Java code) and property definitions (in any number of different property sources, including &lt;code&gt;.yaml&lt;/code&gt; and &lt;code&gt;.properties&lt;/code&gt; files and, as we’ll see later, GCP’s RuntimeConfig mechanism). You can selectively activate particular bean definitions and property definitions with &lt;em&gt;profiles&lt;/em&gt;. Spring profiles are arbitrary labels that identify distinct bean and property configurations that could be selectively &lt;em&gt;activated&lt;/em&gt;. In this example, we’re using the &lt;code&gt;mysql&lt;/code&gt; profile.&lt;/p&gt;
-&lt;p&gt;Let’s look at the configuration for the &lt;code&gt;mysql&lt;/code&gt; profile, in &lt;code&gt;src/main/resources/application.properties&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;application.properties.&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.cloud.gcp.sql.database-name=reservations&#xD;
-spring.cloud.gcp.sql.instance-connection-name=pgtm-jlong:us-central1:reservations&#xD;
-&#xD;
-spring.datasource.initialization-mode=always&#xD;
-spring.datasource.hikari.maximum-pool-size=2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-  &lt;li&gt;these properties identify to which GCP SQL instance and database the client should connect&lt;/li&gt;
-  &lt;li&gt;tells Spring to initialize the schema by running &lt;code&gt;src/main/resources/schema.sql&lt;/code&gt;, if present&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;src/main/resources/schema.sql&lt;/code&gt; contains DDL to create a reservations table. &lt;/p&gt;
-&lt;p&gt;In this example, we’re letting Spring Boot configure the database. There are alternative approaches. We could use &lt;code&gt;gcloud sql connect $GCP_SQL_INSTANCE&lt;/code&gt; where &lt;code&gt;$GCP_SQL_INSTANCE&lt;/code&gt; should be replaced with your GCP SQL instance name. In this case, the SQL instance name is &lt;code&gt;reservations&lt;/code&gt;. This will dump you into a MySQL session connected to the remote database in which you can interactively issue the relevant schema DDL.&lt;/p&gt;
-&lt;p&gt;This is a demo, so let’s install some sample data as well. You can create a file, &lt;code&gt;src/main/resources/data.sql&lt;/code&gt;, and Spring will execute that on applicaton startup, or you can use &lt;code&gt;gcloud sql connect&lt;/code&gt;. Either way, run the following statements.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint sql"&gt;insert into reservations(name) values(&amp;#39;ray&amp;#39;);&#xD;
-insert into reservations(name) values(&amp;#39;josh&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now you can talk to the database from your Spring application like you would any other SQL database.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.gcp.mysql;&#xD;
-&#xD;
-import lombok.AllArgsConstructor;&#xD;
-import lombok.Data;&#xD;
-import lombok.NoArgsConstructor;&#xD;
-import org.apache.commons.logging.Log;&#xD;
-import org.apache.commons.logging.LogFactory;&#xD;
-import org.springframework.boot.SpringApplication;&#xD;
-import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
-import org.springframework.boot.context.event.ApplicationReadyEvent;&#xD;
-import org.springframework.context.annotation.Profile;&#xD;
-import org.springframework.context.event.EventListener;&#xD;
-import org.springframework.jdbc.core.JdbcTemplate;&#xD;
-import org.springframework.jdbc.core.RowMapper;&#xD;
-&#xD;
-import java.util.Collection;&#xD;
-&#xD;
-@SpringBootApplication&#xD;
-public class MySqlApplication {&#xD;
-&#xD;
-        private final Log log = LogFactory.getLog(getClass());&#xD;
-&#xD;
-        private final JdbcTemplate template;&#xD;
-&#xD;
-        private final RowMapper&amp;lt;Reservation&amp;gt; rowMapper =&#xD;
-            (rs, rowNum) -&amp;gt; new Reservation(rs.getLong(&amp;quot;id&amp;quot;), rs.getString(&amp;quot;name&amp;quot;));&#xD;
-&#xD;
-        MySqlApplication(JdbcTemplate template) {&#xD;
-                this.template = template;&#xD;
-        }&#xD;
-&#xD;
-        @EventListener(ApplicationReadyEvent.class)&#xD;
-        public void ready() {&#xD;
-                Collection&amp;lt;Reservation&amp;gt; reservations = this.template&#xD;
-                    .query(&amp;quot;select * from reservations&amp;quot;, this.rowMapper);&#xD;
-                reservations.forEach(reservation -&amp;gt; log.info(&amp;quot;reservation: &amp;quot; + reservation.toString()));&#xD;
-        }&#xD;
-&#xD;
-        public static void main(String args[]) {&#xD;
-                SpringApplication.run(MySqlApplication.class, args);&#xD;
-        }&#xD;
-}&#xD;
-&#xD;
-@Data&#xD;
-@AllArgsConstructor&#xD;
-@NoArgsConstructor&#xD;
-class Reservation {&#xD;
-        private Long id;&#xD;
-        private String reservationName;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run the application and confirm that the results are reflected in the output.&lt;/p&gt;
-&lt;p&gt;At this point you should be on familiar footing; you can use Spring Data JPA and Spring Data REST, JOOQ, MyBatis, or any of the various JDBC-based technologies, along with Spring Boot, to work with this GCP-managed MySQL instance.&lt;/p&gt;
-&lt;p&gt;In this post, we’ve used MySQL as managed by Google Cloud. This isn’t particularly interesting; it’s not why you should be using GCP. Anybody can run MySQL! In the next installment, we’ll look at using Google Cloud Spanner with Spring Cloud GCP. Be sure to check back next Monday for the next installment. &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration for AWS 2.0 GA and Spring Cloud Stream Kinesis Binder 1.0 GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/08/21/spring-integration-for-aws-2-0-ga-and-spring-cloud-stream-kinesis-binder-1-0-ga" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2018-08-21:3375</id>
-    <updated>2018-08-21T20:56:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It’s my pleasure to announce General Availability for Spring projects supporting &lt;a href="https://aws.amazon.com/"&gt;Amazon Web Services&lt;/a&gt;: &lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Spring Integration for AWS&lt;/a&gt; &lt;code&gt;2.0.0.RELEASE&lt;/code&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Spring Cloud Stream Binder for AWS Kinesis&lt;/a&gt; &lt;code&gt;1.0.0.RELEASE&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both artifacts are available in the &lt;a href="https://repo.spring.io/release/"&gt;Spring Release&lt;/a&gt; repository and Maven Central and can be used as dependencies:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.springframework.integration&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-integration-aws&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;2.0.0.RELEASE&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;
-...
-&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-cloud-stream-binder-kinesis&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.0.0.RELEASE&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;spring-integration-aws&lt;/code&gt; is not needed to be includes when the second one is in use.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The main goal of this Spring Integration for AWS &lt;code&gt;2.0&lt;/code&gt; generation was, of course, around AWS Kinesis support which was driven by the work done in the Spring Cloud Stream Binder for AWS Kinesis.
-In particular we have introduced a &lt;code&gt;DynamoDbMetadataStore&lt;/code&gt; and &lt;code&gt;DynamoDbLockRegistry&lt;/code&gt; to support distributed Binder consumers for the AWS Kinesis.
-At the same time, following well-formed Spring Integration abstractions, these new components can be used in any other distributed tasks, when your application is deployed into the Amazon cloud environment or when you rely on the AWS services.
-For example AWS S3 Inbound Channel Adapters can use a &lt;code&gt;DynamoDbMetadataStore&lt;/code&gt; for the &lt;code&gt;S3PersistentAcceptOnceFileListFilter&lt;/code&gt; to prevent access to the same already processed resource in several distributed application instances.
-The &lt;code&gt;DynamoDbLockRegistry&lt;/code&gt; can be used for leader election in the application cluster.
-See more information about &lt;code&gt;LockRegistryLeaderInitiator&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/current/reference/html/messaging-endpoints-chapter.html#leadership-event-handling"&gt;Spring Integration Reference Manual&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition to those new components tne SNS and SQS Channel Adapters support now headers mapping to the message attributes as back.
-See &lt;code&gt;AbstractMessageAttributesHeaderMapper&lt;/code&gt; Javadocs and its implementations for more details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Kinesis Channel Adapters also support headers mapping, but the mechanism is fully different and we can only &lt;strong&gt;embed&lt;/strong&gt; them together with the payload into the record body.
-See an &lt;code&gt;EmbeddedJsonHeadersMessageMapper&lt;/code&gt; in Spring Integration for more details.
-Similar embedding technique is used in the Kinesis Binder when &lt;code&gt;headerMode&lt;/code&gt; is &lt;code&gt;embedded&lt;/code&gt; (default one).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See previous release &lt;a href="https://spring.io/blog/2018/08/01/spring-integration-for-aws-2-0-0-rc1-and-spring-cloud-stream-kinesis-binder-1-0-0-rc1"&gt;announcements&lt;/a&gt; for more information about new features in the Spring Integration for AWS &lt;code&gt;2.0&lt;/code&gt; and what Spring Cloud Stream Binder for AWS Kinesis is about.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also see &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-samples"&gt;Spring Cloud Stream Samples&lt;/a&gt; for more ideas how Kinesis Binder can be used in cloud streaming applications.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Thanks everyone who contributed to these projects any possible way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We are looking forward for any feedback and thrilled to evolve these projects for better community requirements in the next installments.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Spring Integration AWS Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Spring Cloud Stream Binder for AWS Kinesis Project Page&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

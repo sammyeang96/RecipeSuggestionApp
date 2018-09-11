@@ -1545,3 +1545,17 @@ org.eclipse.core.internal.resources.ResourceException: Marker id 12 not found.
 2018-09-11 09:25:26,113 [Worker-5: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RecipeApp
 2018-09-11 09:25:26,114 [Worker-5: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RecipeApp
 2018-09-11 09:25:26,129 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-11 11:55:16,282 [Worker-4: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:RecipeApp:0.0.1-SNAPSHOT @ C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\pom.xml.
+2018-09-11 11:55:24,791 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-09-11 11:55:25,652 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:RecipeApp:0.0.1-SNAPSHOT @ C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\pom.xml.
+2018-09-11 11:55:26,718 [Worker-10: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RecipeApp/src/main/java
+2018-09-11 11:55:26,719 [Worker-10: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RecipeApp/src/test/java
+2018-09-11 11:55:28,246 [Worker-10: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for RecipeApp
+2018-09-11 11:55:28,253 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2018-09-11 11:55:31,334 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-11 11:55:31,334 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\main\resources
+2018-09-11 11:55:31,338 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-11 11:55:31,339 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\RecipeApp\src\test\resources
+2018-09-11 11:55:31,340 [Worker-3: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RecipeApp
+2018-09-11 11:55:31,340 [Worker-3: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RecipeApp
+2018-09-11 11:55:31,356 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
