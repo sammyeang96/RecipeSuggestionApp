@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="PANTY_ITEMS")
+@Table(name="PANTRY_ITEMS")
 public class PantryItems {
 	
 	@Id
