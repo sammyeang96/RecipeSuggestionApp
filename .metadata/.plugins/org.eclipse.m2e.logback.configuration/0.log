@@ -88,3 +88,11 @@ java.io.FileNotFoundException: C:\mm\1807Jul30Java\RecipeSuggestionApp\.metadata
 2018-09-12 10:45:22,674 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
 2018-09-12 10:45:22,676 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-09-12 10:45:22,676 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-12 10:47:29,612 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-12 10:47:29,612 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-12 10:47:29,664 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-12 10:47:29,664 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-12 10:47:30,831 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-12 10:47:30,831 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-12 10:47:30,949 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-12 10:47:30,988 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
