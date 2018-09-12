@@ -12,14 +12,5 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-
-
-
-<<<<<<< HEAD
-=======
-=======
-
-=======
->>>>>>> staging
 # End of https://www.gitignore.io/api/git,maven,angular,serverless
 
