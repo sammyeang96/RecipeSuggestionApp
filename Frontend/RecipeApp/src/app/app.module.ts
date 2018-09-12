@@ -57,7 +57,6 @@ import { FeatureResultsComponent } from './components/feature-results/feature-re
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent,
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent

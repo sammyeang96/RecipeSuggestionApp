@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Backend-0.0.1-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD:Backend/.settings/org.eclipse.wst.common.component
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <property name="context-root" value="Backend"/>
+        <property name="java-output-path" value="/Backend/target/classes"/>
+=======
+        <property name="context-root" value="RecipeApp"/>
+        <property name="java-output-path" value="/RecipeApp/target/classes"/>
+>>>>>>> 9e09b2e5d92c0ad6c29a6bb4ad5a4535663458c8:RecipeApp/.settings/org.eclipse.wst.common.component
+    </wb-module>
+</project-modules>

@@ -32,9 +32,27 @@ export class AuthService {
     return this.http.post<User>('http://localhost: and the rest of the URL', {username: username, password: password});
   }
 
-  registerUser(fullName: string, newUsername: string, newPassword: string, confirmPassword: string, newEmail: string) {
-    return this.http.post<User>('http://localhost: and the rest of the URL',
-    {fullName: fullName, newUsername: newUsername, newPassword: newPassword, confirmPassword: confirmPassword, newEmail: newEmail});
+  registerUser(
+
+    // fullName: string,
+    firstName: string,
+    lastName: string,
+    newUsername: string,
+    newPassword: string
+    // confirmPassword: string,
+    // newEmail: string
+  ) {
+    console.log('printing info inside auth-service ');
+    // console.log(this.firstName);
+    // console.log(this.lastName);
+    console.log(newUsername);
+    console.log(newPassword);
+    return this.http.post<User>('http://localhost:8081/RecipeApp/login/create',
+    {
+        username: newUsername,
+        password: newPassword
+
+    });
   }
 
   getUsersPantryItems() {
