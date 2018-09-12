@@ -21,6 +21,7 @@ import { PantryComponent } from './components/pantry/pantry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Browser } from 'protractor';
 import { FeatureResultsComponent } from './components/feature-results/feature-results.component';
+import { FeatureInstructionsComponent } from './components/feature-instructions/feature-instructions.component';
 // import { ScrollSpyModule } from 'ngx-scrollspy';
 
 
@@ -38,10 +39,8 @@ import { FeatureResultsComponent } from './components/feature-results/feature-re
     LoginRegisterComponent,
     FoodCategoryComponent,
     PantryComponent,
-    FeatureResultsComponent
-    
-    
-    
+    FeatureResultsComponent,
+    FeatureInstructionsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +58,9 @@ import { FeatureResultsComponent } from './components/feature-results/feature-re
   entryComponents: [
     SearchResultsComponent,
     ResultsModalComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    FeatureResultsComponent,
+    FeatureInstructionsComponent
   ]
 })
 export class AppModule { }

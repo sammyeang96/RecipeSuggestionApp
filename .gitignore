@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/maven
 
 ### Maven ###
@@ -13,4 +12,3 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 # End of https://www.gitignore.io/api/git,maven,angular,serverless
-
