@@ -13,6 +13,7 @@ export class SearchAlgorithmService {
   private searchUrl: string = "";
   private selectedPantry: Ingredient[];
    resultSet: FeatureResults[];
+  private joke: string;
 
 
   // randomInt(min, max) {
@@ -62,7 +63,5 @@ export class SearchAlgorithmService {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
       })
   }
-
-  get
 
 }
