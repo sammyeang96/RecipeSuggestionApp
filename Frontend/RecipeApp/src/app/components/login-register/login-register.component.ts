@@ -6,7 +6,7 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
-  // styleUrls: ['./login-register.component.css']
+  styleUrls: ['./login-register.component.css']
 })
 export class LoginRegisterComponent implements OnInit {
 
@@ -86,6 +86,7 @@ export class LoginRegisterComponent implements OnInit {
       this.hidden = !this.hidden;
       this.show = !this.show;
 
+      
       this.authService.registerUser(
 
         this.firstName,
@@ -99,13 +100,26 @@ export class LoginRegisterComponent implements OnInit {
           this.authService.loggedInUser = data;
 
           if (data != null) {
-            this.authService.isLoggedIn = true;
-            this.router.navigate(['userInfo']);
+
+            // this.authService.isLoggedIn = true;
+            // this.router.navigate(['userInfo']);
+
+            this.authService.registerUserInfo(
+              this.firstName,
+              this.lastName,
+              this.newUsername,
+              this.newPassword
+            ).subscribe(
+              data2 => {
+                console.log(data2);
+              }
+            )
           }
 
         }
 
       );
+
     }
   }
 

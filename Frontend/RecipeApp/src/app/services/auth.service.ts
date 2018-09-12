@@ -32,7 +32,7 @@ export class AuthService {
     console.log('printing info inside auth-service ');
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost: and the rest of the URL',
+    return this.http.post<User>('http://localhost:8081/Backend/ and the rest of the URL',
       {
         username: newUsername,
         password: newPassword
@@ -40,18 +40,30 @@ export class AuthService {
   }
 
   registerUser(firstName: string, lastName: string, newUsername: string, newPassword: string) {
-    console.log('printing info inside auth-service ');
-    console.log(firstName);
-    console.log(lastName);
+    console.log('sending into to /login/create ');
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost:8081/RecipeApp/login/create',
+    
+    return this.http.post<User>('http://localhost:8081/Backend/login/create',
       {
-        firstname: firstName,
-        lastname: lastName,
         username: newUsername,
         password: newPassword
       });
+      // this.registerUserInfo(firstName, lastName, newUsername, newPassword);
+  }
+
+  registerUserInfo(firstName: string, lastName: string, newUsername: string, newPassword: string) {
+    console.log('sending into to /info/create ');
+    console.log(firstName);
+    console.log(lastName);
+    console.log(newUsername);
+    return this.http.post<User>('http://localhost:8081/Backend/info/create',
+      {
+        firstname: firstName,
+        lastname: lastName,
+        username: { username: newUsername }
+      });
+
   }
 
   getUsersPantryItems() {
