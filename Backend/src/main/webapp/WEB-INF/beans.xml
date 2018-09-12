@@ -61,5 +61,10 @@
 		<property name="sessionFactory" ref="mySessionFactory"/>
 	</bean>
 
+<<<<<<< HEAD:RecipeApp/src/main/webapp/WEB-INF/beans.xml
 </beans>
 
+=======
+
+</beans>
+>>>>>>> Benjamin:Backend/src/main/webapp/WEB-INF/beans.xml
