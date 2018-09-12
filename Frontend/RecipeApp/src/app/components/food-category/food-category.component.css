@@ -19,6 +19,11 @@ img:hover{
   /* margin-bottom: -10px; */
 }
 
+#category-view {
+  width: 500px;
+  height: 500px;
+}
+
 .button {
   background-color: #e6a756;
   -webkit-transition-duration: 0.2s; /* Safari */
