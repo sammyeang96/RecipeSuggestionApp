@@ -22,6 +22,21 @@ export class HandleArraysService {
   {id:7,name:'Tuna',category:'meats', weight:12},
   {id:8,name:'Tilapia',category:'meats', weight:12},
   {id:9,name:'Halibut',category:'meats', weight:12},
+  {id:10,name:'Lamb',category:'meats', weight:12},
+  {id:11,name:'Sardines',category:'meats', weight:12},
+  {id:12,name:'Liver',category:'meats', weight:12},
+  {id:13,name:'Ham',category:'meats', weight:12},
+  {id:14,name:'Bacon',category:'meats', weight:12},
+  {id:15,name:'Tripe',category:'meats', weight:12},
+  {id:16,name:'Scallop',category:'meats', weight:12},
+  {id:17,name:'Anchovies',category:'meats', weight:12},
+  {id:18,name:'Lobster',category:'meats', weight:12},
+  {id:19,name:'Steak',category:'meats', weight:12},
+  {id:20,name:'Egg',category:'meats', weight:12},
+  {id:21,name:'Tofu',category:'meats', weight:12},
+  {id:22,name:'Tempeh',category:'meats', weight:12}
+
+
 
 
 ];
@@ -59,7 +74,20 @@ public veggies:Array<Ingredient>=[
   {id:31,name:'Fennel',category:'veggies',weight:4},
   {id:32,name:'Ginger Root',category:'veggies',weight:4},
   {id:33,name:'Horseradish',category:'veggies',weight:4},
-  {id:34,name:'Jicama',category:'veggies',weight:4}
+  {id:34,name:'Jicama',category:'veggies',weight:4},
+  {id:35,name:'Edamame',category:'veggies',weight:4},
+  {id:36,name:'Lentils',category:'veggies',weight:4},
+  {id:36,name:'Pinto beans',category:'veggies',weight:4},
+  {id:36,name:'Black beans',category:'veggies',weight:4},
+  {id:36,name:'Pickles',category:'veggies',weight:4},
+  {id:36,name:'Olives',category:'veggies',weight:4}
+
+
+
+
+
+
+
 
 
 
@@ -110,7 +138,9 @@ public veggies:Array<Ingredient>=[
     {id:9,name:'Cream',category:'dairy',weight:5},
     {id:10,name:'Cheese',category:'dairy',weight:5},
     {id:10,name:'Cream Cheese',category:'dairy',weight:5},
-    {id:10,name:'Eggnog',category:'dairy',weight:5}
+    {id:10,name:'Eggnog',category:'dairy',weight:5},
+    {id:10,name:'Soymilk',category:'dairy',weight:5}
+
 
 
 
@@ -125,7 +155,7 @@ public veggies:Array<Ingredient>=[
     {id:4,name:'Cayenne pepper',category:'spices',weight:2},
     {id:5,name:'Paprika',category:'spices',weight:2},
     {id:6,name:'Basil',category:'spices',weight:2},
-    {id:7,name:'Crushed Red Pepper',category:'spices',weight:2},
+    {id:7,name:'Red Pepper',category:'spices',weight:2},
     {id:8,name:'Pepper',category:'spices',weight:2},
     {id:9,name:'Salt',category:'spices',weight:2},
     {id:10,name:'Cumin',category:'spices',weight:2},
@@ -136,10 +166,37 @@ public veggies:Array<Ingredient>=[
     {id:15,name:'Ketchup',category:'spices',weight:2},
     {id:16,name:'Mustard',category:'spices',weight:2},
     {id:17,name:'Sesame',category:'spices',weight:2},
-    {id:18,name:'Onion Powder',category:'spices',weight:2},
-    {id:19,name:'Bay Leaf',category:'spices',weight:2},
+    {id:18,name:'Onion powder',category:'spices',weight:2},
+    {id:19,name:'Bay leaf',category:'spices',weight:2},
     {id:20,name:'Sugar',category:'spices',weight:2},
-    {id:21,name:'Powdered Sugar',category:'spices',weight:2}
+    {id:21,name:'Powdered sugar',category:'spices',weight:2},
+    {id:21,name:'Cilantro',category:'spices',weight:2},
+    {id:22,name:'Cloves',category:'spices',weight:2},
+    {id:23,name:'Cream of tarter',category:'spices',weight:2},
+    {id:24,name:'Curry powder',category:'spices',weight:2},
+    {id:25,name:'Nutmeg',category:'spices',weight:2},
+    {id:26,name:'Rosemary',category:'spices',weight:2},
+    {id:27,name:'Vanilla extract',category:'spices',weight:2},
+    {id:28,name:'Dill weed',category:'spices',weight:2},
+    {id:29,name:'All spice',category:'spices',weight:2},
+    {id:30,name:'Poppy seeds',category:'spices',weight:2},
+    {id:31,name:'Peanut butter',category:'spices',weight:2},
+    {id:32,name:'Jelly',category:'spices',weight:2},
+    {id:33,name:'Soy sauce',category:'spices',weight:2},
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -167,7 +224,12 @@ public veggies:Array<Ingredient>=[
       {id:13,name:'Fettucini',category:'grains',weight:15},
       {id:14,name:'Ravioli',category:'grains',weight:15},
       {id:15,name:'Baking powder',category:'grains',weight:15},
-      {id:16,name:'Flour',category:'grains',weight:15}
+      {id:16,name:'Flour',category:'grains',weight:15},
+      {id:17,name:'Oats',category:'grains',weight:15},
+      {id:18,name:'Quinoa',category:'grains',weight:15}
+
+
+
 
 
 
