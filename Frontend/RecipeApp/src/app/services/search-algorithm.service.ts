@@ -63,4 +63,11 @@ export class SearchAlgorithmService {
       })
   }
 
+  searchJoke() {
+    return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random`,
+      {
+        headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
+      })
+  }
+
 }
