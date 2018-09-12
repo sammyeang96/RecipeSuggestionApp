@@ -18,8 +18,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
+<<<<<<< HEAD
     <properties>
 >>>>>>> Benjamin:Backend/pom.xml
+=======
+  	<properties>
+>>>>>>> Benjamin
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +43,7 @@
 	</dependencyManagement>
 
 	<dependencies>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -47,6 +52,8 @@
 			<scope>provided</scope>
 		</dependency>
 
+=======
+>>>>>>> Benjamin
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -121,6 +128,7 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
 			<version>11.2.0</version>
+<<<<<<< HEAD
 
 		</dependency>
 
@@ -142,6 +150,9 @@
 
 		</dependency>
 
+=======
+		</dependency>
+>>>>>>> Benjamin
 
 		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
 		<dependency>
@@ -149,4 +160,5 @@
 			<artifactId>tomcat-catalina</artifactId>
 		</dependency>
 	</dependencies>
+  
 </project>

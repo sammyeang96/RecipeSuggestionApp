@@ -1,7 +1,5 @@
 package com.ex.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +15,8 @@ public class UserLoginService {
 	public UserLogin addUserLogin(UserLogin a) {
 		return userLoginRepo.add(a);
 	}
-
-
-
 	
 	public UserLogin getByUsername(String username) {
 		return userLoginRepo.getByusername(username);
 	}
-
 }
