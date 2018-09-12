@@ -45,6 +45,7 @@ public class UserLoginController {
 			
 		}
 		else {
+			System.out.println("User Not found");
 			return new ResponseEntity<UserLogin>(HttpStatus.NOT_FOUND);
 		}
 	}
