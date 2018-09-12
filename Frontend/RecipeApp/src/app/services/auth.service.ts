@@ -32,7 +32,7 @@ export class AuthService {
     console.log('printing info inside auth-service ');
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost: and the rest of the URL',
+    return this.http.post<User>('http://localhost:8081/Backend and the rest of the URL',
       {
         username: newUsername,
         password: newPassword
@@ -45,7 +45,7 @@ export class AuthService {
     console.log(lastName);
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost:8081/RecipeApp/login/create',
+    return this.http.post<User>('http://localhost:8081/Backend/login/create',
       {
         firstname: firstName,
         lastname: lastName,

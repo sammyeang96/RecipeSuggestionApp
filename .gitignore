@@ -20,3 +20,5 @@ buildNumber.properties
 =======
 # End of https://www.gitignore.io/api/git,maven,angular,serverless
 
+/.metadata/
+/.recommenders/
