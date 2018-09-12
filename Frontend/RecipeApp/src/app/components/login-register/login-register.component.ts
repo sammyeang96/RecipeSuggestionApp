@@ -18,7 +18,6 @@ export class LoginRegisterComponent implements OnInit {
   private newUsername: string;
   private newPassword: string;
   private confirmPassword: string;
-  // private newEmail: string;
 
   show = false;
   hidden = true;
@@ -64,19 +63,25 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
+  checkPasswords() {
+    if (this.newPassword !== this.confirmPassword) {
+      alert('passwords do not match');
+      // this.confirmPassword == null;
+      return;
+    } else {
+      this.registerUser();
+    }
+  }
+
   registerUser() {
 
     if (
-      this.firstName == null || this.lastName == null || this.newUsername == null || this.newPassword == null
-      // || this.confirmPassword == null
-      // || this.newEmail == null
+      this.firstName == null || this.lastName == null || this.newUsername == null
+      || this.newPassword == null || this.confirmPassword == null
     ) {
       alert('please fill  in all fields');
       this.hidden1 = !this.hidden1;
     } else {
-
-      // console.log(this.confirmPassword);
-      // console.log(this.newEmail);
 
       this.hidden = !this.hidden;
       this.show = !this.show;
@@ -87,8 +92,6 @@ export class LoginRegisterComponent implements OnInit {
         this.lastName,
         this.newUsername,
         this.newPassword
-        // this.confirmPassword,
-        // this.newEmail
 
       ).subscribe(
         data => {
@@ -110,8 +113,19 @@ export class LoginRegisterComponent implements OnInit {
     this.modalService.dismissAll('Cross click');
   }
 
-  testLogin() {
-    console.log('woohooo, the testLogin is working');
-  }
+  getUsersPantry() {
 
+    console.log('printing info in getUsersPantry() ');
+
+    this.authService.login(this.username, this.password).subscribe(
+      data => {
+        console.log(data);
+        this.authService.loggedInUser = data;
+
+        if (data != null) {
+          this.authService.isLoggedIn = true;
+        }
+      }
+    );
+  }
 }
