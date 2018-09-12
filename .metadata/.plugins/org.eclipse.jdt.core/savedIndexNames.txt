@@ -14,7 +14,6 @@ INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.
 3832227684.index
 2105412092.index
 655399273.index
-293667416.index
 957074529.index
 3440520556.index
 1194370040.index
@@ -35,9 +34,8 @@ INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.
 2939987665.index
 984225034.index
 41239047.index
-3826828292.index
 2511617568.index
-1560408839.index
+3130988147.index
 3410571344.index
 2844764243.index
 14682029.index
@@ -58,7 +56,6 @@ INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.
 3523662158.index
 321740606.index
 348112629.index
-3940600246.index
 980854434.index
 4289135590.index
 3610771118.index
