@@ -5,6 +5,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Recipe } from '../../models/Recipe.model';
 import { FeatureResults } from '../../models/feature-results';
 import { SearchAlgorithmService } from '../../services/search-algorithm.service';
+import { StepsData } from '../../models/steps-data';
 
 @Component({
   selector: 'app-feature-instructions',
@@ -13,7 +14,8 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
 })
 export class FeatureInstructionsComponent implements OnInit {
   int: number;
-  steps: FeatureResults;
+  instructions: FeatureResults;
+  steps: StepsData;
   @ViewChild('content')
   content: NgbActiveModal;
   constructor(private modalService: NgbModal,
@@ -24,16 +26,20 @@ export class FeatureInstructionsComponent implements OnInit {
   ngOnInit() {
   }
 
-  open( results: FeatureResults) {
+  open(results: FeatureResults) {
     console.log(results);
+    this.instructions = results;
     this.modalService.open(this.content);
-    this.searchAlgorithmService.searchRecipeInstructionById(492608).subscribe(
+    this.searchAlgorithmService.searchRecipeInstructionById(results.id).subscribe(
       data => {
-         results.steps = data;
-         console.log(data);
-       }
-     );
-     this.steps = results;
+        console.log(data);
+        this.steps = data[0].steps;
+
+        // results.steps = data;
+        // console.log(data);
+      }
+    );
+    // this.instructions.steps = this.steps;
   }
   close() {
     this.modalService.dismissAll();

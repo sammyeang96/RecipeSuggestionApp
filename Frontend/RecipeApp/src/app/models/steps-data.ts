@@ -1,4 +1,4 @@
 
 export class StepsData {
-    steps: {step: string}[];
+    steps: {number: number, step: string}[];
 }
