@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { SearchAlgorithmService } from '../../services/search-algorithm.service';
 import { FeatureResults } from '../../models/feature-results';
 import { FeatureInstructionsComponent } from '../feature-instructions/feature-instructions.component';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Recipe } from '../../models/Recipe.model';
 
 @Component({
@@ -11,9 +12,9 @@ import { Recipe } from '../../models/Recipe.model';
 })
 export class FeatureResultsComponent implements OnInit {
   results: FeatureResults[];
-  @ViewChild(FeatureResultsComponent)
-  modal:FeatureInstructionsComponent;
-  constructor(private searchAlgorithmService: SearchAlgorithmService ) { }
+  @ViewChild(FeatureInstructionsComponent)
+  modal: FeatureInstructionsComponent;
+  constructor( private searchAlgorithmService: SearchAlgorithmService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.set();
@@ -23,15 +24,16 @@ export class FeatureResultsComponent implements OnInit {
     this.results = this.searchAlgorithmService.resultSet;
   }
 
-  openDetails(result: FeatureResults) {
-    this.searchAlgorithmService.searchRecipeInstructionById(392463).subscribe(
-      data => {
-        console.log(data);
-      }
-    );
-  }
-  open(recipe: FeatureResults) {
-    this.modal.open(recipe);
+  // openDetails(result: FeatureResults) {
+  //   this.searchAlgorithmService.searchRecipeInstructionById(392463).subscribe(
+  //     data => {
+  //       console.log(data);
+  //     }
+  //   );
+  // }
+  open(result: FeatureResults) {
+    console.log(result);
+    this.modal.open(result);
   }
 
 }

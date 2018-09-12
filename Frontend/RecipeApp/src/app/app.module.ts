@@ -41,9 +41,6 @@ import { FeatureInstructionsComponent } from './components/feature-instructions/
     PantryComponent,
     FeatureResultsComponent,
     FeatureInstructionsComponent
-    
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -62,7 +59,9 @@ import { FeatureInstructionsComponent } from './components/feature-instructions/
     LoginComponent,
     SearchResultsComponent,
     ResultsModalComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    FeatureResultsComponent,
+    FeatureInstructionsComponent
   ]
 })
 export class AppModule { }

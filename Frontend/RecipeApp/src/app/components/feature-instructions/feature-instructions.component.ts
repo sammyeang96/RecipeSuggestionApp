@@ -4,7 +4,7 @@ import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Recipe } from '../../models/Recipe.model';
 import { FeatureResults } from '../../models/feature-results';
-
+import { SearchAlgorithmService } from '../../services/search-algorithm.service';
 
 @Component({
   selector: 'app-feature-instructions',
@@ -12,25 +12,21 @@ import { FeatureResults } from '../../models/feature-results';
   styleUrls: ['./feature-instructions.component.css']
 })
 export class FeatureInstructionsComponent implements OnInit {
-
+  int: number;
   steps: FeatureResults;
   @ViewChild('content')
   content: NgbActiveModal;
   constructor(private modalService: NgbModal,
     private route: RouterModule,
     private router: Router,
-    private authService: AuthService) { }
+    private authService: SearchAlgorithmService) { }
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-  open(recipes: Recipe) {
-    this.recipes = recipes;
-=======
-  open(recipes: FeatureResults) {
-    this.steps = recipes;
->>>>>>> staging
+  open( results: FeatureResults) {
+    console.log(results);
+    this.steps = results;
     this.modalService.open(this.content);
   }
   close() {
