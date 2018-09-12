@@ -31,9 +31,9 @@ img:hover{
 }
 
 .change-category {
-  margin-top: 30%;
-  margin-bottom: 10%;
-}
+  margin-top: 10%;
+  margin-bottom: 0%;
+} 
 
   /* Clear floats after image containers */
 .row::after {
@@ -51,4 +51,11 @@ img:hover{
   }
   .content {
     position: relative;
+  }
+
+
+  #category-view{
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 400px;
+    height: 400px
   }

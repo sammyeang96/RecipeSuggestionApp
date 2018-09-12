@@ -16,6 +16,14 @@ export class PantryComponent implements OnInit {
 
   ngOnInit() {
   }
+// to be used to sort the pantry items
+  public sortIngredients() {
+    this.ingredient.sort(function (a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    })
+  }
 
   addSelectionToArray() {
     this.ingredient = this.pantryService.ingredient;
