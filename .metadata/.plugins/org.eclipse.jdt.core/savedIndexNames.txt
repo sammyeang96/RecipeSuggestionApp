@@ -35,6 +35,10 @@ INDEX VERSION 1.131+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.
 984225034.index
 41239047.index
 2511617568.index
+<<<<<<< HEAD
+=======
+3130988147.index
+>>>>>>> staging
 3410571344.index
 2844764243.index
 14682029.index

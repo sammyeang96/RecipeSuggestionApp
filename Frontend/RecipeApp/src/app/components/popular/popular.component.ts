@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchAlgorithmService } from '../../services/search-algorithm.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-popular',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularComponent implements OnInit {
 
-  constructor() { }
+  private joke: string;
+  // public joke: String[] = [];
+
+  constructor(private searchService: SearchAlgorithmService) { }
 
   ngOnInit() {
+    this.getJoke();
   }
+
+  getJoke(){
+    this.searchService.searchJoke().subscribe(
+      data => {
+        this.joke = data.text;
+      }
+    );
+  }
+  
 
 }

@@ -10618,6 +10618,7 @@ java.util.concurrent.TimeoutException: Timeout after waiting 10 seconds to acqui
 
 !ENTRY org.eclipse.wst.server.core 4 0 2018-09-11 13:35:19.307
 !MESSAGE Server Tomcat v8.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+<<<<<<< HEAD
 !SESSION 2018-09-12 09:50:10.510 -----------------------------------------------
 eclipse.buildId=3.9.5.201807031753-RELEASE-e48
 java.version=1.8.0_181
@@ -11003,3 +11004,16 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 
 !ENTRY org.eclipse.wst.server.discovery 1 0 2018-09-12 09:54:06.869
 !MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+=======
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-09-12 10:36:50.153
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 2 1 2018-09-12 10:36:50.157
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2018-09-12 10:36:50.157
+!MESSAGE The project description file (.project) for 'Servers3' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-09-12 10:36:53.261
+!MESSAGE The workspace will exit with unsaved changes in this session.
+>>>>>>> staging
