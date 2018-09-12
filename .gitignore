@@ -1,4 +1,5 @@
-# Created by https://www.gitignore.io/api/maven,angular
+
+# Created by https://www.gitignore.io/api/git,maven,angular,serverless
 
 ### Angular ###
 ## Angular ##
@@ -31,6 +32,9 @@ testem.log
 #System Files
 .DS_Store
 
+### Git ###
+*.orig
+
 ### Maven ###
 target/
 pom.xml.tag
@@ -43,8 +47,12 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# End of https://www.gitignore.io/api/maven,angular
+### Serverless ###
+# Ignore build directory
+.serverless
 
+
+<<<<<<< HEAD
 Backend/recipe-app/.springBeans
 Backend/recipe-app/.springBeans
 node_modules
@@ -70,4 +78,7 @@ Frontend/RecipeApp/src/app/components/menu/menu.component.html
 >>>>>>> 5761931397bea083cf98eac93333e44683ed4226
 =======
 >>>>>>> 9e09b2e5d92c0ad6c29a6bb4ad5a4535663458c8
+>>>>>>> Benjamin
+=======
+# End of https://www.gitignore.io/api/git,maven,angular,serverless
 >>>>>>> Benjamin
