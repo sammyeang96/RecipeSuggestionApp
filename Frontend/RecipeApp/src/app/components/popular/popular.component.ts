@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchAlgorithmService } from '../../services/search-algorithm.service';
 
 @Component({
   selector: 'app-popular',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searchService: SearchAlgorithmService) { }
 
   ngOnInit() {
   }
+
+  
 
 }
