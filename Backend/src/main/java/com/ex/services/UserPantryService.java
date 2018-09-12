@@ -16,5 +16,4 @@ public class UserPantryService {
 		System.out.println("Service" + a);
 		return userPantryRepo.add(a);
 	}
-
 }
