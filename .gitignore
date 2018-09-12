@@ -14,4 +14,9 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 
-# End of https://www.gitignore.io/api/maven
+
+=======
+
+=======
+# End of https://www.gitignore.io/api/git,maven,angular,serverless
+
