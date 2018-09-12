@@ -31,6 +31,7 @@ public class UserLoginController {
 		else {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
 		}
+
 	}
 	
 	// Takes in UserLogin object (username, password) and returns it if found and null if not found
