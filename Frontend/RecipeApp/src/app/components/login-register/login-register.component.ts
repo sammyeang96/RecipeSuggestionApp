@@ -18,7 +18,6 @@ export class LoginRegisterComponent implements OnInit {
   private newUsername: string;
   private newPassword: string;
   private confirmPassword: string;
-  // private newEmail: string;
 
   show = false;
   hidden = true;
@@ -110,7 +109,6 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
-
   dismissModal(any) {
     this.modalService.dismissAll('Cross click');
   }
@@ -119,4 +117,19 @@ export class LoginRegisterComponent implements OnInit {
     console.log('woohooo, the testLogin is working');
   }
 
+  getUsersPantry() {
+
+    console.log('printing info in getUsersPantry() ');
+
+    this.authService.login(this.username, this.password).subscribe(
+      data => {
+        console.log(data);
+        this.authService.loggedInUser = data;
+
+        if (data != null) {
+          this.authService.isLoggedIn = true;
+        }
+      }
+    );
+  }
 }
