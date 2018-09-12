@@ -24,6 +24,7 @@
     "core-js": "^2.5.4",
     "ng-simple-slideshow": "^1.2.4",
     "ng-slideshow": "^0.8.2",
+    "ngx-scrollspy": "^1.2.1",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },

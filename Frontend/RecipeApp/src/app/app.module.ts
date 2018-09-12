@@ -56,7 +56,6 @@ import { FeatureInstructionsComponent } from './components/feature-instructions/
   bootstrap: [AppComponent],
 
   entryComponents: [
-    LoginComponent,
     SearchResultsComponent,
     ResultsModalComponent,
     LoginRegisterComponent,
