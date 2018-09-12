@@ -34,6 +34,11 @@ export class FeatureResultsComponent implements OnInit {
   open(result: FeatureResults) {
     console.log(result);
     this.modal.open(result);
+    // this.searchAlgorithmService.searchRecipeInstructionById(result.id).subscribe(
+    //       data => {
+    //          result.steps = data;
+    //        }
+    //      );
   }
 
 }

@@ -1,13 +1,13 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <ng-template #content>
   <div class="modal-header">
-    <h3 class="modal-title"></h3>
+    <h3 class="modal-title">{{steps.title}}</h3>
 
   </div>
   <div class="modal-body">
     <h4>Ingredients:</h4>
     <ol class="list-group list-group-flush">
-      <li class="list-group-item" >{{steps.title}}</li>
+      <li class="list-group-item" *ngFor="let s of steps">{{ s.steps }}</li>
     </ol>
     <br>
     

@@ -19,15 +19,21 @@ export class FeatureInstructionsComponent implements OnInit {
   constructor(private modalService: NgbModal,
     private route: RouterModule,
     private router: Router,
-    private authService: SearchAlgorithmService) { }
+    private searchAlgorithmService: SearchAlgorithmService) { }
 
   ngOnInit() {
   }
 
   open( results: FeatureResults) {
     console.log(results);
-    this.steps = results;
     this.modalService.open(this.content);
+    this.searchAlgorithmService.searchRecipeInstructionById(492608).subscribe(
+      data => {
+         results.steps = data;
+         console.log(data);
+       }
+     );
+     this.steps = results;
   }
   close() {
     this.modalService.dismissAll();

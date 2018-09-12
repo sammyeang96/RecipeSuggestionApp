@@ -1,3 +1,4 @@
+import { StepsData } from "./steps-data";
 
 export class Recipe{
 //cook time in minutes,
@@ -9,6 +10,7 @@ export class Recipe{
     ingredientLines: string[];
     image: string;
     calories:number;
+   
 
  
     }
