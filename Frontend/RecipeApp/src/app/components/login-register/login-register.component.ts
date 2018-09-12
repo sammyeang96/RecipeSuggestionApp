@@ -113,10 +113,6 @@ export class LoginRegisterComponent implements OnInit {
     this.modalService.dismissAll('Cross click');
   }
 
-  testLogin() {
-    console.log('woohooo, the testLogin is working');
-  }
-
   getUsersPantry() {
 
     console.log('printing info in getUsersPantry() ');
