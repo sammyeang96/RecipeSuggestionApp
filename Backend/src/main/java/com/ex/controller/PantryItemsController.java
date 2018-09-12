@@ -1,5 +1,6 @@
 package com.ex.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ public class PantryItemsController {
 		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<PantryItems>> getAllData(@RequestBody UserPantry a) {
 		List<PantryItems> list = pantryItemsService.getAllData(a.getId());
+		
 		return new ResponseEntity<List<PantryItems>>(list, HttpStatus.OK);
 	}
 }

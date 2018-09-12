@@ -155,11 +155,7 @@ public veggies:Array<Ingredient>=[
     {id:4,name:'Cayenne pepper',category:'spices',weight:2},
     {id:5,name:'Paprika',category:'spices',weight:2},
     {id:6,name:'Basil',category:'spices',weight:2},
-<<<<<<< HEAD
-    {id:7,name:'Crushed Red Pepper',category:'spices',weight:2},
-=======
     {id:7,name:'Red Pepper',category:'spices',weight:2},
->>>>>>> staging
     {id:8,name:'Pepper',category:'spices',weight:2},
     {id:9,name:'Salt',category:'spices',weight:2},
     {id:10,name:'Cumin',category:'spices',weight:2},
