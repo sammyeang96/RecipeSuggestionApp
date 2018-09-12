@@ -26,7 +26,12 @@ public class PantryItemsController {
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<PantryItems>> addAllBypantryId(@RequestBody List<PantryItems> a) {
+		
+		System.out.println("woohoo! we made it here!");
+		System.out.println(a);
+		
 		a = pantryItemsService.addAllBypantryId(a);
+		
 		if(a == null) {
 			return new ResponseEntity<List<PantryItems>>(HttpStatus.CONFLICT);
 		}
