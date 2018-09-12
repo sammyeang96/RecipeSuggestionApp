@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Recipe } from '../../models/Recipe.model';
+import { FeatureResults } from '../../models/feature-results';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Recipe } from '../../models/Recipe.model';
 })
 export class FeatureInstructionsComponent implements OnInit {
 
-  recipes: Recipe;
+  steps: FeatureResults;
   @ViewChild('content')
   content: NgbActiveModal;
   constructor(private modalService: NgbModal,
@@ -23,8 +24,13 @@ export class FeatureInstructionsComponent implements OnInit {
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   open(recipes: Recipe) {
     this.recipes = recipes;
+=======
+  open(recipes: FeatureResults) {
+    this.steps = recipes;
+>>>>>>> staging
     this.modalService.open(this.content);
   }
   close() {
