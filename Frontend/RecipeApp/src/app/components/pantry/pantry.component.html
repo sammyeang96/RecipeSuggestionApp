@@ -6,7 +6,7 @@
         <span class="section-heading-lower">My Ingredients</span>
       </h2>
       <div class="card-deck row">
-        <button class="btn btn-sm button" (click)="removeItemFromPantry(i)" *ngFor="let i of this.pantryService.ingredient">{{ i.name }}</button>
+        <button class="btn btn-sm button" (click)="removeItemFromPantry(i)" *ngFor="let i of sortIngredientsType(this.pantryService.ingredient)">{{ i.name }}</button>
       </div>
       <br>
       <hr>

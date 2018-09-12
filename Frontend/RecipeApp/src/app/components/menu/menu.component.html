@@ -24,7 +24,7 @@
         </li>
       </ul>
       <ul class="navbar-nav col-4 offset-3">
-        <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search" class="form-control col-9 mt-2">
+        <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search"  (keydown.enter)="searchRecipe()" class="form-control col-9 mt-2">
         <button class="btn btn-beige ml-2 mt-2" (click)="searchRecipe()">
           <span class="oi oi-zoom-out"></span>
         </button>
