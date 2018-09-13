@@ -15,6 +15,7 @@ buildNumber.properties
 <<<<<<< HEAD
 
 /.metadata/
+/servers/
 /.recommenders/
 =======
 >>>>>>> staging

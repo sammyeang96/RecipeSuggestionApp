@@ -8,24 +8,27 @@ import { SearchResultsComponent } from '../components/search-results/search-resu
 import { User } from '../models/User.model';
 import { MenuComponent } from '../components/menu/menu.component';
 import { Ingredient } from '../models/Ingredient.model';
+import { DataObject } from '../models/dataobject.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  dataObject: DataObject;
   link: string;
   recipe: RecipeData;
   recipes: Recipe[];
   loggedInUser: User;
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean;
+  loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   constructor(
     private http: HttpClient,
   ) { }
 
   searchRecipes(search: string) {
-    return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=1000000000`);
+    return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
   loginTrueOrFalse(){
@@ -85,8 +88,27 @@ export class AuthService {
       });
   }
 
-  getUsersPantryItems() {
-    return this.allPantryItems;
+  // returns pantry items when given pantry id
+  getUsersPantryItems(id: number) {
+    console.log('sending info to /items/retrieve ');
+    console.log(id);
+  
+    return this.http.post<User>('http://localhost:8081/Backend/items/retrieve',
+    {
+      id: id
+    });
+
+  }
+
+  // returns pantry id when given a username
+  getPantryByUsername(username: string) {
+    console.log('sending info to /pantry/retrieve ');
+    console.log(username);
+
+    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/retrieve',
+    {
+      username: username
+    });
   }
 
 }
