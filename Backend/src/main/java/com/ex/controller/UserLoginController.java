@@ -33,6 +33,7 @@ public class UserLoginController {
 		else {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
 		}
+
 	}
 	
 	// Takes in UserLogin object (username, password) and returns it if found and null if not found
@@ -42,7 +43,8 @@ public class UserLoginController {
 	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword().equals(a.getPassword())) {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
+			System.out.println(a);
+			return new ResponseEntity<UserLogin>(a, HttpStatus.OK);
 		}
 		else {
 			return new ResponseEntity<UserLogin>(HttpStatus.NOT_FOUND);

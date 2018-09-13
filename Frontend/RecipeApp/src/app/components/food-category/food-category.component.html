@@ -1,64 +1,72 @@
 <div class="container">
 
-    <div class="row">
-      <div class="col">
-        <section class="page-section">
-          <div class="container">
-            <div class="product-item-description d-flex mr-auto">
-  
-              <div class="bg-faded p-5 rounded category-view" *ngIf="!showIngredients">
-                <h2 class="section-heading mb-0">
-                  <span class="section-heading-upper">Select a food group to begin adding ingredients</span>
-                  <span class="section-heading-lower">Categories</span>
-                </h2>
-                <br>
-                <div class="row">
-                  <div class="column">
-                    <img src="../../../assets/images/meat.png" width="100" (click)="showCarne()">
-                  </div>
-                  <div class="column">
-                    <img src="../../../assets/images/dairy.png" width="100" (click)="showDairy()">
-                  </div>
-                  <div class="column">
-                    <img src="../../../assets/images/veggie.png" width="95" (click)="showVeggie()">
-                  </div>
+  <div class="row">
+    <div class="col">
+      <section class="page-section">
+        <div class="container">
+          <div class="product-item-description d-flex mr-auto">
+
+            <div class="bg-faded p-5 rounded category-view" *ngIf="!showIngredients">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">Select a food group to begin adding ingredients</span>
+                <span class="section-heading-lower">Categories</span>
+              </h2>
+              <br>
+              <div class="row">
+                <div class="column">
+                  <img src="../../../assets/images/meat.png" width="100" (click)="showCarne()">
                 </div>
-                <div class="row">
-                  <div class="column">
-                    <img src="../../../assets/images/fruit.png" width="100" (click)="showFruit()">
-                  </div>
-                  <div class="column">
-                    <img src="../../../assets/images/wheat.png" width="100" (click)="showGrain()">
-                  </div>
-                  <div class="column">
-                    <img src="../../../assets/images/spice.png" width="90" (click)="showHerbSpice()">
-                  </div>
+                <div class="column">
+                  <img src="../../../assets/images/dairy.png" width="100" (click)="showDairy()">
+                </div>
+                <div class="column">
+                  <img src="../../../assets/images/veggie.png" width="95" (click)="showVeggie()">
                 </div>
               </div>
-              <div class="bg-faded p-5 rounded" *ngIf="showIngredients">
-                <div>
-                  <h2 class="section-heading mb-0">
-                    <span class="section-heading-upper">Click on your {{this.currentCategory}} to add to your pantry</span>
-                    <span class="section-heading-lower">{{this.currentCategory}}</span>
-                  </h2>
-                  <br>
-                  <div class="card-deck row">
-                    <div class="card-block" *ngFor="let ingredient of ingredients">
-                      <button class="btn btn-sm button" (click)="addToPantry(ingredient)">{{ingredient.name}}</button>
-                    </div>
-                  </div>
+              <div class="row">
+                <div class="column">
+                  <img src="../../../assets/images/fruit.png" width="100" (click)="showFruit()">
                 </div>
-                <label class="change-category ">
-                    <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
-                  </label>
+                <div class="column">
+                  <img src="../../../assets/images/wheat.png" width="100" (click)="showGrain()">
+                </div>
+                <div class="column">
+                  <img src="../../../assets/images/spice.png" width="90" (click)="showHerbSpice()">
+                </div>
               </div>
             </div>
+            <div class="bg-faded p-5 rounded" *ngIf="showIngredients">
+              <div>
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Click on your {{this.currentCategory}} to add to your pantry</span>
+                  <span class="section-heading-lower">{{this.currentCategory}}</span>
+                </h2>
+                <br>
+                <div class="card-deck row">
+                  <div class="card-block" *ngFor="let ingredient of ingredients">
+                    <!-- <button class="btn btn-sm button"  (click)="addToPantry(ingredient)">{{ingredient.name}}</button> -->
+                    <button class="btn btn-sm button" [ngClass]="{
+                      'btn-meat':ingredient.category === 'meats',
+                      'btn-dairy':ingredient.category === 'dairy',
+                      'btn-veggies':ingredient.category === 'veggies',
+                      'btn-fruits':ingredient.category === 'fruits',
+                      'btn-spices':ingredient.category === 'spices',
+                      'btn-grains':ingredient.category === 'grains'}" (click)="addToPantry(ingredient)" >{{ingredient.name}}</button>
+                    
+                  </div>
+                </div>
+              </div>
+              <label class="change-category ">
+                <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
+              </label>
+            </div>
           </div>
-  
-        </section>
-      </div>
-      <div class="col">
-        <app-pantry></app-pantry>
-      </div>
+        </div>
+
+      </section>
+    </div>
+    <div class="col">
+      <app-pantry></app-pantry>
     </div>
   </div>
+</div>

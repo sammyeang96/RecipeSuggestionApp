@@ -16,6 +16,7 @@ export class FoodCategoryComponent implements OnInit {
   public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
   public ingredient: Ingredient[] = [];
+  categoryColor: string;
 
   public state = 'inavtive';
 
@@ -23,6 +24,7 @@ export class FoodCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.showIngredients = false;
+
   }
 
   public sortIngredients() {
@@ -43,6 +45,7 @@ export class FoodCategoryComponent implements OnInit {
     this.sortIngredients();
     this.currentCategory = "meats";
     this.showIngredients = true;
+    this.categoryColor = "btn btn-sm btn-warning"; 
   }
 
   public showDairy() {
