@@ -15,6 +15,7 @@ import com.ex.services.UserInfoService;
 
 @RestController
 @RequestMapping("/info")
+@CrossOrigin(origins = "*")
 public class UserInfoController {
 
 	@Autowired
