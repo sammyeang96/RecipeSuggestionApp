@@ -11,37 +11,45 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ex.beans.UserLogin;
-import com.ex.beans.UserPantry;
-import com.ex.services.UserPantryService;
+import com.ex.beans.Pantry;
+import com.ex.services.PantryService;
 
 @RestController
 @RequestMapping("/pantry")
 @CrossOrigin(origins = "*")
-public class UserPantryController {
+public class PantryController {
 	
 	@Autowired
-	private UserPantryService userPantryService;
+	private PantryService userPantryService;
 	
 	@RequestMapping(value="/create", method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UserPantry> addUserPantry(@RequestBody UserPantry a) {
+	public ResponseEntity<Pantry> addUserPantry(@RequestBody Pantry a) {
 		a = userPantryService.addUserPantry(a);
 		if (a == null) {
-			return new ResponseEntity<UserPantry>(a, HttpStatus.CONFLICT);
+			return new ResponseEntity<Pantry>(a, HttpStatus.CONFLICT);
 		}
 		else {
-			return new ResponseEntity<UserPantry>(a, HttpStatus.CREATED);
+			return new ResponseEntity<Pantry>(a, HttpStatus.CREATED);
 		}
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST,
+		consumes=MediaType.APPLICATION_JSON_VALUE,
+		produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Pantry> updateUserPantry(@RequestBody Pantry a) {
+		a = userPantryService.updateUserPantry(a);
+		return new ResponseEntity<Pantry>(a, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/retrieve", method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)	
-	public ResponseEntity<UserPantry> retrieveUserPantry(@RequestBody UserLogin a) {
+	public ResponseEntity<Pantry> retrieveUserPantry(@RequestBody UserLogin a) {
 		System.out.println(a.getUsername());
-		UserPantry result = userPantryService.retrieve(a.getUsername());
+		Pantry result = userPantryService.retrieve(a.getUsername());
 		System.out.println(result);
-		return new ResponseEntity<UserPantry>(result, HttpStatus.OK);
+		return new ResponseEntity<Pantry>(result, HttpStatus.OK);
 	}
 }
