@@ -23,6 +23,7 @@ export class AuthService {
   isLoggedIn: boolean;
   loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
+  userPantryString: string;
   constructor(
     private http: HttpClient,
   ) { }
@@ -31,7 +32,7 @@ export class AuthService {
     return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
-  loginTrueOrFalse(){
+  loginTrueOrFalse() {
     if(this.isLoggedIn == false){
       return false;
     } 
