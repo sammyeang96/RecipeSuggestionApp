@@ -53,7 +53,7 @@ export class SearchAlgorithmService {
       ,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
-      })
+      });
   }
 
   //Retrives a JSON recipe with URL to instructions
