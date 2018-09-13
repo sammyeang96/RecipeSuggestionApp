@@ -1,9 +1,9 @@
 package com.ex.repositories;
 
-import com.ex.beans.UserInformation;
+import com.ex.beans.UserInfo;
 
 public interface UserInformationRepository {
 	
-	public UserInformation add(UserInformation a);
+	public UserInfo add(UserInfo a);
 
 }
