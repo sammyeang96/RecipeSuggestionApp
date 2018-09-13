@@ -5,11 +5,7 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
 import { FoodCategoryComponent } from '../food-category/food-category.component';
 import { AuthService } from '../../services/auth.service';
 import { RouterModule, Router } from '@angular/router';
-<<<<<<< HEAD
-import { AuthService } from '../../services/auth.service';
-=======
 import { HandleArraysService } from '../../services/handle-arrays.service';
->>>>>>> 065aeba4d0b34cb4ac59da8d418af63b351ce491
 @Component({
   selector: 'app-pantry',
   templateUrl: './pantry.component.html',
@@ -21,7 +17,7 @@ export class PantryComponent implements OnInit {
   userPantry: number[] = [];
   private databasestring: string = "";
   userPantryIngredients: Ingredient[] = [];
-  constructor( private authService: AuthService, private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
+  constructor( private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
     this.unpackUserPantryArray();
@@ -58,8 +54,18 @@ export class PantryComponent implements OnInit {
     this.foodCategory.ingredients.push(ingredient);
   }
 
-  updatePantry() {
-this.authService.updateUserPantry()
+  updatePantry(databasestring) {
+    this.ingredient = this.pantryService.ingredient;
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
+      data => {
+      this.searchAlgorithmService.resultSet = data;
+    } );
+    this.turnArrayToString();
+
+    databasestring = this.databasestring;
+    console.log('printing stringForDatabase inside pantry component: ');
+    console.log(databasestring);
+    this.authService.intermediaryFunctionForUpdatePantry(databasestring);
   }
 
 
@@ -70,6 +76,8 @@ this.authService.updateUserPantry()
     }
     this.pantryService.userPantryString = this.databasestring;
     this.authService.userPantryString = this.databasestring;
+    console.log('printing databasestring:');
+    console.log(this.databasestring);
     // this.unpackUserPantryArray();
   }
   unpackUserPantryArray() {
@@ -87,4 +95,10 @@ this.authService.updateUserPantry()
     }
     console.log(this.userPantryIngredients);
   }
+
+testUpdate() {
+  this.authService.testupdateUserPantry();
 }
+
+
+  }
