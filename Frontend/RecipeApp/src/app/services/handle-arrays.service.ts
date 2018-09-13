@@ -4,7 +4,7 @@ import { Recipe } from '../models/Recipe.model';
 import { User } from '../models/User.model';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class HandleArraysService {
