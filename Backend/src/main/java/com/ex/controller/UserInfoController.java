@@ -10,24 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ex.beans.UserInformation;
-import com.ex.services.UserInformationService;
+import com.ex.beans.UserInfo;
+import com.ex.services.UserInfoService;
 
 @RestController
 @RequestMapping("/info")
+<<<<<<< HEAD:Backend/src/main/java/com/ex/controller/UserInfoController.java
+public class UserInfoController {
+=======
 @CrossOrigin(origins = "*")
 public class UserInformationController {
+>>>>>>> staging:Backend/src/main/java/com/ex/controller/UserInformationController.java
 
 	@Autowired
-	private UserInformationService userInformationService;
+	private UserInfoService userInformationService;
 	
 	@RequestMapping(value="/create",method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UserInformation> addUserInformation(@RequestBody UserInformation a) {
-		System.out.println("IN IT NOW");
+	public ResponseEntity<UserInfo> addUserInformation(@RequestBody UserInfo a) {
 		a = userInformationService.addUserInformation(a);
-		return new ResponseEntity<UserInformation>(a, HttpStatus.OK);
+		return new ResponseEntity<UserInfo>(a, HttpStatus.OK);
 	}
 	
 }

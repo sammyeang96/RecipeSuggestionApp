@@ -14,8 +14,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="USER_PANTRY")
-public class UserPantry {
+@Table(name="PANTRY")
+public class Pantry {
 	
 	@Id
 	@Column(name="PANTRY_ID")
@@ -29,12 +29,15 @@ public class UserPantry {
 	@JoinColumn(name="USERNAME")
 	private UserLogin username;
 	
-	public UserPantry() {}
-
-	public UserPantry(int id, UserLogin username) {
+	String ingredients;
+	
+	public Pantry() {}
+	
+	public Pantry(int id, UserLogin username, String ingredients) {
 		super();
 		this.id = id;
 		this.username = username;
+		this.ingredients = ingredients;
 	}
 
 	public int getId() {
@@ -53,8 +56,16 @@ public class UserPantry {
 		this.username = username;
 	}
 
+	public String getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
+	}
+
 	@Override
 	public String toString() {
-		return "UserPantry [id=" + id + ", username=" + username + "]";
+		return "Pantry [id=" + id + ", username=" + username + ", ingredients=" + ingredients + "]";
 	}
 }

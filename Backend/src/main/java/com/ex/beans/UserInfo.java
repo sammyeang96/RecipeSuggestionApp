@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="LOGIN_INFORMATION")
-public class UserInformation {
+@Table(name="USER_INFO")
+public class UserInfo {
 	
 	@Id
 	@SequenceGenerator(name="info", 
@@ -31,9 +31,9 @@ public class UserInformation {
 	
 	private String lastname;
 	
-	public UserInformation() {}
+	public UserInfo() {}
 
-	public UserInformation(int id, UserLogin username, String firstname, String lastname) {
+	public UserInfo(int id, UserLogin username, String firstname, String lastname) {
 		super();
 		this.id = id;
 		this.username = username;
