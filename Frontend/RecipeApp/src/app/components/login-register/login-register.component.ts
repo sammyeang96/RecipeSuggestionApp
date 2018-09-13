@@ -40,7 +40,7 @@ export class LoginRegisterComponent implements OnInit {
     if (this.username == null || this.password == null) {
       alert('please enter in something.');
     } else {
-      console.log('printing info... ');
+      console.log('printing info in login-register ');
       console.log(this.username);
       console.log(this.password);
 
@@ -54,7 +54,7 @@ export class LoginRegisterComponent implements OnInit {
 
           if (data != null) {
             this.authService.isLoggedIn = true;
-            this.router.navigate(['userInfo']);
+            // this.router.navigate(['userInfo']);
           }
 
         }
@@ -112,15 +112,25 @@ export class LoginRegisterComponent implements OnInit {
             ).subscribe(
               data2 => {
                 console.log(data2);
+
+                if (data2 != null) {
+                  this.authService.registerUserPantry(
+                    this.newUsername
+                  ).subscribe(
+                    data3 => {
+                      console.log(data3);
+                    }
+                  );
+                }
+
               }
-            )
+            );
           }
 
         }
-
       );
-
     }
+
   }
 
   dismissModal(any) {

@@ -28,32 +28,30 @@ export class AuthService {
     return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=1000000000`);
   }
 
-  login(newUsername: string, newPassword: string) {
-    console.log('printing info inside auth-service ');
-    console.log(newUsername);
-    console.log(newPassword);
-    return this.http.post<User>('http://localhost:8081/Backend/ and the rest of the URL',
+  login(username: string, password: string) {
+    console.log('sending info to /login/validate ');
+    console.log(username);
+    console.log(password);
+    return this.http.post<User>('http://localhost:8081/Backend/login/validate',
       {
-        username: newUsername,
-        password: newPassword
+        username: username,
+        password: password
       });
   }
 
   registerUser(firstName: string, lastName: string, newUsername: string, newPassword: string) {
-    console.log('sending into to /login/create ');
+    console.log('sending info to /login/create ');
     console.log(newUsername);
     console.log(newPassword);
-    
     return this.http.post<User>('http://localhost:8081/Backend/login/create',
       {
         username: newUsername,
         password: newPassword
       });
-      // this.registerUserInfo(firstName, lastName, newUsername, newPassword);
   }
 
   registerUserInfo(firstName: string, lastName: string, newUsername: string, newPassword: string) {
-    console.log('sending into to /info/create ');
+    console.log('sending info to /info/create ');
     console.log(firstName);
     console.log(lastName);
     console.log(newUsername);
@@ -64,6 +62,15 @@ export class AuthService {
         username: { username: newUsername }
       });
 
+  }
+
+  registerUserPantry(newUsername: string) {
+    console.log('sending info to /pantry/create ');
+    console.log(newUsername);
+    return this.http.post<User>('http://localhost:8081/Backend/pantry/create',
+      {
+        username: { username: newUsername }
+      });
   }
 
   getUsersPantryItems() {

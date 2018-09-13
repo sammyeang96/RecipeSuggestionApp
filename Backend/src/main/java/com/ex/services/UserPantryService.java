@@ -15,4 +15,8 @@ public class UserPantryService {
 	public UserPantry addUserPantry(UserPantry a) {
 		return userPantryRepo.add(a);
 	}
+	
+	public UserPantry retrieve(String username) {
+		return userPantryRepo.retrieve(username);
+	}
 }
