@@ -6,7 +6,7 @@ import { Ingredient } from '../models/Ingredient.model';
   providedIn: 'root'
 })
 export class PantryService {
-  
+userPantryString: string;
 ingredient: Ingredient[] = [];
 
 
