@@ -5,7 +5,34 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
+<<<<<<< HEAD
   <updated>2018-09-13T00:00:00Z</updated>
+=======
+  <updated>2018-09-13T06:01:00Z</updated>
+  <entry>
+    <title>Spring Boot 2.1 M3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/09/13/spring-boot-2-1-m3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2018-09-13:3393</id>
+    <updated>2018-09-13T06:01:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the third milestone of Spring Boot 2.1 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.0.M3"&gt;117 issues and pull requests&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;This third milestone aligns with &lt;a href="https://spring.io/blog/2018/09/07/spring-framework-5-1-rc3-5-0-9-and-4-3-19-available-now"&gt;Spring Framework 5.1.RC3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Highlights in this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kafka Streams support&lt;/li&gt;
+  &lt;li&gt;Support for non-web OAuth applications&lt;/li&gt;
+  &lt;li&gt;Improved conversion service integration&lt;/li&gt;
+  &lt;li&gt;Support for logging groups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1.0-M3-Release-Notes"&gt;Spring Boot 2.1 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.0.M3/reference/htmlsingle/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to get started with 2.1 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We hope to release an M4 just in time for &lt;a href="https://springoneplatform.io/"&gt;Spring One Platform 2018&lt;/a&gt; and the 2.1 GA towards the end of October.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.0.M3/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+>>>>>>> staging
   <entry>
     <title>Bootiful GCP: To Production! (8/8)</title>
     <link rel="alternate" href="https://spring.io/blog/2018/09/13/bootiful-gcp-to-production-8-8" />
@@ -1480,6 +1507,7 @@ class SubscriberConfig {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;The nice thing about &lt;code&gt;IntegrationFlow&lt;/code&gt; in both examples is that you can chain calls together. Here, we specify only where a message comes from (&lt;code&gt;.from()&lt;/code&gt;) and what handles it (&lt;code&gt;.handle()&lt;/code&gt;), but we could as easily after the &lt;code&gt;.handle()&lt;/code&gt; call also route, split, transform, etc., the messages. The message sent as the output of one component (the adapters, the message handlers, transformers, etc.) become the input to any downstream components.&lt;/p&gt;</content>
   </entry>
+<<<<<<< HEAD
   <entry>
     <title>Spring Security OAuth2 Boot Auto-config 2.0.4 &amp; 2.1.0.M2 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2018/08/29/spring-security-oauth2-boot-auto-config-2-0-4-2-1-0-m2-released" />
@@ -1502,4 +1530,6 @@ class SubscriberConfig {&#xD;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</content>
   </entry>
+=======
+>>>>>>> staging
 </feed>

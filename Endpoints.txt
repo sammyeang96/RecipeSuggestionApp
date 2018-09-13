@@ -40,39 +40,11 @@
 	"username": username
   }
   
-  SHOULD RETURN THE PANTRYID ASSOCIATED WITH THAT USERNAME 
- 
- "http://localhost:8888/Backend/items/add" ???
- 
- {
-	"id": 9999, // Generated automatically
-	"pantryId": {
-		"id": 1, // Needs to be assigned
-		"username": {
-			"username": "ben", // May or may not need this
-			"password": "test" // May or may not need this
-		}
-	},
-	"name": "New",
-	"type": "Item",
-	"weight": 1
- },
- ...
- 
- RETURNS THE SAME JSON IF ADDED CORRECTLY
- 
- "http://localhost:8888/Backend/items/retrieve"
- 
- {
-	"id": 1
- }
- 
- WILL RETURN JSON WITH ALL ITEMS ASSOCIATED WITH THE SUPPLIED PANTRY ID
- 
- "http://localhost:8888/Backend/items/delete"
- 
- {
-	"id": 1
- }
- 
- WILL RETURN THE ITEM THAT WAS DELETED 
+  WILL RETURN ID, USERNAME & PASSWORD, AND CURRENT STRING OF INGREDIENTS
+  
+"http://localhost:8888/Backend/pantry/update"
+
+{
+	"id": SUPPLIED_ID,
+	"ingredients": "NUMBERS,SEPARATED,BY,NUMBERS"
+}

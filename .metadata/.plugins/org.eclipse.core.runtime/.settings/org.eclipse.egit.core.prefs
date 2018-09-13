@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 GitRepositoriesView.GitDirectories=C\:\\mm\\1807Jul30Java\\.git;
 GitRepositoriesView.GitDirectories.relative=C\:\\mm\\1807Jul30Java\\.git;
+=======
+GitRepositoriesView.GitDirectories=C\:\\Users\\tmacd\\Documents\\_repos\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Users\\tmacd\\Documents\\_repos\\.git;
+>>>>>>> staging
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

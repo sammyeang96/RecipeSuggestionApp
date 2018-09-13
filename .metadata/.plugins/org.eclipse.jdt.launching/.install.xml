@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
+<<<<<<< HEAD
 <entry loc="C:\Program Files\Java\jre1.8.0_171" stamp="1530823139636"/>
+=======
+<<<<<<< HEAD
+<entry loc="C:\Program Files\Java\jre1.8.0_171" stamp="1530823139636"/>
+=======
+<entry loc="C:\Program Files\Java\jre1.8.0_181" stamp="1532975968215"/>
+>>>>>>> b38d27f1dfdf496f4f157ff02c8c8a333c2c978b
+>>>>>>> staging
 </dirs>
