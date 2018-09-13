@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ex.beans.PantryItems;
-import com.ex.beans.UserPantry;
-import com.ex.services.PantryItemsService;
+import com.ex.beans.Pantry;
+import com.ex.services.PantryService;
 
 @RestController
 @RequestMapping("/items")
@@ -23,13 +23,13 @@ import com.ex.services.PantryItemsService;
 public class PantryItemsController {
 	
 	@Autowired
-	private PantryItemsService pantryItemsService;
+	private PantryService pantryItemsService;
 	
 
 	@RequestMapping(value="/retrieve", method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<PantryItems>> getAllData(@RequestBody UserPantry a) {
+	public ResponseEntity<List<PantryItems>> getAllData(@RequestBody Pantry a) {
 		System.out.println(a.getId());
 		List<PantryItems> list = pantryItemsService.getAllData(a.getId());
 		return new ResponseEntity<List<PantryItems>>(list, HttpStatus.OK);
@@ -50,7 +50,7 @@ public class PantryItemsController {
 	@RequestMapping(value="/delete", method=RequestMethod.POST,
 			consumes=MediaType.APPLICATION_JSON_VALUE,
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<PantryItems> deleteItem(@RequestBody UserPantry a) {
+	public ResponseEntity<PantryItems> deleteItem(@RequestBody Pantry a) {
 		PantryItems deleted = pantryItemsService.deleteItem(a.getId());
 		return new ResponseEntity<PantryItems>(deleted, HttpStatus.OK);
 	}

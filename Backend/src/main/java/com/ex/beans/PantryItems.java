@@ -27,7 +27,7 @@ public class PantryItems {
 	
 	@ManyToOne
 	@JoinColumn(name="PANTRY_ID")
-	private UserPantry pantryId;
+	private Pantry pantryId;
 	
 	@Column
 	private String name;
@@ -40,7 +40,7 @@ public class PantryItems {
 	
 	public PantryItems() {}
 
-	public PantryItems(int id, UserPantry pantryId, String name, String type, double weight) {
+	public PantryItems(int id, Pantry pantryId, String name, String type, double weight) {
 		super();
 		this.id = id;
 		this.pantryId = pantryId;
@@ -57,11 +57,11 @@ public class PantryItems {
 		this.id = id;
 	}
 
-	public UserPantry getPantryId() {
+	public Pantry getPantryId() {
 		return pantryId;
 	}
 
-	public void setPantryId(UserPantry pantryId) {
+	public void setPantryId(Pantry pantryId) {
 		this.pantryId = pantryId;
 	}
 

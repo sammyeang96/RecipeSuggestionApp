@@ -1,10 +1,8 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=staging
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
 platformState=1530827207600
-=======
-eclipse.preferences.version=1
-platformState=1532974579024
->>>>>>> staging
 quickStart=false
 tipsAndTricks=true

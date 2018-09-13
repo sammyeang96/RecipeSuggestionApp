@@ -5,9 +5,6 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-<<<<<<< HEAD
-  <updated>2018-09-13T00:00:00Z</updated>
-=======
   <updated>2018-09-13T06:01:00Z</updated>
   <entry>
     <title>Spring Boot 2.1 M3 available now</title>
@@ -32,7 +29,6 @@
 &lt;p&gt;We hope to release an M4 just in time for &lt;a href="https://springoneplatform.io/"&gt;Spring One Platform 2018&lt;/a&gt; and the 2.1 GA towards the end of October.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.0.M3/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
->>>>>>> staging
   <entry>
     <title>Bootiful GCP: To Production! (8/8)</title>
     <link rel="alternate" href="https://spring.io/blog/2018/09/13/bootiful-gcp-to-production-8-8" />
@@ -1507,29 +1503,4 @@ class SubscriberConfig {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;The nice thing about &lt;code&gt;IntegrationFlow&lt;/code&gt; in both examples is that you can chain calls together. Here, we specify only where a message comes from (&lt;code&gt;.from()&lt;/code&gt;) and what handles it (&lt;code&gt;.handle()&lt;/code&gt;), but we could as easily after the &lt;code&gt;.handle()&lt;/code&gt; call also route, split, transform, etc., the messages. The message sent as the output of one component (the adapters, the message handlers, transformers, etc.) become the input to any downstream components.&lt;/p&gt;</content>
   </entry>
-<<<<<<< HEAD
-  <entry>
-    <title>Spring Security OAuth2 Boot Auto-config 2.0.4 &amp; 2.1.0.M2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/08/29/spring-security-oauth2-boot-auto-config-2-0-4-2-1-0-m2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Josh Cummings</name>
-    </author>
-    <id>tag:spring.io,2018-08-29:3378</id>
-    <updated>2018-08-29T18:43:16Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I&amp;#8217;m pleased to announce on behalf of the community &lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot"&gt;Spring Security OAuth2 Boot Auto-config&lt;/a&gt; 2.0.4 and 2.1.0.M2.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both releases primarily deliver bug fixes and dependency version updates along with some minor improvements. Of particular note is that these align with &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.0.M2"&gt;recent&lt;/a&gt; &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.4.RELEASE"&gt;releases&lt;/a&gt; of Spring Boot.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For a complete list of changes, please refer to the 2.0.4 &lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot/milestone/7?closed=1"&gt;changelog&lt;/a&gt; and 2.1.0.M2 &lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot/milestone/9?closed=1"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
-  </entry>
-=======
->>>>>>> staging
 </feed>

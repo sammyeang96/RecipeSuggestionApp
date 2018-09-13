@@ -4510,3 +4510,58 @@ Caused by: java.io.FileNotFoundException: C:\Users\Joel DeVos\project2\RecipeSug
 2018-09-12 23:31:50,407 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Joel DeVos\project2\RecipeSuggestionApp\Backend\src\test\resources
 >>>>>>> b38d27f1dfdf496f4f157ff02c8c8a333c2c978b
 >>>>>>> staging
+2018-09-13 10:43:44,626 [Worker-1: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:Backend:0.0.1-SNAPSHOT @ C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\pom.xml.
+2018-09-13 10:43:46,783 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:11.2.0 is missing, no dependency information available
+2018-09-13 10:43:46,782 [Worker-10: Check for devtools] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:11.2.0 is missing, no dependency information available
+2018-09-13 10:43:47,952 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:11.2.0 is missing, no dependency information available
+2018-09-13 10:43:50,876 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:43:50,877 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:43:50,884 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:43:50,884 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:43:52,062 [Worker-2: Check for devtools] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:11.2.0 is missing, no dependency information available
+2018-09-13 10:44:11,070 [Worker-7: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:Backend:0.0.1-SNAPSHOT @ C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\pom.xml.
+2018-09-13 10:44:12,930 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:12,931 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:44:12,934 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:12,934 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:44:12,938 [Worker-7: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of Backend
+2018-09-13 10:44:12,939 [Worker-7: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for Backend
+2018-09-13 10:44:13,045 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:17,257 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:17,258 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:44:17,260 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:17,337 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:44:25,576 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-09-13 10:44:26,692 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:Backend:0.0.1-SNAPSHOT @ C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\pom.xml.
+2018-09-13 10:44:28,542 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Backend/src/main/java
+2018-09-13 10:44:28,607 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Backend/src/test/java
+2018-09-13 10:44:30,528 [Worker-16: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for Backend
+2018-09-13 10:44:30,669 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2018-09-13 10:44:32,695 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:32,793 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:44:32,832 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:44:32,866 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:44:32,866 [Worker-5: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of Backend
+2018-09-13 10:44:32,926 [Worker-5: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for Backend
+2018-09-13 10:44:32,935 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:45:17,762 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-09-13 10:45:18,751 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:Backend:0.0.1-SNAPSHOT @ C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\pom.xml.
+2018-09-13 10:45:20,573 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Backend/src/main/java
+2018-09-13 10:45:20,574 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Backend/src/test/java
+2018-09-13 10:45:21,525 [Worker-7: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for Backend
+2018-09-13 10:45:21,573 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2018-09-13 10:45:23,464 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:45:23,464 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:45:23,552 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:45:23,578 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:45:23,601 [Worker-8: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of Backend
+2018-09-13 10:45:23,602 [Worker-8: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for Backend
+2018-09-13 10:45:23,611 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:46:36,095 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:46:36,180 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:46:36,245 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:46:36,342 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
+2018-09-13 10:48:01,259 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:48:01,260 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\main\resources
+2018-09-13 10:48:01,387 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-09-13 10:48:01,493 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\mm\1807Jul30Java\RecipeSuggestionApp\Backend\src\test\resources
