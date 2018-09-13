@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-login-register',
@@ -29,10 +30,24 @@ export class LoginRegisterComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
 
+
   ) { }
 
   ngOnInit() {
     console.log('inside the login-register component');
+  }
+  //dummy method to test navbar look while logged in/out
+  login1() {
+    if (this.username == null || this.password == null) {
+      alert('please enter in something.');
+    } else {
+      
+      this.authService.isLoggedIn = true;
+      console.log(this.authService.isLoggedIn + " logged in???");
+      
+      this.modalService.dismissAll('Cross click');
+      this.router.navigate(['home']);
+    }
   }
 
   login() {
@@ -48,13 +63,32 @@ export class LoginRegisterComponent implements OnInit {
       this.show = !this.show;
 
       this.authService.login(this.username, this.password).subscribe(
-        data => {
-          console.log(data);
-          this.authService.loggedInUser = data;
+        user => {
+          console.log(user);
+          this.authService.loggedInUser = user;
 
-          if (data != null) {
+          if (user != null) {
             this.authService.isLoggedIn = true;
             // this.router.navigate(['userInfo']);
+            this.authService.getPantryByUsername(user.username).subscribe(
+              pantryid => {
+                console.log('printing pantryid: ');
+                console.log(pantryid);
+                this.authService.dataObject = pantryid;
+                if (pantryid != null) {
+                  this.authService.getUsersPantryItems(pantryid.id).subscribe(
+                    pantryitems => {
+                      console.log('printing pantry items: ');
+                      console.log(pantryitems);
+                      console.log('printing pantryid.pantryid: ');
+                      console.log(pantryid.id);
+
+                    }
+                  );
+                }
+              }
+            );
+
           }
 
         }
@@ -86,7 +120,7 @@ export class LoginRegisterComponent implements OnInit {
       this.hidden = !this.hidden;
       this.show = !this.show;
 
-      
+
       this.authService.registerUser(
 
         this.firstName,

@@ -18,7 +18,7 @@ import { RecipeData } from '../../models/recipe-data';
 export class MenuComponent implements OnInit {
 
   private search: string;
-  hiddenUntilLoggedIn = true;
+  public loggedIn: boolean = this.authService.isLoggedIn;
 
   constructor(
     private modalService: NgbModal,
@@ -26,7 +26,13 @@ export class MenuComponent implements OnInit {
     private router: Router,
   ) { }
 
+  //dummy logout
+  logout1(){
+    this.authService.logout1();
+  }
+
   ngOnInit() {
+    console.log(this.loggedIn + " IN MENU COMPONENT");
   }
 
   searchRecipe() {

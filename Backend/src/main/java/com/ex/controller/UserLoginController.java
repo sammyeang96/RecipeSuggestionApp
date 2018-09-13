@@ -26,14 +26,17 @@ public class UserLoginController {
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserLogin> addUserLogin(@RequestBody UserLogin a) {
-		a = userLoginService.addUserLogin(a);
-		if(a == null) {
-			return new ResponseEntity<UserLogin>(HttpStatus.CONFLICT);
+		try {
+			a = userLoginService.addUserLogin(a);
+			if(a == null) {
+				return new ResponseEntity<UserLogin>(HttpStatus.CONFLICT);
+			}
+			else {
+				return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
+			}
+		} catch (NullPointerException e) {
+			return null;
 		}
-		else {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
-		}
-
 	}
 	
 	// Takes in UserLogin object (username, password) and returns it if found and null if not found
@@ -41,6 +44,7 @@ public class UserLoginController {
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
+		try {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword().equals(a.getPassword())) {
 			System.out.println(a);
@@ -49,5 +53,9 @@ public class UserLoginController {
 		else {
 			return new ResponseEntity<UserLogin>(HttpStatus.NOT_FOUND);
 		}
+		} catch (NullPointerException e) {
+			return null;
+		}
+
 	}
 }
