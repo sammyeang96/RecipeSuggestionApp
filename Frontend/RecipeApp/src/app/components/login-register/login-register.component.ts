@@ -48,13 +48,32 @@ export class LoginRegisterComponent implements OnInit {
       this.show = !this.show;
 
       this.authService.login(this.username, this.password).subscribe(
-        data => {
-          console.log(data);
-          this.authService.loggedInUser = data;
+        user => {
+          console.log(user);
+          this.authService.loggedInUser = user;
 
-          if (data != null) {
+          if (user != null) {
             this.authService.isLoggedIn = true;
             // this.router.navigate(['userInfo']);
+            this.authService.getPantryByUsername(user.username).subscribe(
+              pantryid => {
+                console.log('printing pantryid: ');
+                console.log(pantryid);
+                this.authService.dataObject = pantryid;
+                if (pantryid != null) {
+                  this.authService.getUsersPantryItems(pantryid.id).subscribe(
+                    pantryitems => {
+                      console.log('printing pantry items: ');
+                      console.log(pantryitems);
+                      console.log('printing pantryid.pantryid: ');
+                      console.log(pantryid.id);
+
+                    }
+                  );
+                }
+              }
+            );
+
           }
 
         }

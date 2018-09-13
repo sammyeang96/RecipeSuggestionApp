@@ -8,17 +8,20 @@ import { SearchResultsComponent } from '../components/search-results/search-resu
 import { User } from '../models/User.model';
 import { MenuComponent } from '../components/menu/menu.component';
 import { Ingredient } from '../models/Ingredient.model';
+import { DataObject } from '../models/dataobject.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  dataObject: DataObject;
   link: string;
   recipe: RecipeData;
   recipes: Recipe[];
   loggedInUser: User;
   isLoggedIn: boolean;
+  loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   constructor(
     private http: HttpClient,
@@ -73,8 +76,27 @@ export class AuthService {
       });
   }
 
-  getUsersPantryItems() {
-    return this.allPantryItems;
+  // returns pantry items when given pantry id
+  getUsersPantryItems(id: number) {
+    console.log('sending info to /items/retrieve ');
+    console.log(id);
+  
+    return this.http.post<User>('http://localhost:8081/Backend/items/retrieve',
+    {
+      id: id
+    });
+
+  }
+
+  // returns pantry id when given a username
+  getPantryByUsername(username: string) {
+    console.log('sending info to /pantry/retrieve ');
+    console.log(username);
+
+    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/retrieve',
+    {
+      username: username
+    });
   }
 
 }
