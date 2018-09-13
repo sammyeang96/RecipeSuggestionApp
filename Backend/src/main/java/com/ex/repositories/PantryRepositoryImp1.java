@@ -7,25 +7,31 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ex.beans.UserPantry;
+import com.ex.beans.Pantry;
 
 @Transactional
 @Repository
-public class UserPantryRepositoryImp1 implements UserPantryRepository {
+public class PantryRepositoryImp1 implements PantryRepository {
 	
 	@Autowired
 	SessionFactory sf;
 
 	@Override
-	public UserPantry add(UserPantry a) {
+	public Pantry add(Pantry a) {
 		int id = (Integer) sf.getCurrentSession().save(a);
 		a.setId(id);
 		return a;
 	}
 
 	@Override
-	public UserPantry retrieve(String username) {
-		System.out.println("Repo " + username);
-		return (UserPantry) sf.getCurrentSession().createCriteria(UserPantry.class).add(Restrictions.eq("username.username", username)).uniqueResult();
+	public Pantry retrieve(String username) {
+		return (Pantry) sf.getCurrentSession().createCriteria(Pantry.class).add(Restrictions.eq("username.username", username)).uniqueResult();
+	}
+
+	@Override
+	public Pantry update(Pantry a) {
+		Pantry pantry = (Pantry) sf.getCurrentSession().get(Pantry.class, a.getId());
+		pantry.setIngredients(a.getIngredients());
+		return pantry;
 	}
 }

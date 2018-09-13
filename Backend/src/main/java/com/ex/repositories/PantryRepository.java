@@ -1,11 +1,13 @@
 package com.ex.repositories;
 
-import com.ex.beans.UserPantry;
+import com.ex.beans.Pantry;
 
-public interface UserPantryRepository {
+public interface PantryRepository {
 
-	public UserPantry add(UserPantry a);
+	public Pantry add(Pantry a);
 	
-	public UserPantry retrieve(String username);
+	public Pantry retrieve(String username);
+
+	public Pantry update(Pantry a);
 
 }

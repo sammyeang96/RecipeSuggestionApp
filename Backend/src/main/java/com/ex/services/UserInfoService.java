@@ -3,16 +3,16 @@ package com.ex.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ex.beans.UserInformation;
-import com.ex.repositories.UserInformationRepository;
+import com.ex.beans.UserInfo;
+import com.ex.repositories.UserInfoRepository;
 
 @Service("userInformationService")
-public class UserInformationService {
+public class UserInfoService {
 	
 	@Autowired
-	private UserInformationRepository userInformationRepo;
+	private UserInfoRepository userInformationRepo;
 	
-	public UserInformation addUserInformation(UserInformation a) {
+	public UserInfo addUserInformation(UserInfo a) {
 		return userInformationRepo.add(a);
 	}
 

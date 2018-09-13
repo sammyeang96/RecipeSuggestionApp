@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="LOGIN_CREDENTIALS")
+@Table(name="USER_LOGIN")
 public class UserLogin {
 	
 	@Id
