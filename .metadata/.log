@@ -1984,3 +1984,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.wst.server.discovery 1 0 2018-09-12 20:37:20.567
 !MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.wst.server.core 4 0 2018-09-12 20:53:31.709
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
