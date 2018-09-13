@@ -128,39 +128,6 @@ public veggies:Array<Ingredient>=[
     ];
  
   public spices:Array<Ingredient>=[
-<<<<<<< HEAD
-    {id:1,name:'Lemon pepper',category:'spices',weight:2},
-    {id:2,name:'Chili Powder',category:'spices',weight:2},
-    {id:3,name:'Oregano',category:'spices',weight:2},
-    {id:4,name:'Cayenne pepper',category:'spices',weight:2},
-    {id:5,name:'Paprika',category:'spices',weight:2},
-    {id:6,name:'Basil',category:'spices',weight:2},
-    {id:7,name:'Crushed Red Pepper',category:'spices',weight:2},
-    {id:8,name:'Pepper',category:'spices',weight:2},
-    {id:9,name:'Salt',category:'spices',weight:2},
-    {id:10,name:'Cumin',category:'spices',weight:2},
-    {id:11,name:'Thyme',category:'spices',weight:2},
-    {id:12,name:'Cinnamon',category:'spices',weight:2},
-    {id:13,name:'Ginger',category:'spices',weight:2},
-    {id:14,name:'Parsley',category:'spices',weight:2},
-    {id:15,name:'Ketchup',category:'spices',weight:2},
-    {id:16,name:'Mustard',category:'spices',weight:2},
-    {id:17,name:'Sesame',category:'spices',weight:2},
-    {id:18,name:'Onion Powder',category:'spices',weight:2},
-    {id:19,name:'Bay Leaf',category:'spices',weight:2},
-    {id:20,name:'Sugar',category:'spices',weight:2},
-    {id:21,name:'Powdered Sugar',category:'spices',weight:2}
-
-
-
-
-
-
-
-
-
-    
-=======
     {id:101,name:'Lemon pepper',category:'spices',weight:2},
     {id:102,name:'Chili Powder',category:'spices',weight:2},
     {id:103,name:'Oregano',category:'spices',weight:2},
@@ -195,7 +162,6 @@ public veggies:Array<Ingredient>=[
     {id:131,name:'Peanut butter',category:'spices',weight:2},
     {id:132,name:'Jelly',category:'spices',weight:2},
     {id:133,name:'Soy sauce',category:'spices',weight:2}
->>>>>>> staging
     ];
 
     public starches:Array<Ingredient>=[
