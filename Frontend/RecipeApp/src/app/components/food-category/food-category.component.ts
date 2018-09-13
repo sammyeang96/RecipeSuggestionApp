@@ -15,6 +15,9 @@ export class FoodCategoryComponent implements OnInit {
   public showIngredients: boolean;
   public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
+
+  //to be used when attempting to add back ingredients to Food List..
+  public returnedIngredients: Ingredient[] = [];
   
   categoryColor: string;
 
@@ -39,6 +42,13 @@ export class FoodCategoryComponent implements OnInit {
       }
     }
   }
+  filterCategorysList(){
+    for(let ing of this.ingredients){
+      if(ing.category != this.currentCategory){
+        this.ingredients.splice(this.ingredients.indexOf(ing, 0), 1);
+      }
+    }
+  }
 
   public sortIngredients() {
     this.ingredients.sort(function (a, b) {
@@ -55,6 +65,9 @@ export class FoodCategoryComponent implements OnInit {
 
   public showCarne() {
     this.ingredients = this.foodService.getMeats();
+    // this.ingredients = this.ingredients.concat(this.returnedIngredients);
+    // console.log(this.ingredients);
+    // this.filterCategorysList();
     this.filterOutLoggedInUsersIngredients();
     this.sortIngredients();
     this.currentCategory = "meats";
