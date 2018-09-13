@@ -25,16 +25,52 @@ export class AuthService {
   ) { }
 
   searchRecipes(search: string) {
-        return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=1000000000`);
+    return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
   login(username: string, password: string) {
-    return this.http.post<User>('http://localhost: and the rest of the URL', {username: username, password: password});
+    console.log('sending info to /login/validate ');
+    console.log(username);
+    console.log(password);
+    return this.http.post<User>('http://localhost:8081/Backend/login/validate',
+      {
+        username: username,
+        password: password
+      });
   }
 
-  registerUser(fullName: string, newUsername: string, newPassword: string, confirmPassword: string, newEmail: string) {
-    return this.http.post<User>('http://localhost: and the rest of the URL',
-    {fullName: fullName, newUsername: newUsername, newPassword: newPassword, confirmPassword: confirmPassword, newEmail: newEmail});
+  registerUser(firstName: string, lastName: string, newUsername: string, newPassword: string) {
+    console.log('sending info to /login/create ');
+    console.log(newUsername);
+    console.log(newPassword);
+    return this.http.post<User>('http://localhost:8081/Backend/login/create',
+      {
+        username: newUsername,
+        password: newPassword
+      });
+  }
+
+  registerUserInfo(firstName: string, lastName: string, newUsername: string, newPassword: string) {
+    console.log('sending info to /info/create ');
+    console.log(firstName);
+    console.log(lastName);
+    console.log(newUsername);
+    return this.http.post<User>('http://localhost:8081/Backend/info/create',
+      {
+        firstname: firstName,
+        lastname: lastName,
+        username: { username: newUsername }
+      });
+
+  }
+
+  registerUserPantry(newUsername: string) {
+    console.log('sending info to /pantry/create ');
+    console.log(newUsername);
+    return this.http.post<User>('http://localhost:8081/Backend/pantry/create',
+      {
+        username: { username: newUsername }
+      });
   }
 
   getUsersPantryItems() {

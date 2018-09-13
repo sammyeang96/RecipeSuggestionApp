@@ -4,9 +4,9 @@
     <div class="col">
       <section class="page-section">
         <div class="container">
-          <div class="product-item-description2 d-flex mr-auto">
+          <div class="product-item-description d-flex mr-auto">
 
-            <div class="bg-faded p-5 rounded" *ngIf="!showIngredients">
+            <div class="bg-faded p-5 rounded category-view" *ngIf="!showIngredients">
               <h2 class="section-heading mb-0">
                 <span class="section-heading-upper">Select a food group to begin adding ingredients</span>
                 <span class="section-heading-lower">Categories</span>
@@ -36,18 +36,26 @@
               </div>
             </div>
             <div class="bg-faded p-5 rounded" *ngIf="showIngredients">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">Click on your {{this.currentCategory}} to add to your pantry</span>
-                <span class="section-heading-lower">{{this.currentCategory}}</span>
-              </h2>
-              <br>
-              <div class="card-deck row">
-                <div class="card-block" *ngFor="let ingredient of ingredients">
-                  <button class="btn btn-sm button" (click)="addToPantry(ingredient)">{{ingredient.name}}</button>
+              <div>
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Click on your {{this.currentCategory}} to add to your pantry</span>
+                  <span class="section-heading-lower">{{this.currentCategory}}</span>
+                </h2>
+                <br>
+                <div class="card-deck row">
+                  <div class="card-block" *ngFor="let ingredient of ingredients">
+                    <button class="btn btn-sm button" [ngClass]="{
+                      'btn-meat':ingredient.category === 'meats',
+                      'btn-dairy':ingredient.category === 'dairy',
+                      'btn-veggies':ingredient.category === 'veggies',
+                      'btn-fruits':ingredient.category === 'fruits',
+                      'btn-spices':ingredient.category === 'spices',
+                      'btn-grains':ingredient.category === 'grains'}" (click)="addToPantry(ingredient)" >{{ingredient.name}}</button>
+                    
+                  </div>
                 </div>
               </div>
-
-              <label class="change-category">
+              <label class="change-category ">
                 <button (click)="this.showIngredients=false;" class="btn btn-primary">Back To Categories</button>
               </label>
             </div>

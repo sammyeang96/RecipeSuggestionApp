@@ -6,18 +6,18 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
-  // styleUrls: ['./login-register.component.css']
+  styleUrls: ['./login-register.component.css']
 })
 export class LoginRegisterComponent implements OnInit {
 
   private username: string;
   private password: string;
 
-  private fullName: string;
+  private firstName: string;
+  private lastName: string;
   private newUsername: string;
   private newPassword: string;
   private confirmPassword: string;
-  private newEmail: string;
 
   show = false;
   hidden = true;
@@ -27,7 +27,7 @@ export class LoginRegisterComponent implements OnInit {
     private modalService: NgbModal,
     private route: RouterModule,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
 
   ) { }
 
@@ -40,7 +40,7 @@ export class LoginRegisterComponent implements OnInit {
     if (this.username == null || this.password == null) {
       alert('please enter in something.');
     } else {
-      console.log('printing info... ');
+      console.log('printing info in login-register ');
       console.log(this.username);
       console.log(this.password);
 
@@ -54,7 +54,7 @@ export class LoginRegisterComponent implements OnInit {
 
           if (data != null) {
             this.authService.isLoggedIn = true;
-            this.router.navigate(['userInfo']);
+            // this.router.navigate(['userInfo']);
           }
 
         }
@@ -63,46 +63,93 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
+  checkPasswords() {
+    if (this.newPassword !== this.confirmPassword) {
+      alert('passwords do not match');
+      // this.confirmPassword == null;
+      return;
+    } else {
+      this.registerUser();
+    }
+  }
+
   registerUser() {
 
-    if (this.fullName == null || this.newUsername == null || this.newPassword == null || this.confirmPassword == null
-      || this.newEmail == null) {
+    if (
+      this.firstName == null || this.lastName == null || this.newUsername == null
+      || this.newPassword == null || this.confirmPassword == null
+    ) {
       alert('please fill  in all fields');
       this.hidden1 = !this.hidden1;
     } else {
-      console.log('printing info... ');
-      console.log(this.fullName);
-      console.log(this.newUsername);
-      console.log(this.newPassword);
-      console.log(this.confirmPassword);
-      console.log(this.newEmail);
 
       this.hidden = !this.hidden;
       this.show = !this.show;
 
-      this.authService.registerUser(this.fullName, this.newUsername, this.newPassword, this.confirmPassword, this.newEmail).subscribe(
+      
+      this.authService.registerUser(
+
+        this.firstName,
+        this.lastName,
+        this.newUsername,
+        this.newPassword
+
+      ).subscribe(
         data => {
           console.log(data);
           this.authService.loggedInUser = data;
 
           if (data != null) {
-            this.authService.isLoggedIn = true;
-            this.router.navigate(['userInfo']);
+
+            // this.authService.isLoggedIn = true;
+            // this.router.navigate(['userInfo']);
+
+            this.authService.registerUserInfo(
+              this.firstName,
+              this.lastName,
+              this.newUsername,
+              this.newPassword
+            ).subscribe(
+              data2 => {
+                console.log(data2);
+
+                if (data2 != null) {
+                  this.authService.registerUserPantry(
+                    this.newUsername
+                  ).subscribe(
+                    data3 => {
+                      console.log(data3);
+                    }
+                  );
+                }
+
+              }
+            );
           }
 
         }
-
       );
     }
+
   }
 
   dismissModal(any) {
     this.modalService.dismissAll('Cross click');
   }
 
-  testLogin() {
-    console.log('woohooo, the testLogin is working');
-    
-  }
+  getUsersPantry() {
 
+    console.log('printing info in getUsersPantry() ');
+
+    this.authService.login(this.username, this.password).subscribe(
+      data => {
+        console.log(data);
+        this.authService.loggedInUser = data;
+
+        if (data != null) {
+          this.authService.isLoggedIn = true;
+        }
+      }
+    );
+  }
 }

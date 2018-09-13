@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 import { RecipeData } from '../../models/recipe-data';
 
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -19,9 +20,11 @@ export class MenuComponent implements OnInit {
   private search: string;
   hiddenUntilLoggedIn = true;
 
-  constructor(private modalService: NgbModal,
+  constructor(
+    private modalService: NgbModal,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -36,10 +39,17 @@ export class MenuComponent implements OnInit {
         }
       );
     }
+    this.clearData();
   }
-reload(link: string) {
-  this.router.navigate(['/'], {skipLocationChange: true}).then(() => { this.router.navigate([link]); });
-}
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
+  }
+
+  clearData() {
+    
+  this.search = '';
+  }
+
   open() {
     const modalRef = this.modalService.open(LoginComponent);
   }

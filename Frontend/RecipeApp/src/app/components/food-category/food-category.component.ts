@@ -16,6 +16,7 @@ export class FoodCategoryComponent implements OnInit {
   public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
   public ingredient: Ingredient[] = [];
+  categoryColor: string;
 
   public state = 'inavtive';
 
@@ -23,6 +24,15 @@ export class FoodCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.showIngredients = false;
+
+  }
+
+  public sortIngredients() {
+    this.ingredients.sort(function (a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    })
   }
 
   public setCategory = (category) => {
@@ -31,45 +41,50 @@ export class FoodCategoryComponent implements OnInit {
   }
 
   public showCarne() {
-    
     this.ingredients = this.foodService.getMeats();
+    this.sortIngredients();
     this.currentCategory = "meats";
     this.showIngredients = true;
-    // console.log(this.ingredients);
+    this.categoryColor = "btn btn-sm btn-warning"; 
   }
 
   public showDairy() {
     this.ingredients = this.foodService.getDairy();
+    this.sortIngredients();
     this.currentCategory = "dairy";
     this.showIngredients = true;
   }
 
   public showVeggie() {
     this.ingredients = this.foodService.getVeggies();
+    this.sortIngredients();
     this.currentCategory = "veggies";
     this.showIngredients = true;
   }
 
   public showFruit() {
     this.ingredients = this.foodService.getFruits();
+    this.sortIngredients();
     this.currentCategory = "fruits";
     this.showIngredients = true;
   }
 
   public showGrain() {
     this.ingredients = this.foodService.getStarches();
+    this.sortIngredients();
     this.currentCategory = "grains";
     this.showIngredients = true;
   }
 
   public showHerbSpice() {
     this.ingredients = this.foodService.getSpices();
+    this.sortIngredients();
     this.currentCategory = "herbs-spices";
     this.showIngredients = true;
   }
 
   addToPantry(ingredient: Ingredient) {
     this.pantryService.ingredient.push(ingredient);
-    this.ingredients.splice(this.ingredients.indexOf(ingredient,0),1);
+    this.ingredients.splice(this.ingredients.indexOf(ingredient, 0), 1);
   }
 }

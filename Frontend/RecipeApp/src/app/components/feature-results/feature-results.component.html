@@ -1,15 +1,18 @@
 <br>
 <div class="container col-10">
 <div class="row card-group">
-  <div class="col-3 mb-1 mt-1" *ngFor="let r of this.searchAlgorithmService.resultSet">
+  <div class="col-3 mb-1 mt-1" (click)="open(r)" *ngFor="let r of this.searchAlgorithmService.resultSet">
   <div class="card">
     <img class="card-img-top" src="{{r.image}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ r.title }}</h5>
       <p class="card-text">Likes: {{ r.likes }}</p>
       <p class="card-text"> Used Ingredients: {{ r.usedIngredientCount }}</p>
+      <p class="card-text">Missed Ingredients: {{ r.missedIngredientCount }}</p>
+      <button class="btn btn-primary">Details</button>
     </div>
   </div>
 </div>
 </div>
 </div>
+<app-feature-instructions></app-feature-instructions>

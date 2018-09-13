@@ -9,8 +9,8 @@
   height: 40%;
 }
 img{
-  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
-  transition: width .6s;
+  
+  transition: width .3s;
   width: 90%;
 }
 
@@ -19,9 +19,14 @@ img:hover{
   /* margin-bottom: -10px; */
 }
 
+.bg-faded.p-5.rounded.category-view{
+  width: 500px;
+  height: 500px;
+}
+
 .button {
   background-color: #e6a756;
-  -webkit-transition-duration: 0.2s; /* Safari */
+  -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.3s;
   margin-right: 15px;
   margin-top: 15px;
@@ -30,10 +35,37 @@ img:hover{
   box-shadow: 0 12px 16px 0 rgba(85, 77, 62, 0.24),0 17px 50px 0 rgba(126, 106, 65, 0.19);
 }
 
-.change-category {
-  margin-top: 30%;
-  margin-bottom: 10%;
+
+.btn-meat{
+  background: rgb(214, 177, 165);
+
 }
+.btn-veggies{
+  background-color: rgb(247, 255, 233);
+
+}
+.btn-dairy{
+  background-color: rgb(255, 252, 240);
+  /* 848586  */
+
+}
+.btn-fruits{
+  background-color: rgb(255, 251, 255);
+
+}
+.btn-spices{
+  background-color: rgb(233, 211, 205);
+
+}
+.btn-grains{
+  background-color: rgb(207, 187, 177);
+
+}
+
+.change-category {
+  margin-top: 10%;
+  margin-bottom: 0%;
+} 
 
   /* Clear floats after image containers */
 .row::after {
@@ -52,3 +84,12 @@ img:hover{
   .content {
     position: relative;
   }
+
+
+  #category-view{
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 400px;
+    height: 400px
+  }
+
+  
