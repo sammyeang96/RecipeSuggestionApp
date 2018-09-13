@@ -5,6 +5,7 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
 import { FoodCategoryComponent } from '../food-category/food-category.component';
 
 import { RouterModule, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-pantry',
   templateUrl: './pantry.component.html',
@@ -12,7 +13,7 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class PantryComponent implements OnInit {
   ingredient: Ingredient[] = [];
-  constructor(private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
+  constructor( private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
   }
@@ -48,7 +49,9 @@ export class PantryComponent implements OnInit {
     this.foodCategory.ingredients.push(ingredient);
   }
 
-
+  updatePantry() {
+this.authService.updateUserPantry()
+  }
 
 
 }

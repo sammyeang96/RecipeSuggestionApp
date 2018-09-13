@@ -109,9 +109,21 @@ export class AuthService {
     console.log(username);
 
     return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/retrieve',
-    {
-      username: username
-    });
+      {
+        username: username
+      });
+  }
+
+  updateUserPantry(id: number, theIngredients: string) {
+    console.log('sending info to /pantry/update ');
+    console.log(id);
+    console.log(theIngredients);
+
+    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/update',
+      {
+        id: id,
+        ingredients: theIngredients
+      });
   }
 
 }
