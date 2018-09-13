@@ -43,14 +43,10 @@ public class UserLoginController {
 	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword().equals(a.getPassword())) {
-<<<<<<< HEAD
+
 			System.out.println("Login Success");
 			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
-			
-=======
-			System.out.println(a);
-			return new ResponseEntity<UserLogin>(a, HttpStatus.OK);
->>>>>>> staging
+
 		}
 		else {
 			System.out.println("User Not found");

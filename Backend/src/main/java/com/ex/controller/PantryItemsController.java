@@ -39,14 +39,11 @@ public class PantryItemsController {
 	@RequestMapping(value="/add", method=RequestMethod.POST,
 		consumes=MediaType.APPLICATION_JSON_VALUE,
 		produces=MediaType.APPLICATION_JSON_VALUE)
-<<<<<<< HEAD
-	public ResponseEntity<List<PantryItems>> getAllData(@RequestBody UserPantry a) {
-		List<PantryItems> list = pantryItemsService.getAllData(a.getId());
-		
-=======
+
+	
 	public ResponseEntity<List<PantryItems>> addPantryItems(@RequestBody List<PantryItems> a) {
 		List<PantryItems> list = pantryItemsService.addData(a);
->>>>>>> staging
+
 		return new ResponseEntity<List<PantryItems>>(list, HttpStatus.OK);
 	}
 	
