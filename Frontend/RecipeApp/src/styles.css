@@ -219,7 +219,7 @@ body {
   
   .list-hours .list-hours-item.today {
     font-weight: bold;
-    color: #e6a756;
+    color: #af8349;
   }
   
   @media (min-width: 992px) {
@@ -262,3 +262,4 @@ body {
   .font-weight-light {
     font-weight: 100 !important;
   }
+  

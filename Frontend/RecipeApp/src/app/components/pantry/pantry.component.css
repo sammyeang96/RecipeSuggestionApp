@@ -8,3 +8,29 @@
   .button:hover {
     box-shadow: 0 12px 16px 0 rgba(85, 77, 62, 0.24),0 17px 50px 0 rgba(126, 106, 65, 0.19);
   }
+
+  .btn-meat{
+    background: rgb(214, 177, 165);
+  
+  }
+  .btn-veggies{
+    background-color: rgb(247, 255, 233);
+  
+  }
+  .btn-dairy{
+    background-color: rgb(255, 252, 240);
+    /* 848586  */
+  
+  }
+  .btn-fruits{
+    background-color: rgb(255, 251, 255);
+  
+  }
+  .btn-spices{
+    background-color: rgb(233, 211, 205);
+  
+  }
+  .btn-grains{
+    background-color: rgb(207, 187, 177);
+  
+  }

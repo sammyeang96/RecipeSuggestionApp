@@ -26,9 +26,9 @@
               placeholder="password..." [(ngModel)]='password'>
           </div>
 
-          <div [hidden]="hidden" id="loginErrorMsg" class="alert alert-error hide">Wrong username/password!</div>
+          <!-- <div [hidden]="hidden" id="loginErrorMsg" class="alert alert-error hide">Wrong username/password!</div> -->
 
-          <button type="submit" class="btn btn-success btn-block" (click)="login()">Login</button>
+          <button type="submit" class="btn btn-success btn-block" (click)="login1()"(click)="dismissModal('Close click')">Login</button>
           
         </div>
       </div>
