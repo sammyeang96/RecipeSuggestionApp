@@ -61,7 +61,6 @@ export class PantryComponent implements OnInit {
     }
     this.pantryService.userPantryString = this.databasestring;
     this.authService.userPantryString = this.databasestring;
-    // this.unpackUserPantryArray();
   }
   unpackUserPantryArray() {
     const array = this.authService.dataObject.ingredients.split(',');
