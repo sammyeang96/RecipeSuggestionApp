@@ -1,5 +1,7 @@
 	package com.ex.repositories;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
@@ -26,5 +28,11 @@ public class UserLoginRepositoryImp1 implements UserLoginRepository {
 	public UserLogin getByusername(String username) {
 		UserLogin result = (UserLogin) sf.getCurrentSession().get(UserLogin.class, username);
 		return result;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserLogin> getAll() {
+		return sf.getCurrentSession().createCriteria(UserLogin.class).list();
 	}
 }
