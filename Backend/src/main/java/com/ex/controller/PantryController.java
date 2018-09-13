@@ -16,12 +16,7 @@ import com.ex.services.PantryService;
 
 @RestController
 @RequestMapping("/pantry")
-<<<<<<< HEAD:Backend/src/main/java/com/ex/controller/PantryController.java
 public class PantryController {
-=======
-@CrossOrigin(origins = "*")
-public class UserPantryController {
->>>>>>> staging:Backend/src/main/java/com/ex/controller/UserPantryController.java
 	
 	@Autowired
 	private PantryService userPantryService;
