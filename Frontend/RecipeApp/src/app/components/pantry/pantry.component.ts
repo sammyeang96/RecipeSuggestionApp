@@ -43,37 +43,14 @@ export class PantryComponent implements OnInit {
       this.searchAlgorithmService.resultSet = data;
       console.log(data);
     } );
+    this.turnArrayToString();
     this.router.navigate(['feature']);
-    
   }
 
   removeItemFromPantry(ingredient: Ingredient) {
     this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
     this.foodCategory.ingredients.push(ingredient);
   }
-
-  addIdtoNewPantryArrayToBeSentToServer() {
-    // this.userPantry = [];
-    // return this.pantryService.ingredient.forEach(function (ingr) {
-    //   // this.stringForDatabase += ingr.id;
-    //   console.log("t+");
-
-    //   this.userPantry = this.userPantry.push(ingr.id);
-    //   console.log(this.userPantry);
-    //   // console.log(this.stringForDatabase);
-    //   // userPantry.forEach(function (ident) {
-    //   // }
-    //   // )
-    //   return this.userPantry;
-    // });54
-    
-  }
-
-    // for(let userPantry of this.pantryService.ingredient) {
-      
-    // }
-  
-    
 
   turnArrayToString() {
     this.databasestring = String (this.pantryService.ingredient[0].id);
