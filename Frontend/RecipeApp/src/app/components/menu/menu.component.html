@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <!-- <a class="navbar-brand text-uppercase text-expanded font-weight-bold " href="#">RecipeApp</a> -->
+<!-- LOGGED IN -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" *ngIf="authService.isLoggedIn">
   <a class="icon" routerLink="/home">
     <img src="./../../../assets/images/bowl.png" width="200%" hspace="50">
   </a>
@@ -9,10 +9,9 @@
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <!-- <a class="navbar-brand text-uppercase text-expanded font-weight-bold " href="#">Recipe App</a> -->
+    <!-- MENU WHEN USER LOGGED IN -->
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
       <ul class="navbar-nav mx-auto">
-        <!-- <li class="nav-item px-lg-4">                         <a class="nav-link text-uppercase text-expanded" routerLink="#">Recipe App</a>                     </li> -->
         <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" routerLink="/popular">Joke</a>
         </li>
@@ -28,11 +27,46 @@
         <button class="btn btn-beige ml-2 mt-2" (click)="searchRecipe()">
           <span class="oi oi-zoom-out"></span>
         </button>
-        <button (click)="openLoginRegisterModal()" class="btn btn-primary ml-2 mt-2 ">Log in/Register</button>
-        <button [hidden]="hiddenUntilLoggedIn" class="btn btn-primary ml-2 mt-2" routerLink="/userInfo">Account
+        <button (click)="logout1()" class="btn btn-primary ml-2 mt-2 ">Logout</button>
+        <button [hidden]="loggedIn" class="btn btn-primary ml-2 mt-2" routerLink="/userInfo">Account
           <span class="oi oi-person"></span>
         </button>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- LOGGED OUT -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" *ngIf="!authService.isLoggedIn">
+    <a class="icon" routerLink="/home">
+      <img src="./../../../assets/images/bowl.png" width="200%" hspace="50">
+    </a>
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--MENU WHEN USER IN LOGGED OUT -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" routerLink="/popular">Joke</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" routerLink="/categories">Add Ingredients</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav col-4 offset-3">
+          <input type="text" placeholder="Search our awesome recipes" [(ngModel)]="search" class="form-control col-9 mt-2">
+          <button class="btn btn-beige ml-2 mt-2" (click)="searchRecipe()">
+            <span class="oi oi-zoom-out"></span>
+          </button>
+          <button (click)="openLoginRegisterModal()" class="btn btn-primary ml-2 mt-2 ">Log in/Register</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
