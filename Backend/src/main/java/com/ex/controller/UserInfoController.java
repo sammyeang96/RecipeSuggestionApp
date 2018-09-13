@@ -15,12 +15,7 @@ import com.ex.services.UserInfoService;
 
 @RestController
 @RequestMapping("/info")
-<<<<<<< HEAD:Backend/src/main/java/com/ex/controller/UserInfoController.java
 public class UserInfoController {
-=======
-@CrossOrigin(origins = "*")
-public class UserInformationController {
->>>>>>> staging:Backend/src/main/java/com/ex/controller/UserInformationController.java
 
 	@Autowired
 	private UserInfoService userInformationService;
