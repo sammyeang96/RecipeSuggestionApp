@@ -5,6 +5,7 @@ import { SearchAlgorithmService } from '../../services/search-algorithm.service'
 import { FoodCategoryComponent } from '../food-category/food-category.component';
 import { AuthService } from '../../services/auth.service';
 import { RouterModule, Router } from '@angular/router';
+import { HandleArraysService } from '../../services/handle-arrays.service';
 @Component({
   selector: 'app-pantry',
   templateUrl: './pantry.component.html',
@@ -13,9 +14,10 @@ import { RouterModule, Router } from '@angular/router';
 export class PantryComponent implements OnInit {
   ingredient: Ingredient[] = [];
   stringForDatabase: string;
-  userPantry: number[];
+  userPantry: number[] = [];
   private databasestring: string = "";
-  constructor(private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
+  userPantryIngredients: Ingredient[] = [];
+  constructor( private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
   }
@@ -41,7 +43,6 @@ export class PantryComponent implements OnInit {
     this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
       data => {
       this.searchAlgorithmService.resultSet = data;
-      console.log(data);
     } );
     this.turnArrayToString();
     this.router.navigate(['feature']);
@@ -57,12 +58,23 @@ export class PantryComponent implements OnInit {
     for( let i = 1; i < this.pantryService.ingredient.length; i++) {
         this.databasestring = String (this.databasestring + "," + this.pantryService.ingredient[i].id);
     }
-    console.log(this.databasestring);
     this.pantryService.userPantryString = this.databasestring;
-    console.log(this.pantryService.userPantryString);
     this.authService.userPantryString = this.databasestring;
-    console.log(this.authService.userPantryString);
+    this.unpackUserPantryArray();
+  }
+  unpackUserPantryArray() {
+    const array = this.authService.userPantryString.split(',');
+    for (let i = 0; i < array.length; i++) {
+        this.userPantry.push(Number(array[i]));
+    }
+    console.log(this.userPantry);
+    this.findPantry();
   }
 
-
+  findPantry() {
+    for( let i = 0; i < this.userPantry.length; i++) {
+    this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantry[i]));
+    }
+    console.log(this.userPantryIngredients);
+  }
 }
