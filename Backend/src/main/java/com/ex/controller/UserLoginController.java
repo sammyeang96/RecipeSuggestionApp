@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import com.ex.services.UserLoginService;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin(origins = "*")
 public class UserLoginController {
 	
 	@Autowired
@@ -45,7 +47,8 @@ public class UserLoginController {
 		try {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword().equals(a.getPassword())) {
-			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
+			System.out.println(a);
+			return new ResponseEntity<UserLogin>(a, HttpStatus.OK);
 		}
 		else {
 			return new ResponseEntity<UserLogin>(HttpStatus.NOT_FOUND);

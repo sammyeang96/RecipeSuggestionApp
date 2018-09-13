@@ -1,2 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Joel DeVos\project2\RecipeSuggestionApp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3940600246.index

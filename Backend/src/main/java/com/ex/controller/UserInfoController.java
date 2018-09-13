@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +15,12 @@ import com.ex.services.UserInfoService;
 
 @RestController
 @RequestMapping("/info")
+<<<<<<< HEAD:Backend/src/main/java/com/ex/controller/UserInfoController.java
 public class UserInfoController {
+=======
+@CrossOrigin(origins = "*")
+public class UserInformationController {
+>>>>>>> staging:Backend/src/main/java/com/ex/controller/UserInformationController.java
 
 	@Autowired
 	private UserInfoService userInformationService;

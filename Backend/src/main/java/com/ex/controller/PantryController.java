@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,12 @@ import com.ex.services.PantryService;
 
 @RestController
 @RequestMapping("/pantry")
+<<<<<<< HEAD:Backend/src/main/java/com/ex/controller/PantryController.java
 public class PantryController {
+=======
+@CrossOrigin(origins = "*")
+public class UserPantryController {
+>>>>>>> staging:Backend/src/main/java/com/ex/controller/UserPantryController.java
 	
 	@Autowired
 	private PantryService userPantryService;

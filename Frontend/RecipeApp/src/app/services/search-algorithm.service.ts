@@ -13,6 +13,7 @@ export class SearchAlgorithmService {
   private searchUrl: string = "";
   private selectedPantry: Ingredient[];
    resultSet: FeatureResults[];
+  private joke: string;
 
 
   // randomInt(min, max) {
@@ -52,7 +53,7 @@ export class SearchAlgorithmService {
       ,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
-      })
+      });
   }
 
   //Retrives a JSON recipe with URL to instructions
@@ -60,14 +61,14 @@ export class SearchAlgorithmService {
     return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/`+ id + `/analyzedInstructions`,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
-      })
+      });
   }
 
   searchJoke() {
-    return this.http.get<any>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random`,
+    return this.http.get<{text: string}>(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/trivia/random`,
       {
         headers: new HttpHeaders().set('X-Mashape-Key', 'qV5bkLva8Dmsh883r8J9jjNcnaKUp1NtCmejsnVMLeOFnhI9zW')
-      })
+      });
   }
 
 }
