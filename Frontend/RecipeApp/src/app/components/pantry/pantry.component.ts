@@ -22,14 +22,14 @@ export class PantryComponent implements OnInit {
       if (a.name < b.name) return -1;
       if (a.name > b.name) return 1;
       return 0;
-    })
+    });
   }
   public sortIngredientsType( arr:Ingredient[]) {
     arr.sort(function (a, b) {
       if (a.name < b.name) return -1;
       if (a.name > b.name) return 1;
       return 0;
-    })
+    });
     return arr;
   }
 
@@ -48,6 +48,11 @@ export class PantryComponent implements OnInit {
     this.foodCategory.ingredients.push(ingredient);
   }
 
+  addIdtoNewPantryArrayToBeSentToServer() {
+    for each (let id in this.ingredient) {
+      
+    }
+  }
 
 
 
