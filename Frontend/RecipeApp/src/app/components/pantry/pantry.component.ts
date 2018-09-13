@@ -31,7 +31,6 @@ export class PantryComponent implements OnInit {
     });
   }
 
-
   public sortIngredientsType() {
     this.ingredient.sort(function (a, b) {
       if (a.category < b.category) return -1;
@@ -65,6 +64,7 @@ export class PantryComponent implements OnInit {
     this.pantryService.userPantryString = this.databasestring;
     this.authService.userPantryString = this.databasestring;
   }
+  
   unpackUserPantryArray() {
     const array = this.authService.dataObject.ingredients.split(',');
     for (let i = 0; i < array.length; i++) {

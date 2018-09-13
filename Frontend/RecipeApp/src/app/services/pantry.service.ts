@@ -14,9 +14,35 @@ export class PantryService {
 
   userPantryIds: Number[] = [];
 
+  dummypantry: string;
+  dummyuserPantry: number[] = [];
+  dummyuserPantryIngredients: Ingredient[] = [];
 
   constructor(private authService: AuthService, private handleArrays: HandleArraysService) { }
 
+  findDummyPantry() {
+    for (let i = 0; i < this.dummyuserPantry.length; i++) {
+      this.dummyuserPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.dummyuserPantry[i]));
+    }
+    console.log(this.dummyuserPantryIngredients);
+  }
+
+  unpackDummyUserPantryArray() {
+    const array = this.dummypantry.split(',');
+    for (let i = 0; i < array.length; i++) {
+      this.dummyuserPantry.push(Number(array[i]));
+    }
+    console.log(this.dummyuserPantry);
+    this.findPantry();
+  }
+
+  getDummyPantry() {
+    this.authService.getDummyPantryItems().subscribe(
+      data => {
+        console.log(data);
+        this.dummypantry = data;
+      });
+  }
 
   unpackUserPantryArray() {
     const array = this.authService.dataObject.ingredients.split(',');
@@ -33,6 +59,5 @@ export class PantryService {
     }
     console.log(this.userPantryIngredients);
   }
-
 
 }

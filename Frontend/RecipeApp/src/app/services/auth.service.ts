@@ -32,14 +32,6 @@ export class AuthService {
     return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
-  loginTrueOrFalse() {
-    if(this.isLoggedIn == false){
-      return false;
-    } 
-    else {
-      return true;
-    }
-  }
   logout1(){
     this.isLoggedIn = false;
   }
@@ -96,12 +88,15 @@ export class AuthService {
   getUsersPantryItems(id: number) {
     console.log('sending info to /items/retrieve ');
     console.log(id);
-  
     return this.http.post<User>('http://localhost:8081/Backend/items/retrieve',
     {
       id: id
     });
+  }
 
+  getDummyPantryItems() {
+    console.log('retreiving dummy data . . . . .');
+    return this.http.get<string>('http://localhost:3000/pantry');
   }
 
   // returns pantry id when given a username
