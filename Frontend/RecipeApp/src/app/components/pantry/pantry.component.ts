@@ -20,6 +20,7 @@ export class PantryComponent implements OnInit {
   constructor( private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
+    this.unpackUserPantryArray();
   }
 // to be used to sort the pantry items
   public sortIngredients() {
@@ -60,10 +61,10 @@ export class PantryComponent implements OnInit {
     }
     this.pantryService.userPantryString = this.databasestring;
     this.authService.userPantryString = this.databasestring;
-    this.unpackUserPantryArray();
+    // this.unpackUserPantryArray();
   }
   unpackUserPantryArray() {
-    const array = this.authService.userPantryString.split(',');
+    const array = this.authService.dataObject.ingredients.split(',');
     for (let i = 0; i < array.length; i++) {
         this.userPantry.push(Number(array[i]));
     }
