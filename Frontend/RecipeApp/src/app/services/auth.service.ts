@@ -25,8 +25,8 @@ export class AuthService {
   loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   userPantryString: string;
-  testId = 62;
-  testIngredients = '12, 23, 34, 45, 56';
+  theOldIngredients: string;
+  theNewIngredients: string;
   constructor(
     private http: HttpClient,
   ) { }
@@ -124,7 +124,7 @@ export class AuthService {
     console.log(this.pantryId);
     console.log('printing mediumIngredientString:');
     console.log(mediumIngredientString);
-    this.updateUserPantry(this.pantryId, mediumIngredientString);
+    return this.updateUserPantry(this.pantryId, mediumIngredientString);
   }
 
   updateUserPantry(id: number, theIngredients: string) {
@@ -134,26 +134,12 @@ export class AuthService {
     console.log('theIngredients is:');
     console.log(theIngredients);
 
-   
+    this.theNewIngredients = this.theOldIngredients + ',' + theIngredients;
 
     return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/update',
       {
-        id: this.testId,
-        ingredients: this.testIngredients
-      });
-  }
-
-  testupdateUserPantry() {
-    console.log('testing at /pantry/update ');
-    console.log('id is:');
-    console.log(this.testId);
-    console.log('theIngredients is:');
-    console.log(this.testIngredients);
-
-    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/update',
-      {
-        id: this.testId,
-        ingredients: this.testIngredients
+        id: id,
+        ingredients: this.theNewIngredients
       });
   }
 

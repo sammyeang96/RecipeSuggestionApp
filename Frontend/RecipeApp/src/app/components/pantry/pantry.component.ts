@@ -40,6 +40,7 @@ export class PantryComponent implements OnInit {
   }
 
   addSelectionToArray() {
+    console.log('in addSelectionToArray');
     this.ingredient = this.pantryService.ingredient;
     this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
       data => {
@@ -52,6 +53,7 @@ export class PantryComponent implements OnInit {
   removeItemFromPantry(ingredient: Ingredient) {
     this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
     this.foodCategory.ingredients.push(ingredient);
+    console.log('in removeItemFromPantry');
   }
 
   updatePantry(databasestring) {
@@ -63,9 +65,10 @@ export class PantryComponent implements OnInit {
     this.turnArrayToString();
 
     databasestring = this.databasestring;
+    console.log('in updatePantry');
     console.log('printing stringForDatabase inside pantry component: ');
     console.log(databasestring);
-    this.authService.intermediaryFunctionForUpdatePantry(databasestring);
+    this.authService.intermediaryFunctionForUpdatePantry(databasestring).subscribe(data => console.log(data));
   }
 
 
@@ -76,6 +79,7 @@ export class PantryComponent implements OnInit {
     }
     this.pantryService.userPantryString = this.databasestring;
     this.authService.userPantryString = this.databasestring;
+    console.log('in turnArrayToString');
     console.log('printing databasestring:');
     console.log(this.databasestring);
     // this.unpackUserPantryArray();
@@ -85,6 +89,7 @@ export class PantryComponent implements OnInit {
     for (let i = 0; i < array.length; i++) {
         this.userPantry.push(Number(array[i]));
     }
+    console.log('in unpackUserPantryArray');
     console.log(this.userPantry);
     this.findPantry();
   }
@@ -93,12 +98,8 @@ export class PantryComponent implements OnInit {
     for( let i = 0; i < this.userPantry.length; i++) {
     this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantry[i]));
     }
+    console.log('in findPantry');
     console.log(this.userPantryIngredients);
   }
-
-testUpdate() {
-  this.authService.testupdateUserPantry();
-}
-
 
   }

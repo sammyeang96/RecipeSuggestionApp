@@ -72,8 +72,8 @@ export class LoginRegisterComponent implements OnInit {
                 console.log('printing pantryid: ');
                 console.log(pantryid);
                 this.authService.dataObject = pantryid;
+                this.authService.theOldIngredients = pantryid.ingredients;
                 if (pantryid != null) {
-                  console.log("good")
                 }
               }
             );
