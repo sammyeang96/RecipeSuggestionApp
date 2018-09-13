@@ -44,7 +44,6 @@
                 <br>
                 <div class="card-deck row">
                   <div class="card-block" *ngFor="let ingredient of ingredients">
-                    <!-- <button class="btn btn-sm button"  (click)="addToPantry(ingredient)">{{ingredient.name}}</button> -->
                     <button class="btn btn-sm button" [ngClass]="{
                       'btn-meat':ingredient.category === 'meats',
                       'btn-dairy':ingredient.category === 'dairy',
