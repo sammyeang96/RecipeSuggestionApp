@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import com.ex.services.UserLoginService;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin(origins = "*")
 public class UserLoginController {
 	
 	@Autowired
@@ -31,6 +33,7 @@ public class UserLoginController {
 		else {
 			return new ResponseEntity<UserLogin>(a, HttpStatus.CREATED);
 		}
+
 	}
 	
 	// Takes in UserLogin object (username, password) and returns it if found and null if not found
@@ -40,9 +43,14 @@ public class UserLoginController {
 	public ResponseEntity<UserLogin> getUserLogin(@RequestBody UserLogin a) {
 		UserLogin result = userLoginService.getByUsername(a.getUsername());
 		if (result.getPassword().equals(a.getPassword())) {
+<<<<<<< HEAD
 			System.out.println("Login Success");
 			return new ResponseEntity<UserLogin>(a, HttpStatus.FOUND);
 			
+=======
+			System.out.println(a);
+			return new ResponseEntity<UserLogin>(a, HttpStatus.OK);
+>>>>>>> staging
 		}
 		else {
 			System.out.println("User Not found");
