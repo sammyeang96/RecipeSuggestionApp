@@ -17,4 +17,12 @@ public class PantryItemsService {
 	public List<PantryItems> getAllData(int pantryId) {
 		return pantryItemsRepo.getAllData(pantryId);
 	}
+
+	public PantryItems deleteItem(int id) {
+		return pantryItemsRepo.deleteItem(id);
+	}
+
+	public List<PantryItems> addData(List<PantryItems> a) {
+		return pantryItemsRepo.addData(a);
+	}
 }
