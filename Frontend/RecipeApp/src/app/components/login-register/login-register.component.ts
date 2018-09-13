@@ -55,9 +55,6 @@ export class LoginRegisterComponent implements OnInit {
     if (this.username == null || this.password == null) {
       alert('please enter in something.');
     } else {
-      console.log('printing info in login-register ');
-      console.log(this.username);
-      console.log(this.password);
 
       this.hidden = !this.hidden;
       this.show = !this.show;
@@ -76,15 +73,7 @@ export class LoginRegisterComponent implements OnInit {
                 console.log(pantryid);
                 this.authService.dataObject = pantryid;
                 if (pantryid != null) {
-                  this.authService.getUsersPantryItems(pantryid.id).subscribe(
-                    pantryitems => {
-                      console.log('printing pantry items: ');
-                      console.log(pantryitems);
-                      console.log('printing pantryid.pantryid: ');
-                      console.log(pantryid.id);
-
-                    }
-                  );
+                  console.log("good")
                 }
               }
             );
@@ -120,7 +109,7 @@ export class LoginRegisterComponent implements OnInit {
       this.hidden = !this.hidden;
       this.show = !this.show;
 
-
+      // SENDING NEW INFO TO BE REGISTERED IN THE USER_LOGIN TABLE
       this.authService.registerUser(
 
         this.firstName,
@@ -138,6 +127,7 @@ export class LoginRegisterComponent implements OnInit {
             // this.authService.isLoggedIn = true;
             // this.router.navigate(['userInfo']);
 
+            // SENDING NEW INFO TO BE REGISTERED IN THE USER_INFO TABLE
             this.authService.registerUserInfo(
               this.firstName,
               this.lastName,
@@ -148,6 +138,8 @@ export class LoginRegisterComponent implements OnInit {
                 console.log(data2);
 
                 if (data2 != null) {
+
+                  // MAKING A PANTRY FOR NEW USER
                   this.authService.registerUserPantry(
                     this.newUsername
                   ).subscribe(

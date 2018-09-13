@@ -16,6 +16,7 @@ import com.ex.services.PantryService;
 
 @RestController
 @RequestMapping("/pantry")
+@CrossOrigin(origins = "*")
 public class PantryController {
 	
 	@Autowired
