@@ -39,10 +39,17 @@ export class MenuComponent implements OnInit {
         }
       );
     }
+    this.clearData();
   }
-reload(link: string) {
-  this.router.navigate(['/'], {skipLocationChange: true}).then(() => { this.router.navigate([link]); });
-}
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
+  }
+
+  clearData() {
+    
+  this.search = '';
+  }
+
   open() {
     const modalRef = this.modalService.open(LoginComponent);
   }
