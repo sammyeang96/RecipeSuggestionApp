@@ -33,7 +33,10 @@ INDEX VERSION 1.131+C:\mm\1807Jul30Java\RecipeSuggestionApp\.metadata\.plugins\o
 2663043158.index
 2364364085.index
 441346562.index
+<<<<<<< HEAD
 3130988147.index
+=======
+>>>>>>> staging
 4284348706.index
 890887124.index
 392610275.index
