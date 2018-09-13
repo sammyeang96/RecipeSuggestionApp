@@ -20,6 +20,7 @@ export class AuthService {
   loggedInUser: User;
   isLoggedIn: boolean;
   allPantryItems: Ingredient[];
+  userPantryString: string;
   constructor(
     private http: HttpClient,
   ) { }
