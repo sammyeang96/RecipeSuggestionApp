@@ -54,6 +54,7 @@ export class FeatureInstructionsComponent implements OnInit {
   }
   close() {
     this.steps = null;
+    console.log("this should be null now")
     this.modalService.dismissAll();
   }
 }
