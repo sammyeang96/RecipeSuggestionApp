@@ -17,15 +17,11 @@ import { HandleArraysService } from '../../services/handle-arrays.service';
 })
 export class PantryComponent implements OnInit {
   ingredient: Ingredient[] = [];
-<<<<<<< HEAD
-  constructor( private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
-=======
   stringForDatabase: string;
   userPantry: number[] = [];
   private databasestring: string = "";
   userPantryIngredients: Ingredient[] = [];
-  constructor( private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
->>>>>>> 065aeba4d0b34cb4ac59da8d418af63b351ce491
+  constructor( private authService: AuthService, private handleArrays: HandleArraysService, private authService: AuthService, private foodCategory: FoodCategoryComponent, private router: Router, private pantryService: PantryService, private searchAlgorithmService: SearchAlgorithmService ) { }
 
   ngOnInit() {
     this.unpackUserPantryArray();
@@ -62,13 +58,11 @@ export class PantryComponent implements OnInit {
     this.foodCategory.ingredients.push(ingredient);
   }
 
-<<<<<<< HEAD
   updatePantry() {
 this.authService.updateUserPantry()
   }
 
 
-=======
   turnArrayToString() {
     this.databasestring = String (this.pantryService.ingredient[0].id);
     for( let i = 1; i < this.pantryService.ingredient.length; i++) {
@@ -93,5 +87,4 @@ this.authService.updateUserPantry()
     }
     console.log(this.userPantryIngredients);
   }
->>>>>>> 065aeba4d0b34cb4ac59da8d418af63b351ce491
 }
