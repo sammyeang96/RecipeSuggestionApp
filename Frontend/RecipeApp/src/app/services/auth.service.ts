@@ -85,7 +85,7 @@ export class AuthService {
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/create',
       {
         username: { username: newUsername },
-        ingredients: 1
+        ingredients: 9000
       });
   }
 
@@ -129,7 +129,7 @@ export class AuthService {
     console.log(theIngredients);
 
     this.theNewIngredients = theIngredients;
-    
+
     console.log('theNewIngredients is:');
     console.log(this.theNewIngredients);
 
