@@ -1,5 +1,7 @@
 package com.ex.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -56,6 +58,12 @@ public class UserLoginController {
 		} catch (NullPointerException e) {
 			return null;
 		}
-
+	}
+	
+	@RequestMapping(value="/all", method=RequestMethod.GET,
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<UserLogin>> getAll() {
+		List<UserLogin> list = userLoginService.getAll();
+		return new ResponseEntity<List<UserLogin>>(list, HttpStatus.OK);
 	}
 }

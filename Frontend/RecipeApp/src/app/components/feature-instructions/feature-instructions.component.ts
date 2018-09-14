@@ -26,14 +26,25 @@ export class FeatureInstructionsComponent implements OnInit {
   ngOnInit() {
   }
 
+  // private dummysteps: StepsData = steps:[ {1: number,"Finely grate the zest from the lemon, then cut" : string}];
+
+
   open(results: FeatureResults) {
     console.log(results);
+
     this.instructions = results;
     this.modalService.open(this.content);
     this.searchAlgorithmService.searchRecipeInstructionById(results.id).subscribe(
       data => {
         console.log(data);
-        this.steps = data[0].steps;
+        if (data.length == 0) {
+          console.log("No available instructions")
+        }
+        else {
+          
+          this.steps = data[0].steps;
+
+        }
 
         // results.steps = data;
         // console.log(data);
@@ -42,6 +53,7 @@ export class FeatureInstructionsComponent implements OnInit {
     // this.instructions.steps = this.steps;
   }
   close() {
+    this.steps = null;
     this.modalService.dismissAll();
   }
 }
