@@ -54,6 +54,7 @@ export class LoginRegisterComponent implements OnInit {
 
           if (user != null) {
             this.authService.isLoggedIn = true;
+            this.authService.notLoggedIn = false;
             // this.router.navigate(['userInfo']);
             this.authService.getPantryByUsername(user.username).subscribe(
               pantryid => {

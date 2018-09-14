@@ -19,9 +19,10 @@ export class PantryService {
 
   unpackUserPantryArray() {
     const array = this.authService.dataObject.ingredients.split(',');
-    if (array[0] === '9000'){
+    if (array[0] === '9000') {
       array.splice(0, 1);
     }
+    this.userPantryIngredientIds = []; // change here
     for (let i = 0; i < array.length; i++) {
       this.userPantryIngredientIds.push(Number(array[i]));
     }
@@ -31,8 +32,13 @@ export class PantryService {
   }
 
   findPantry() {
+    console.log(this.userPantryIngredients);
+    this.userPantryIngredients = [];
     for (let i = 0; i < this.userPantryIngredientIds.length; i++) {
-      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
+      
+     
+      
+     this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
     }
     console.log(this.userPantryIngredients);
   }

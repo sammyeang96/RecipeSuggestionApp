@@ -9,6 +9,7 @@ import { User } from '../models/User.model';
 import { MenuComponent } from '../components/menu/menu.component';
 import { Ingredient } from '../models/Ingredient.model';
 import { DataObject } from '../models/dataobject.model';
+import { Router } from '../../../node_modules/@angular/router';
 
 
 @Injectable({
@@ -21,7 +22,8 @@ export class AuthService {
   recipe: RecipeData;
   recipes: Recipe[];
   loggedInUser: User;
-  isLoggedIn: boolean;
+  isLoggedIn = false;
+  notLoggedIn = true;
   loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   userPantryString: string;
@@ -29,6 +31,7 @@ export class AuthService {
   theNewIngredients: string;
   constructor(
     private http: HttpClient,
+    private router: Router
   ) { }
 
   searchRecipes(search: string) {
@@ -36,8 +39,15 @@ export class AuthService {
     (`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
-  logout1(){
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
+  }
+
+  logout1() {
     this.isLoggedIn = false;
+    this.theOldIngredients = null;
+    this.theNewIngredients = null;
+    this.reload('home');
   }
 
   login(username: string, password: string) {

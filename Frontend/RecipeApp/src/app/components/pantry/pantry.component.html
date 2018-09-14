@@ -19,8 +19,8 @@
             </div>
             <br>
             <hr>
-            <button class="btn btn-primary" (click)="addSelectionToArray()">Submit</button>
-            <button class="btn btn-primary" (click)="updatePantry()">Update</button>
+            <button class="btn btn-primary" *ngIf="this.authService.notLoggedIn" (click)="addSelectionToArray()">Check for Recipes!</button>
+            <button class="btn btn-primary" *ngIf="this.authService.isLoggedIn" (click)="updatePantry()" (click)="addSelectionToArray()">Update</button>
         </div>
     </section>
 </div>
