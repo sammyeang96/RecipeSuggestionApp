@@ -51,7 +51,7 @@ export class AuthService {
     console.log('sending info to /login/validate ');
     console.log(username);
     console.log(password);
-    return this.http.post<User>('http://localhost:8081/Backend/login/validate',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/validate',
       {
         username: username,
         password: password
@@ -63,7 +63,7 @@ export class AuthService {
     console.log('sending info to /login/create ');
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost:8081/Backend/login/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/create',
       {
         username: newUsername,
         password: newPassword
@@ -76,7 +76,7 @@ export class AuthService {
     console.log(firstName);
     console.log(lastName);
     console.log(newUsername);
-    return this.http.post<User>('http://localhost:8081/Backend/info/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/info/create',
       {
         firstname: firstName,
         lastname: lastName,
@@ -89,7 +89,7 @@ export class AuthService {
   registerUserPantry(newUsername: string) {
     console.log('sending info to /pantry/create ');
     console.log(newUsername);
-    return this.http.post<User>('http://localhost:8081/Backend/pantry/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/create',
       {
         username: { username: newUsername }
       });
@@ -100,7 +100,7 @@ export class AuthService {
     console.log('sending info to /items/retrieve ');
     console.log(id);
   
-    return this.http.post<User>('http://localhost:8081/Backend/items/retrieve',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/items/retrieve',
     {
       id: id
     });
@@ -112,7 +112,7 @@ export class AuthService {
     console.log('sending info to /pantry/retrieve ');
     console.log(username);
 
-    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/retrieve',
+    return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/retrieve',
     {
       username: username
     });
@@ -136,7 +136,7 @@ export class AuthService {
 
     this.theNewIngredients = this.theOldIngredients + ',' + theIngredients;
 
-    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/update',
+    return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/update',
       {
         id: id,
         ingredients: this.theNewIngredients

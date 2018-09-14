@@ -78,6 +78,9 @@ export class LoginRegisterComponent implements OnInit {
                     console.log('printing ingredients before setting null to empty string:');
                     this.authService.theOldIngredients = '';
                   }
+                  else if (pantryid.ingredients === ','){
+                    this.authService.theOldIngredients = '';
+                  }
                 }
               }
             );
