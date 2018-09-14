@@ -78,8 +78,8 @@ export class PantryComponent implements OnInit {
     this.authService.userPantryString = this.databasestring;
   }
   unpackUserPantryArray() {
-    console.log("starting parse");
-    const array = this.authService.dataObject.ingredients.split(',');
+    const array = this.authService.dataObject.ingredients.substring(1, this.authService.dataObject.ingredients.length).split(',');
+    console.log(array);
     for (let i = 0; i < array.length; i++) {
         this.userPantry.push(Number(array[i]));
     }
