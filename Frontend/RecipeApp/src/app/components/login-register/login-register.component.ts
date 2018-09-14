@@ -4,6 +4,7 @@ import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MenuComponent } from '../menu/menu.component';
 import { PantryService } from '../../services/pantry.service';
+import { FoodCategoryComponent } from '../food-category/food-category.component';
 
 @Component({
   selector: 'app-login-register',
@@ -30,12 +31,13 @@ export class LoginRegisterComponent implements OnInit {
     private route: RouterModule,
     private router: Router,
     private authService: AuthService,
-    private pantryService: PantryService
+    private pantryService: PantryService,
+    private foodCategory: FoodCategoryComponent
 
   ) { }
 
   ngOnInit() {
-    console.log('inside the login-register component');
+
   }
 
   login() {
@@ -64,6 +66,7 @@ export class LoginRegisterComponent implements OnInit {
                 console.log('printing pantryid.ingredients ');
                 console.log(pantryid.ingredients);
                 this.pantryService.unpackUserPantryArray();
+                this.foodCategory.filterOutLoggedInUsersIngredients();
                 this.reload('categories');
                 this.modalService.dismissAll();
               }

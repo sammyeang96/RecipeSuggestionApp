@@ -52,7 +52,7 @@ import { FeatureInstructionsComponent } from './components/feature-instructions/
     // ScrollSpyModule.forRoot()
 
   ],
-  providers: [AuthService],
+  providers: [AuthService,FoodCategoryComponent],
   bootstrap: [AppComponent],
 
   entryComponents: [

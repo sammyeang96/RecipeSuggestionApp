@@ -27,22 +27,44 @@ export class PantryComponent implements OnInit {
   }
 
   removeItemFromPantry(ingredient: Ingredient) {
+    let cat = ingredient.category;
     this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
     // if all ingredients includes the ingredient
     if (this.foodCategory.masterPantry.includes(ingredient)) {
 
      console.log('already exists');
     } else {
-      // otherwise, compare the category of the element
-      if (ingredient.category === this.foodCategory.currentCategory) {
-        // make the visible switch
-        this.foodCategory.ingredients.push(ingredient);
-        this.foodCategory.masterPantry.push(ingredient);
-      } else {
-        // add to the masterPantry by itself
-        this.foodCategory.masterPantry.push(ingredient);
+      if(cat == "meats"){
+        this.foodCategory.meatIngredients.push(ingredient);
+        console.log("pushed meat")
       }
-    }
+      if(cat == "dairy"){
+        this.foodCategory.dairyIngredients.push(ingredient);
+        console.log("pushed dairy")
+      }
+      if(cat == "spices"){
+        this.foodCategory.spicesIngredients.push(ingredient);
+        console.log("pushed spices")
+      }
+      if(cat == "fruits"){
+        this.foodCategory.fruitsIngredients.push(ingredient);
+        console.log("pushed fruits")  
+      }
+      if(cat == "grains"){
+        this.foodCategory.starchesIngredients.push(ingredient);
+        console.log("pushed grains")
+      }
+      if(cat == "veggies"){
+        this.foodCategory.veggiesIngredients.push(ingredient);
+        console.log("pushed veggies")
+      }
+      this.foodCategory.masterPantry.push(ingredient);
+      // otherwise, compare the category of the element
+    //   if (ingredient.category === this.foodCategory.currentCategory) {
+    //     // make the visible switch
+    //     // this.foodCategory.ingredients.push(ingredient);
+    // }  
+  }
     console.log('in removeItemFromPantry');
   }
 
