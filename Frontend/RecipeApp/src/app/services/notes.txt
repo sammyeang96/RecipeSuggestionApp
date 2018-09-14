@@ -1,0 +1,331 @@
+import { Injectable } from '@angular/core';
+import { Ingredient } from '../models/Ingredient.model';
+import { AuthService } from '../services/auth.service';
+import { HandleArraysService } from './handle-arrays.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PantryService {
+  userPantryString: string;
+  ingredient: Ingredient[] = [];
+
+  // number array of ingredient ids from db
+  userPantryIngredientIds: Number[] = [];
+  // ingredient objects converted from ids
+  userPantryIngredients: Ingredient[] = [];
+
+  constructor(private authService: AuthService, private handleArrays: HandleArraysService) { }
+
+  unpackUserPantryArray() {
+    const array = this.authService.dataObject.ingredients.split(',');
+    for (let i = 0; i < array.length; i++) {
+      this.userPantryIngredientIds.push(Number(array[i]));
+    }
+    console.log(this.userPantryIngredientIds);
+    this.findPantry();
+    this.addUserIngredientsToMainArray();
+  }
+
+  findPantry() {
+    for (let i = 0; i < this.userPantryIngredientIds.length; i++) {
+      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
+    }
+    console.log(this.userPantryIngredients);
+  }
+
+  
+  addUserIngredientsToMainArray() {
+    this.ingredient = this.ingredient.concat(this.userPantryIngredients);
+  }
+
+}
+
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
+import { RouterModule, Router } from '../../../../node_modules/@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { MenuComponent } from '../menu/menu.component';
+import { PantryService } from '../../services/pantry.service';
+
+@Component({
+  selector: 'app-login-register',
+  templateUrl: './login-register.component.html',
+  styleUrls: ['./login-register.component.css']
+})
+export class LoginRegisterComponent implements OnInit {
+
+  private username: string;
+  private password: string;
+
+  private firstName: string;
+  private lastName: string;
+  private newUsername: string;
+  private newPassword: string;
+  private confirmPassword: string;
+
+  show = false;
+  hidden = true;
+  hidden1 = true;
+
+  constructor(
+    private modalService: NgbModal,
+    private route: RouterModule,
+    private router: Router,
+    private authService: AuthService,
+    private pantryService: PantryService
+
+  ) { }
+
+  ngOnInit() {
+    console.log('inside the login-register component');
+  }
+  // //dummy method to test navbar look while logged in/out
+  // login1() {
+  //   if (this.username == null || this.password == null) {
+  //     alert('please enter in something.');
+  //   } else {
+  //     this.authService.isLoggedIn = true;
+  //     console.log(this.authService.isLoggedIn + " logged in???");
+  //     this.modalService.dismissAll('Cross click');
+  //     this.router.navigate(['home']);
+  //   }
+  // }
+
+  login() {
+
+    if (this.username == null || this.password == null) {
+      alert('please enter in something.');
+    } else {
+
+      this.hidden = !this.hidden;
+      this.show = !this.show;
+
+      this.authService.login(this.username, this.password).subscribe(
+        user => {
+          console.log(user);
+          this.authService.loggedInUser = user;
+
+          if (user != null) {
+            this.authService.isLoggedIn = true;
+            // this.router.navigate(['userInfo']);
+            this.authService.getPantryByUsername(user.username).subscribe(
+              pantryid => {
+                console.log('printing pantryid ');
+                console.log(pantryid);
+                this.authService.dataObject = pantryid;
+                this.authService.theOldIngredients = pantryid.ingredients;
+                console.log('printing pantryid.ingredients ');
+                console.log(pantryid.ingredients);
+                // get user ingredients
+                // this.pantryService.unpackUserPantryArray();
+                this.reload('categories');
+                this.modalService.dismissAll();
+              }
+            );
+
+          }
+
+        }
+
+      );
+    }
+  }
+
+  checkPasswords() {
+    if (this.newPassword !== this.confirmPassword) {
+      alert('passwords do not match');
+      // this.confirmPassword == null;
+      return;
+    } else {
+      this.registerUser();
+    }
+  }
+
+  registerUser() {
+
+    if (
+      this.firstName == null || this.lastName == null || this.newUsername == null
+      || this.newPassword == null || this.confirmPassword == null
+    ) {
+      alert('please fill  in all fields');
+      this.hidden1 = !this.hidden1;
+    } else {
+
+      this.hidden = !this.hidden;
+      this.show = !this.show;
+
+      // SENDING NEW INFO TO BE REGISTERED IN THE USER_LOGIN TABLE
+      this.authService.registerUser(
+
+        this.firstName,
+        this.lastName,
+        this.newUsername,
+        this.newPassword
+
+      ).subscribe(
+        data => {
+          console.log(data);
+          this.authService.loggedInUser = data;
+
+          if (data != null) {
+
+            // this.authService.isLoggedIn = true;
+            // this.router.navigate(['userInfo']);
+
+            // SENDING NEW INFO TO BE REGISTERED IN THE USER_INFO TABLE
+            this.authService.registerUserInfo(
+              this.firstName,
+              this.lastName,
+              this.newUsername,
+              this.newPassword
+            ).subscribe(
+              data2 => {
+                console.log(data2);
+
+                if (data2 != null) {
+
+                  // MAKING A PANTRY FOR NEW USER
+                  this.authService.registerUserPantry(
+                    this.newUsername
+                  ).subscribe(
+                    data3 => {
+                      console.log(data3);
+                    }
+                  );
+                }
+
+              }
+            );
+          }
+
+        }
+      );
+    }
+
+  }
+
+  dismissModal(any) {
+    this.modalService.dismissAll('Cross click');
+  }
+
+  getUsersPantry() {
+
+    console.log('printing info in getUsersPantry() ');
+
+    this.authService.login(this.username, this.password).subscribe(
+      data => {
+        console.log(data);
+        this.authService.loggedInUser = data;
+
+        if (data != null) {
+          this.authService.isLoggedIn = true;
+        }
+      }
+    );
+  }
+
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
+  }
+}
+
+import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '../../models/Ingredient.model';
+import { PantryService } from '../../services/pantry.service';
+import { SearchAlgorithmService } from '../../services/search-algorithm.service';
+import { FoodCategoryComponent } from '../food-category/food-category.component';
+import { AuthService } from '../../services/auth.service';
+import { RouterModule, Router } from '@angular/router';
+import { HandleArraysService } from '../../services/handle-arrays.service';
+@Component({
+  selector: 'app-pantry',
+  templateUrl: './pantry.component.html',
+  styleUrls: ['./pantry.component.css']
+})
+export class PantryComponent implements OnInit {
+  ingredient: Ingredient[] = [];
+  stringForDatabase: string;
+
+  private databasestring: string = '';
+  constructor(private handleArrays: HandleArraysService,
+    private authService: AuthService,
+    private foodCategory: FoodCategoryComponent,
+    private router: Router, private pantryService: PantryService,
+    private searchAlgorithmService: SearchAlgorithmService) { }
+
+  ngOnInit() {
+
+  }
+
+  removeItemFromPantry(ingredient: Ingredient) {
+    this.pantryService.ingredient.splice(this.pantryService.ingredient.indexOf(ingredient, 0), 1);
+    this.foodCategory.ingredients.push(ingredient);
+    console.log('in removeItemFromPantry');
+  }
+
+  updatePantry(databasestring) {
+    this.ingredient = this.pantryService.ingredient;
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
+      data => {
+        this.searchAlgorithmService.resultSet = data;
+      });
+    this.turnArrayToString();
+
+    databasestring = this.databasestring;
+    console.log('in updatePantry');
+    console.log('printing databasestring inside pantry component: ');
+    console.log(databasestring);
+    this.authService.intermediaryFunctionForUpdatePantry(databasestring).subscribe(data => console.log(data));
+  }
+
+  // to be used to sort the pantry items
+  public sortIngredients() {
+    this.ingredient.sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  public sortIngredientsType(arr: Ingredient[]) {
+    arr.sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    return arr;
+  }
+
+  addSelectionToArray() {
+    console.log('in addSelectionToArray');
+    this.ingredient = this.pantryService.ingredient;
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
+      data => {
+        this.searchAlgorithmService.resultSet = data;
+      });
+    this.turnArrayToString();
+    this.router.navigate(['feature']);
+  }
+
+  turnArrayToString() {
+    this.databasestring = String(this.pantryService.ingredient[0].id);
+    for (let i = 1; i < this.pantryService.ingredient.length; i++) {
+      this.databasestring = String(this.databasestring + ',' + this.pantryService.ingredient[i].id);
+    }
+    this.pantryService.userPantryString = this.databasestring;
+    this.authService.userPantryString = this.databasestring;
+    console.log('in turnArrayToString');
+    console.log('printing databasestring:');
+    console.log(this.databasestring);
+    // this.unpackUserPantryArray();
+  }
+
+}

@@ -32,17 +32,10 @@ export class AuthService {
   ) { }
 
   searchRecipes(search: string) {
-    return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
+    return this.http.get<RecipeData>
+    (`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
-  loginTrueOrFalse() {
-    if(this.isLoggedIn == false){
-      return false;
-    } 
-    else {
-      return true;
-    }
-  }
   logout1(){
     this.isLoggedIn = false;
   }
@@ -91,7 +84,8 @@ export class AuthService {
     console.log(newUsername);
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/create',
       {
-        username: { username: newUsername }
+        username: { username: newUsername },
+        ingredients: 1
       });
   }
 
@@ -135,6 +129,11 @@ export class AuthService {
     console.log(theIngredients);
 
     this.theNewIngredients = this.theOldIngredients + ',' + theIngredients;
+
+    console.log('theOldIngredients is:');
+    console.log(this.theOldIngredients);
+    console.log('theNewIngredients is:');
+    console.log(this.theNewIngredients);
 
     return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/update',
       {

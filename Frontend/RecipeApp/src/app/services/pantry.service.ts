@@ -10,29 +10,36 @@ export class PantryService {
   userPantryString: string;
   ingredient: Ingredient[] = [];
 
+  // number array of ingredient ids from db
+  userPantryIngredientIds: Number[] = [];
+  // ingredient objects converted from ids
   userPantryIngredients: Ingredient[] = [];
-
-  userPantryIds: Number[] = [];
-
 
   constructor(private authService: AuthService, private handleArrays: HandleArraysService) { }
 
-
   unpackUserPantryArray() {
     const array = this.authService.dataObject.ingredients.split(',');
-    for (let i = 0; i < array.length; i++) {
-      this.userPantryIds.push(Number(array[i]));
+    if (array[0] === '9000'){
+      array.splice(0, 1);
     }
-    console.log(this.userPantryIds);
+    for (let i = 0; i < array.length; i++) {
+      this.userPantryIngredientIds.push(Number(array[i]));
+    }
+    console.log(this.userPantryIngredientIds);
     this.findPantry();
+    this.addUserIngredientsToMainArray();
   }
 
   findPantry() {
-    for (let i = 0; i < this.userPantryIds.length; i++) {
-      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIds[i]));
+    for (let i = 0; i < this.userPantryIngredientIds.length; i++) {
+      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
     }
     console.log(this.userPantryIngredients);
   }
 
+
+  addUserIngredientsToMainArray() {
+    this.ingredient = this.ingredient.concat(this.userPantryIngredients);
+  }
 
 }

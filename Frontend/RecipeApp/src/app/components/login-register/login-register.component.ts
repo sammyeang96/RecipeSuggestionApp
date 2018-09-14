@@ -3,6 +3,7 @@ import { NgbModal } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MenuComponent } from '../menu/menu.component';
+import { PantryService } from '../../services/pantry.service';
 
 @Component({
   selector: 'app-login-register',
@@ -29,25 +30,12 @@ export class LoginRegisterComponent implements OnInit {
     private route: RouterModule,
     private router: Router,
     private authService: AuthService,
-
+    private pantryService: PantryService
 
   ) { }
 
   ngOnInit() {
     console.log('inside the login-register component');
-  }
-  //dummy method to test navbar look while logged in/out
-  login1() {
-    if (this.username == null || this.password == null) {
-      alert('please enter in something.');
-    } else {
-      
-      this.authService.isLoggedIn = true;
-      console.log(this.authService.isLoggedIn + " logged in???");
-      
-      this.modalService.dismissAll('Cross click');
-      this.router.navigate(['home']);
-    }
   }
 
   login() {
@@ -69,17 +57,15 @@ export class LoginRegisterComponent implements OnInit {
             // this.router.navigate(['userInfo']);
             this.authService.getPantryByUsername(user.username).subscribe(
               pantryid => {
-                console.log('printing pantryid: ');
+                console.log('printing pantryid ');
                 console.log(pantryid);
                 this.authService.dataObject = pantryid;
                 this.authService.theOldIngredients = pantryid.ingredients;
-                if (pantryid != null) {
-                  if (pantryid.ingredients == null) {
-                    console.log('printing ingredients before setting null to empty string:');
-                    this.authService.theOldIngredients = '';
-                  }
-                  
-                }
+                console.log('printing pantryid.ingredients ');
+                console.log(pantryid.ingredients);
+                this.pantryService.unpackUserPantryArray();
+                this.reload('categories');
+                this.modalService.dismissAll();
               }
             );
 
@@ -182,5 +168,9 @@ export class LoginRegisterComponent implements OnInit {
         }
       }
     );
+  }
+
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
   }
 }
