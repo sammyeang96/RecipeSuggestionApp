@@ -55,3 +55,4 @@ buildNumber.properties
 # End of https://www.gitignore.io/api/git,maven,angular,serverless
 >>>>>>> b38d27f1dfdf496f4f157ff02c8c8a333c2c978b
 >>>>>>> staging
+/.metadata/
