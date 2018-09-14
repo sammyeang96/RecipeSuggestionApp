@@ -128,10 +128,8 @@ export class AuthService {
     console.log('theIngredients is:');
     console.log(theIngredients);
 
-    this.theNewIngredients = this.theOldIngredients + ',' + theIngredients;
-
-    console.log('theOldIngredients is:');
-    console.log(this.theOldIngredients);
+    this.theNewIngredients = theIngredients;
+    
     console.log('theNewIngredients is:');
     console.log(this.theNewIngredients);
 
