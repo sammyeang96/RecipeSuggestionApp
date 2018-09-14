@@ -15,7 +15,11 @@ export class FoodCategoryComponent implements OnInit {
   public showIngredients: boolean;
   public contentEditable: boolean;
   public ingredients: Ingredient[] = [];
+  public masterPantry: Ingredient[] = [];
   
+  public meatIngredients = this.foodService.getMeats();
+  public dairyIngredients = this.foodService.getDairy();
+
   categoryColor: string;
 
   public usersIngredients: Ingredient[] = [];
@@ -24,20 +28,22 @@ export class FoodCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.showIngredients = false;
-    this.getUsersIngredients();
+    this.masterPantry = this.foodService.pantry;
 
   }
 
-  getUsersIngredients(){
-    this.usersIngredients = this.pantryService.userPantryIngredients;
-  }
 
   filterOutLoggedInUsersIngredients() {
-    for(let ing of this.usersIngredients){
-      if(this.ingredients.includes(ing)){
+    for (const ing of this.pantryService.ingredient) {
+      console.log(ing);
+      console.log("ingredient");
+      if (this.ingredients.includes(ing)) {
         this.ingredients.splice(this.ingredients.indexOf(ing, 0), 1);
       }
     }
+    // this.ingredients = this.ingredients.filter(x => this.pantryService.ingredient.includes(x));
+    // console.log(this.ingredients);
+    console.log("IN FILTER FUNCTION");
   }
 
   public sortIngredients() {
@@ -59,7 +65,7 @@ export class FoodCategoryComponent implements OnInit {
     this.sortIngredients();
     this.currentCategory = "meats";
     this.showIngredients = true;
-    this.categoryColor = "btn btn-sm btn-warning"; 
+    this.filterOutLoggedInUsersIngredients();
   }
 
   public showDairy() {
@@ -81,6 +87,7 @@ export class FoodCategoryComponent implements OnInit {
   public showFruit() {
     this.ingredients = this.foodService.getFruits();
     this.sortIngredients();
+    this.filterOutLoggedInUsersIngredients();
     this.currentCategory = "fruits";
     this.showIngredients = true;
   }
@@ -103,6 +110,7 @@ export class FoodCategoryComponent implements OnInit {
 
   addToPantry(ingredient: Ingredient) {
     this.pantryService.ingredient.push(ingredient);
+    this.masterPantry.splice(this.masterPantry.indexOf(ingredient, 0), 1);
     this.ingredients.splice(this.ingredients.indexOf(ingredient, 0), 1);
   }
 }
