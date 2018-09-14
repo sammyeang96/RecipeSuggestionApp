@@ -16,6 +16,7 @@ import { DataObject } from '../models/dataobject.model';
 })
 export class AuthService {
   dataObject: DataObject;
+  pantryId: number;
   link: string;
   recipe: RecipeData;
   recipes: Recipe[];
@@ -24,6 +25,8 @@ export class AuthService {
   loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   userPantryString: string;
+  theOldIngredients: string;
+  theNewIngredients: string;
   constructor(
     private http: HttpClient,
   ) { }
@@ -113,6 +116,31 @@ export class AuthService {
     {
       username: username
     });
+  }
+
+  intermediaryFunctionForUpdatePantry(mediumIngredientString: string) {
+    this.pantryId = this.dataObject.id;
+    console.log('printing pantryId:');
+    console.log(this.pantryId);
+    console.log('printing mediumIngredientString:');
+    console.log(mediumIngredientString);
+    return this.updateUserPantry(this.pantryId, mediumIngredientString);
+  }
+
+  updateUserPantry(id: number, theIngredients: string) {
+    console.log('sending id and theIngredients to /pantry/update ');
+    console.log('id is:');
+    console.log(id);
+    console.log('theIngredients is:');
+    console.log(theIngredients);
+
+    this.theNewIngredients = this.theOldIngredients + ',' + theIngredients;
+
+    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/update',
+      {
+        id: id,
+        ingredients: this.theNewIngredients
+      });
   }
 
 }

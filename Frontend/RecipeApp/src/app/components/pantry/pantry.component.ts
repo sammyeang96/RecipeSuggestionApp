@@ -54,6 +54,21 @@ export class PantryComponent implements OnInit {
     this.foodCategory.ingredients.push(ingredient);
   }
 
+  updatePantry(databasestring) {
+    this.ingredient = this.pantryService.ingredient;
+    this.searchAlgorithmService.searchPantryRecipes(this.ingredient).subscribe(
+      data => {
+      this.searchAlgorithmService.resultSet = data;
+    } );
+    this.turnArrayToString();
+
+    databasestring = this.databasestring;
+    console.log('in updatePantry');
+    console.log('printing stringForDatabase inside pantry component: ');
+    console.log(databasestring);
+    this.authService.intermediaryFunctionForUpdatePantry(databasestring).subscribe(data => console.log(data));
+  }
+
   turnArrayToString() {
     this.databasestring = String (this.pantryService.ingredient[0].id);
     for( let i = 1; i < this.pantryService.ingredient.length; i++) {
