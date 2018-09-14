@@ -85,7 +85,8 @@ login() {
               }
             }
           );
-
+          this.modalService.dismissAll('Cross click');
+          this.router.navigate(['categories']);  
         }
 
       }
