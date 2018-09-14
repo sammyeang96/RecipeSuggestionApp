@@ -7,6 +7,7 @@ import { LoginRegisterComponent } from '../login-register/login-register.compone
 import { SearchResultsComponent } from '../search-results/search-results.component';
 import { BehaviorSubject } from 'rxjs';
 import { RecipeData } from '../../models/recipe-data';
+import { PantryService } from '../../services/pantry.service';
 
 
 
@@ -23,12 +24,18 @@ export class MenuComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private authService: AuthService,
-    private router: Router,
+    private pantryService: PantryService,
+    private router: Router
   ) { }
 
   //dummy logout
   logout1(){
     this.authService.logout1();
+    this.authService.notLoggedIn = true;
+    this.pantryService.ingredient = [];
+
+    this.reload("categories");
+    this.reload("home");
   }
 
   ngOnInit() {
