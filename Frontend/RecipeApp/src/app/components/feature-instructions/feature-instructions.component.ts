@@ -30,15 +30,12 @@ export class FeatureInstructionsComponent implements OnInit {
 
 
   open(results: FeatureResults) {
-    console.log(results);
 
     this.instructions = results;
     this.modalService.open(this.content);
     this.searchAlgorithmService.searchRecipeInstructionById(results.id).subscribe(
       data => {
-        console.log(data);
         if (data.length == 0) {
-          console.log("No available instructions")
         }
         else {
           

@@ -102,7 +102,6 @@ export class FoodCategoryComponent implements OnInit {
   this.sortIngredients();
   this.currentCategory = "meats";
   this.showIngredients = true;
-  console.log(this.meatIngredients);
 }
 
   public showDairy() {
@@ -143,8 +142,15 @@ export class FoodCategoryComponent implements OnInit {
 
 addToPantry(ingredient: Ingredient) {
   let cat = ingredient.category;
+  
+  
   this.pantryService.ingredient.push(ingredient);
-  this.masterPantry.splice(this.masterPantry.indexOf(ingredient, 0), 1);
+  // console.log(ingredient);
+  // console.log(this.meatIngredients);
+  // console.log(this.masterPantry);
+
+
+  // this.masterPantry.splice(this.masterPantry.indexOf(ingredient, 0), 1);
   
   if (cat == "meats") {
 

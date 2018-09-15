@@ -51,9 +51,7 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    console.log('sending info to /login/validate ');
-    console.log(username);
-    console.log(password);
+  
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/validate',
       {
         username: username,
@@ -63,9 +61,7 @@ export class AuthService {
 
   // creates a new entry in the User_Login table -- WORKS
   registerUser(firstName: string, lastName: string, newUsername: string, newPassword: string) {
-    console.log('sending info to /login/create ');
-    console.log(newUsername);
-    console.log(newPassword);
+  
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/create',
       {
         username: newUsername,
@@ -75,10 +71,7 @@ export class AuthService {
 
   // this one creates a new entry in the User_Info table -- WORKS
   registerUserInfo(firstName: string, lastName: string, newUsername: string, newPassword: string) {
-    console.log('sending info to /info/create ');
-    console.log(firstName);
-    console.log(lastName);
-    console.log(newUsername);
+ 
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/info/create',
       {
         firstname: firstName,
@@ -90,8 +83,7 @@ export class AuthService {
 
   // CREATES A PANTRY FOR NEW USER -- WORKS
   registerUserPantry(newUsername: string) {
-    console.log('sending info to /pantry/create ');
-    console.log(newUsername);
+  
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/create',
       {
         username: { username: newUsername },
@@ -101,8 +93,7 @@ export class AuthService {
 
   // returns pantry items when given pantry id
   getUsersPantryItems(id: number) {
-    console.log('sending info to /items/retrieve ');
-    console.log(id);
+   
   
     return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/items/retrieve',
     {
@@ -113,8 +104,7 @@ export class AuthService {
 
   // returns pantry id when given a username
   getPantryByUsername(username: string) {
-    console.log('sending info to /pantry/retrieve ');
-    console.log(username);
+
 
     return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/retrieve',
     {
@@ -124,24 +114,17 @@ export class AuthService {
 
   intermediaryFunctionForUpdatePantry(mediumIngredientString: string) {
     this.pantryId = this.dataObject.id;
-    console.log('printing pantryId:');
-    console.log(this.pantryId);
-    console.log('printing mediumIngredientString:');
-    console.log(mediumIngredientString);
+
     return this.updateUserPantry(this.pantryId, mediumIngredientString);
   }
 
   updateUserPantry(id: number, theIngredients: string) {
-    console.log('sending id and theIngredients to /pantry/update ');
-    console.log('id is:');
-    console.log(id);
-    console.log('theIngredients is:');
-    console.log(theIngredients);
+
 
     this.theNewIngredients = theIngredients;
 
-    console.log('theNewIngredients is:');
-    console.log(this.theNewIngredients);
+    // console.log('theNewIngredients is:');
+    // console.log(this.theNewIngredients);
 
     return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/update',
       {

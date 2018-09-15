@@ -35,22 +35,21 @@ export class MenuComponent implements OnInit {
   ) { }
 
   //dummy logout
-  logout1(){
+  logout1() {
     this.authService.logout1();
     this.authService.notLoggedIn = true;
     this.pantryService.ingredient = [];
-    
-  
+
+
     this.reload("categories");
     this.reload("home");
     location.reload();
   }
 
   ngOnInit() {
-    console.log(this.loggedIn + " IN MENU COMPONENT");
   }
 
-  
+
   searchRecipe() {
     if (this.search !== undefined) {
       this.authService.searchRecipes(this.search).subscribe(
@@ -68,8 +67,8 @@ export class MenuComponent implements OnInit {
   }
 
   clearData() {
-    
-  this.search = '';
+
+    this.search = '';
   }
 
   open() {
