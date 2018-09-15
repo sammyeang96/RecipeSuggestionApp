@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { Ingredient } from '../models/Ingredient.model';
 import { AuthService } from '../services/auth.service';
 import { HandleArraysService } from './handle-arrays.service';
+import { parse } from 'path';
+import { format } from 'url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PantryService {
   userPantryString: string;
-  ingredient: Ingredient[] = [];
+  public ingredient:Array<Ingredient> = [];
 
   // number array of ingredient ids from db
   userPantryIngredientIds: Number[] = [];
@@ -26,23 +28,41 @@ export class PantryService {
     for (let i = 0; i < array.length; i++) {
       this.userPantryIngredientIds.push(Number(array[i]));
     }
-    console.log(this.userPantryIngredientIds);
     this.findPantry();
     this.addUserIngredientsToMainArray();
+    // console.log(this.ingredient);
+    // this.getIngredientPantryFromIds();
   }
 
+//   getIngredientPantryFromIds(){
+//   this.userPantryIngredientIds.forEach(UserPId => { 
+//     this.handleArrays.pantry.forEach(PantryId => {
+
+//       if(UserPId === PantryId.id){
+//         this.ingredient.push(PantryId);
+//         console.log(PantryId)
+//       }
+      
+//     });
+//   })
+//   console.log(this.ingredient);
+//   format
+// };
+
   findPantry() {
-    console.log(this.userPantryIngredients);
     this.userPantryIngredients = [];
     for (let i = 0; i < this.userPantryIngredientIds.length; i++) {
      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
     }
-    console.log(this.userPantryIngredients);
   }
 
 
   addUserIngredientsToMainArray() {
-    this.ingredient = this.ingredient.concat(this.userPantryIngredients);
+    for(let i = 0; i < this.userPantryIngredients.length;i++ ){
+      this.ingredient.push(this.userPantryIngredients[i])
+      
+    }
+    
   }
 
 }

@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('inside the login component');
   }
 
   // openLoginModal(content) {
@@ -39,9 +38,9 @@ export class LoginComponent implements OnInit {
       alert('please enter in something.');
     }
     else {
-      console.log("printing info... ")
-      console.log(this.username);
-      console.log(this.password);
+      // console.log("printing info... ")
+      // console.log(this.username);
+      // console.log(this.password);
 
       this.hidden = !this.hidden;
       this.show = !this.show;
