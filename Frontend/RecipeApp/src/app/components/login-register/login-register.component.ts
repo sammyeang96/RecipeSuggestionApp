@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { MenuComponent } from '../menu/menu.component';
 import { PantryService } from '../../services/pantry.service';
 import { FoodCategoryComponent } from '../food-category/food-category.component';
+import { HandleArraysService } from '../../services/handle-arrays.service';
 
 @Component({
   selector: 'app-login-register',
@@ -32,7 +33,8 @@ export class LoginRegisterComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private pantryService: PantryService,
-    private foodCategory: FoodCategoryComponent
+    private foodCategory: FoodCategoryComponent,
+    private handleArrayService: HandleArraysService
 
   ) { }
 
@@ -70,6 +72,12 @@ export class LoginRegisterComponent implements OnInit {
                 this.foodCategory.filterOutLoggedInUsersIngredients();
                 this.reload('categories');
                 this.modalService.dismissAll();
+                this.foodCategory.meatIngredients = this.handleArrayService.getMeats();
+                this.foodCategory.dairyIngredients = this.handleArrayService.getDairy();
+                this.foodCategory.veggiesIngredients = this.handleArrayService.getVeggies();
+                this.foodCategory.spicesIngredients = this.handleArrayService.getSpices();
+                this.foodCategory.fruitsIngredients = this.handleArrayService.getFruits();
+                this.foodCategory.starchesIngredients = this.handleArrayService.getStarches();
               }
             );
 
