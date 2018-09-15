@@ -9,6 +9,7 @@ import { User } from '../models/User.model';
 import { MenuComponent } from '../components/menu/menu.component';
 import { Ingredient } from '../models/Ingredient.model';
 import { DataObject } from '../models/dataobject.model';
+import { Router } from '../../../node_modules/@angular/router';
 
 
 @Injectable({
@@ -16,39 +17,44 @@ import { DataObject } from '../models/dataobject.model';
 })
 export class AuthService {
   dataObject: DataObject;
+  pantryId: number;
   link: string;
   recipe: RecipeData;
   recipes: Recipe[];
   loggedInUser: User;
-  isLoggedIn: boolean;
+  isLoggedIn = false;
+  notLoggedIn = true;
   loggedInUserPantryId: number;
   allPantryItems: Ingredient[];
   userPantryString: string;
+  theOldIngredients: string;
+  theNewIngredients: string;
   constructor(
     private http: HttpClient,
+    private router: Router
   ) { }
 
   searchRecipes(search: string) {
-    return this.http.get<RecipeData>(`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
+    return this.http.get<RecipeData>
+    (`https://api.edamam.com/search?q=${search}&app_id=aeab67c5&app_key=43503b89948d858f171e29557e629321&from=0&to=40`);
   }
 
-  loginTrueOrFalse() {
-    if(this.isLoggedIn == false){
-      return false;
-    } 
-    else {
-      return true;
-    }
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
   }
-  logout1(){
+
+  logout1() {
     this.isLoggedIn = false;
+    this.theOldIngredients = null;
+    this.theNewIngredients = null;
+    this.reload('home');
   }
 
   login(username: string, password: string) {
     console.log('sending info to /login/validate ');
     console.log(username);
     console.log(password);
-    return this.http.post<User>('http://localhost:8081/Backend/login/validate',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/validate',
       {
         username: username,
         password: password
@@ -60,7 +66,7 @@ export class AuthService {
     console.log('sending info to /login/create ');
     console.log(newUsername);
     console.log(newPassword);
-    return this.http.post<User>('http://localhost:8081/Backend/login/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/login/create',
       {
         username: newUsername,
         password: newPassword
@@ -73,7 +79,7 @@ export class AuthService {
     console.log(firstName);
     console.log(lastName);
     console.log(newUsername);
-    return this.http.post<User>('http://localhost:8081/Backend/info/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/info/create',
       {
         firstname: firstName,
         lastname: lastName,
@@ -86,9 +92,10 @@ export class AuthService {
   registerUserPantry(newUsername: string) {
     console.log('sending info to /pantry/create ');
     console.log(newUsername);
-    return this.http.post<User>('http://localhost:8081/Backend/pantry/create',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/create',
       {
-        username: { username: newUsername }
+        username: { username: newUsername },
+        ingredients: 9000
       });
   }
 
@@ -97,7 +104,7 @@ export class AuthService {
     console.log('sending info to /items/retrieve ');
     console.log(id);
   
-    return this.http.post<User>('http://localhost:8081/Backend/items/retrieve',
+    return this.http.post<User>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/items/retrieve',
     {
       id: id
     });
@@ -109,10 +116,38 @@ export class AuthService {
     console.log('sending info to /pantry/retrieve ');
     console.log(username);
 
-    return this.http.post<DataObject>('http://localhost:8081/Backend/pantry/retrieve',
+    return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/retrieve',
     {
       username: username
     });
+  }
+
+  intermediaryFunctionForUpdatePantry(mediumIngredientString: string) {
+    this.pantryId = this.dataObject.id;
+    console.log('printing pantryId:');
+    console.log(this.pantryId);
+    console.log('printing mediumIngredientString:');
+    console.log(mediumIngredientString);
+    return this.updateUserPantry(this.pantryId, mediumIngredientString);
+  }
+
+  updateUserPantry(id: number, theIngredients: string) {
+    console.log('sending id and theIngredients to /pantry/update ');
+    console.log('id is:');
+    console.log(id);
+    console.log('theIngredients is:');
+    console.log(theIngredients);
+
+    this.theNewIngredients = theIngredients;
+
+    console.log('theNewIngredients is:');
+    console.log(this.theNewIngredients);
+
+    return this.http.post<DataObject>('http://ec2-54-173-88-50.compute-1.amazonaws.com:8080/recapi/pantry/update',
+      {
+        id: id,
+        ingredients: this.theNewIngredients
+      });
   }
 
 }

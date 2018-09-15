@@ -3,6 +3,9 @@ import { NgbModal } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Router } from '../../../../node_modules/@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MenuComponent } from '../menu/menu.component';
+import { PantryService } from '../../services/pantry.service';
+import { FoodCategoryComponent } from '../food-category/food-category.component';
+import { HandleArraysService } from '../../services/handle-arrays.service';
 
 @Component({
   selector: 'app-login-register',
@@ -29,25 +32,14 @@ export class LoginRegisterComponent implements OnInit {
     private route: RouterModule,
     private router: Router,
     private authService: AuthService,
-
+    private pantryService: PantryService,
+    private foodCategory: FoodCategoryComponent,
+    private handleArrayService: HandleArraysService
 
   ) { }
 
   ngOnInit() {
-    console.log('inside the login-register component');
-  }
-  //dummy method to test navbar look while logged in/out
-  login1() {
-    if (this.username == null || this.password == null) {
-      alert('please enter in something.');
-    } else {
-      
-      this.authService.isLoggedIn = true;
-      console.log(this.authService.isLoggedIn + " logged in???");
-      
-      this.modalService.dismissAll('Cross click');
-      this.router.navigate(['home']);
-    }
+
   }
 
   login() {
@@ -66,15 +58,26 @@ export class LoginRegisterComponent implements OnInit {
 
           if (user != null) {
             this.authService.isLoggedIn = true;
+            this.authService.notLoggedIn = false;
             // this.router.navigate(['userInfo']);
             this.authService.getPantryByUsername(user.username).subscribe(
               pantryid => {
-                console.log('printing pantryid: ');
+                console.log('printing pantryid ');
                 console.log(pantryid);
                 this.authService.dataObject = pantryid;
-                if (pantryid != null) {
-                  console.log("good")
-                }
+                this.authService.theOldIngredients = pantryid.ingredients;
+                console.log('printing pantryid.ingredients ');
+                console.log(pantryid.ingredients);
+                this.pantryService.unpackUserPantryArray(this.authService.theOldIngredients);
+                this.reload('categories');
+                this.modalService.dismissAll();
+
+                this.foodCategory.meatIngredients = this.handleArrayService.getMeats();
+                this.foodCategory.dairyIngredients = this.handleArrayService.getDairy();
+                this.foodCategory.veggiesIngredients = this.handleArrayService.getVeggies();
+                this.foodCategory.spicesIngredients = this.handleArrayService.getSpices();
+                this.foodCategory.fruitsIngredients = this.handleArrayService.getFruits();
+                this.foodCategory.starchesIngredients = this.handleArrayService.getStarches();
               }
             );
 
@@ -164,6 +167,12 @@ export class LoginRegisterComponent implements OnInit {
   }
 
   getUsersPantry() {
+    this.foodCategory.meatIngredients = this.handleArrayService.getMeats();
+    this.foodCategory.dairyIngredients = this.handleArrayService.getDairy();
+    this.foodCategory.veggiesIngredients = this.handleArrayService.getVeggies();
+    this.foodCategory.spicesIngredients = this.handleArrayService.getSpices();
+    this.foodCategory.fruitsIngredients = this.handleArrayService.getFruits();
+    this.foodCategory.starchesIngredients = this.handleArrayService.getStarches();
 
     console.log('printing info in getUsersPantry() ');
 
@@ -177,5 +186,9 @@ export class LoginRegisterComponent implements OnInit {
         }
       }
     );
+  }
+
+  reload(link: string) {
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => { this.router.navigate([link]); });
   }
 }

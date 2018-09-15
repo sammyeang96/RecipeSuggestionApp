@@ -20,7 +20,6 @@ export class ResultsModalComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
-    
   }
 
   open(recipes: Recipe) {

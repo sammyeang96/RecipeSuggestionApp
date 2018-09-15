@@ -17,21 +17,11 @@
                         'btn-grains':i.category === 'grains'}">
                     {{i.name }}</button>
             </div>
-            <div class="card-deck row">
-                <button class="btn btn-sm button"
-                    (click)="removeItemFromPantry(i)" *ngFor="let i of this.userPantryIngredients"
-                    [ngClass]="{
-                        'btn-meat':i.category === 'meats',
-                        'btn-dairy':i.category === 'dairy',
-                        'btn-veggies':i.category === 'veggies',
-                        'btn-fruits':i.category === 'fruits',
-                        'btn-spices':i.category === 'spices',
-                        'btn-grains':i.category === 'grains'}">
-                    {{i.name}}</button>
-            </div>
             <br>
             <hr>
-            <button class="btn btn-primary" (click)="addSelectionToArray()">Submit</button>
+            <button class="btn btn-primary" *ngIf="this.authService.notLoggedIn" (click)="addSelectionToArray()">Search for Recipes!</button>
+            <button class="btn btn-primary" *ngIf="this.authService.isLoggedIn" (click)="updatePantry()" (click)="addSelectionToArray()">Search for Recipes!</button>
         </div>
     </section>
 </div>
+<!-- *ngFor="let i of this.userPantryIngredients.name" -->

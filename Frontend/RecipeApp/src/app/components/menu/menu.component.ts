@@ -7,6 +7,10 @@ import { LoginRegisterComponent } from '../login-register/login-register.compone
 import { SearchResultsComponent } from '../search-results/search-results.component';
 import { BehaviorSubject } from 'rxjs';
 import { RecipeData } from '../../models/recipe-data';
+import { PantryService } from '../../services/pantry.service';
+import { FoodCategoryComponent } from '../food-category/food-category.component';
+import { HandleArraysService } from '../../services/handle-arrays.service';
+import { Location } from '@angular/common';
 
 
 
@@ -23,18 +27,30 @@ export class MenuComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private authService: AuthService,
+    private pantryService: PantryService,
     private router: Router,
+    private foodCategory: FoodCategoryComponent,
+    private handleArrayService: HandleArraysService,
+    private location: Location
   ) { }
 
   //dummy logout
   logout1(){
     this.authService.logout1();
+    this.authService.notLoggedIn = true;
+    this.pantryService.ingredient = [];
+    
+  
+    this.reload("categories");
+    this.reload("home");
+    location.reload();
   }
 
   ngOnInit() {
     console.log(this.loggedIn + " IN MENU COMPONENT");
   }
 
+  
   searchRecipe() {
     if (this.search !== undefined) {
       this.authService.searchRecipes(this.search).subscribe(
