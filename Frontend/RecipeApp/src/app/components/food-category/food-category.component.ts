@@ -39,7 +39,7 @@ export class FoodCategoryComponent implements OnInit {
   }
 
 
-  filterOutLoggedInUsersIngredients() {
+  // filterOutLoggedInUsersIngredients() {
     // console.log(this.pantryService.ingredient);
 
     
@@ -78,7 +78,7 @@ export class FoodCategoryComponent implements OnInit {
       
     
     
-  }
+  // }
   // this.ingredients = this.ingredients.filter(x => this.pantryService.ingredient.includes(x));
   // console.log(this.ingredients);
   
@@ -117,8 +117,7 @@ export class FoodCategoryComponent implements OnInit {
   this.sortIngredients();
   this.currentCategory = "veggies";
   this.showIngredients = true;
-  console.log("show veggie");
-  console.log(this.ingredients);
+
 }
 
   public showFruit() {
@@ -146,7 +145,7 @@ addToPantry(ingredient: Ingredient) {
   let cat = ingredient.category;
   this.pantryService.ingredient.push(ingredient);
   this.masterPantry.splice(this.masterPantry.indexOf(ingredient, 0), 1);
-
+  
   if (cat == "meats") {
 
     this.meatIngredients.splice(this.meatIngredients.indexOf(ingredient, 0), 1);

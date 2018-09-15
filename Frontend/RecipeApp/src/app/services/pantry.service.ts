@@ -17,8 +17,8 @@ export class PantryService {
 
   constructor(private authService: AuthService, private handleArrays: HandleArraysService) { }
 
-  unpackUserPantryArray() {
-    const array = this.authService.dataObject.ingredients.split(',');
+  unpackUserPantryArray( ingString: string) {
+    let array = ingString.split(',');
     if (array[0] === '9000') {
       array.splice(0, 1);
     }
@@ -35,9 +35,6 @@ export class PantryService {
     console.log(this.userPantryIngredients);
     this.userPantryIngredients = [];
     for (let i = 0; i < this.userPantryIngredientIds.length; i++) {
-      
-     
-      
      this.userPantryIngredients.push(this.handleArrays.pantry.find(o => o.id === this.userPantryIngredientIds[i]));
     }
     console.log(this.userPantryIngredients);

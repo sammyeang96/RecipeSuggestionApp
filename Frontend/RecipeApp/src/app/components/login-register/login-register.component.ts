@@ -68,10 +68,10 @@ export class LoginRegisterComponent implements OnInit {
                 this.authService.theOldIngredients = pantryid.ingredients;
                 console.log('printing pantryid.ingredients ');
                 console.log(pantryid.ingredients);
-                this.pantryService.unpackUserPantryArray();
-                this.foodCategory.filterOutLoggedInUsersIngredients();
+                this.pantryService.unpackUserPantryArray(this.authService.theOldIngredients);
                 this.reload('categories');
                 this.modalService.dismissAll();
+
                 this.foodCategory.meatIngredients = this.handleArrayService.getMeats();
                 this.foodCategory.dairyIngredients = this.handleArrayService.getDairy();
                 this.foodCategory.veggiesIngredients = this.handleArrayService.getVeggies();
@@ -167,6 +167,12 @@ export class LoginRegisterComponent implements OnInit {
   }
 
   getUsersPantry() {
+    this.foodCategory.meatIngredients = this.handleArrayService.getMeats();
+    this.foodCategory.dairyIngredients = this.handleArrayService.getDairy();
+    this.foodCategory.veggiesIngredients = this.handleArrayService.getVeggies();
+    this.foodCategory.spicesIngredients = this.handleArrayService.getSpices();
+    this.foodCategory.fruitsIngredients = this.handleArrayService.getFruits();
+    this.foodCategory.starchesIngredients = this.handleArrayService.getStarches();
 
     console.log('printing info in getUsersPantry() ');
 
